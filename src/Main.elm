@@ -1,9 +1,10 @@
 module Main exposing (main)
 
-import Accessibility as Html exposing (Html, div, h1, text)
-import Css exposing (margin, px)
+import Accessibility as Html exposing (Html)
+import Css
 import Css.Namespace
-import Html as H exposing (node)
+import Html as CoreHtml
+import Html.Attributes as Attrs
 import Html.CssHelpers
 
 
@@ -40,12 +41,80 @@ update msg model =
     Html.CssHelpers.withNamespace namespace
 
 
+type Section
+    = Home
+    | About
+    | Speakers
+    | Location
+    | Tickets
+
+
+sections : List Section
+sections =
+    [ Home
+    , About
+    , Speakers
+    , Location
+    , Tickets
+    ]
+
+
 view : Model -> Html Msg
 view model =
-    div []
-        [ node "style" [] [ text (Css.compile [ css ] |> .css) ]
-        , h1 [ class [ NavBar ] ] [ text "Your Elm App is working!" ]
+    Html.div []
+        [ CoreHtml.node "style" [] [ Html.text (Css.compile [ css ] |> .css) ]
+        , Html.nav [ class [ NavBar ] ] <|
+            List.map viewLink sections
+        , Html.main_ [ class [ Sections ] ] <|
+            List.map viewSection sections
         ]
+
+
+viewLink : Section -> Html Msg
+viewLink section =
+    Html.a
+        [ class [ SectionLink ]
+        , Attrs.href <| getSectionIdentifier section
+        ]
+        [ Html.text <| getSectionName section ]
+
+
+viewSection : Section -> Html Msg
+viewSection section =
+    Html.section
+        [ Attrs.id <| getSectionId section
+        , class [ SectionSection ]
+        ]
+        [ Html.text <| getSectionName section ]
+
+
+getSectionIdentifier : Section -> String
+getSectionIdentifier section =
+    "#" ++ getSectionId section
+
+
+getSectionId : Section -> String
+getSectionId section =
+    case section of
+        Home ->
+            "home"
+
+        About ->
+            "about"
+
+        Speakers ->
+            "speakers"
+
+        Location ->
+            "location"
+
+        Tickets ->
+            "tickets"
+
+
+getSectionName : Section -> String
+getSectionName =
+    toString
 
 
 
@@ -59,13 +128,38 @@ namespace =
 
 type CssClasses
     = NavBar
+    | SectionLink
+    | SectionSection
+    | Sections
+
+
+rem : Float -> Css.Px
+rem =
+    Css.px << (*) 14
+
+
+navBarHeight : Css.Px
+navBarHeight =
+    rem 3
 
 
 css : Css.Stylesheet
 css =
     (Css.stylesheet << Css.Namespace.namespace namespace)
         [ Css.class NavBar
-            [ margin (px 10)
+            [ Css.displayFlex
+            , Css.height navBarHeight
+            , Css.alignItems Css.center
+            , Css.position Css.fixed
+            ]
+        , Css.class Sections
+            []
+        , Css.class SectionLink
+            [ Css.margin2 Css.zero (rem 1)
+            ]
+        , Css.class SectionSection
+            [ Css.height (rem 12)
+            , Css.paddingTop navBarHeight
             ]
         ]
 
