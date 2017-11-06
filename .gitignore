@@ -12,3 +12,6 @@ node_modules
 
 # Desktop Services Store on macOS
 .DS_Store
+
+# Gets generated sometimes
+src/elm-package.json
