@@ -15,3 +15,6 @@ node_modules
 
 # Gets generated sometimes
 src/elm-package.json
+
+# Personal TODO list
+TODO
