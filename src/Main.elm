@@ -1,7 +1,10 @@
 module Main exposing (main)
 
-import Accessibility as Html exposing (Html, decorativeImg, div, h1, text)
-import Html.Attributes exposing (src)
+import Accessibility as Html exposing (Html, div, h1, text)
+import Css exposing (margin, px)
+import Css.Namespace
+import Html as H exposing (node)
+import Html.CssHelpers
 
 
 ---- MODEL ----
@@ -33,11 +36,37 @@ update msg model =
 ---- VIEW ----
 
 
+{ class } =
+    Html.CssHelpers.withNamespace namespace
+
+
 view : Model -> Html Msg
 view model =
     div []
-        [ decorativeImg [ src "/logo.svg" ]
-        , h1 [] [ text "Your Elm App is working!" ]
+        [ node "style" [] [ text (Css.compile [ css ] |> .css) ]
+        , h1 [ class [ NavBar ] ] [ text "Your Elm App is working!" ]
+        ]
+
+
+
+---- STYLES ----
+
+
+namespace : String
+namespace =
+    "npvConference"
+
+
+type CssClasses
+    = NavBar
+
+
+css : Css.Stylesheet
+css =
+    (Css.stylesheet << Css.Namespace.namespace namespace)
+        [ Css.class NavBar
+            [ margin (px 10)
+            ]
         ]
 
 
