@@ -2,6 +2,7 @@ module Main exposing (main)
 
 import Accessibility as Html exposing (Html)
 import Css
+import Css.Elements
 import Css.Namespace
 import Html as CoreHtml
 import Html.Attributes as Attrs
@@ -143,9 +144,15 @@ navBarHeight =
     rem 3
 
 
+colors :
+    { primary : { dark : Css.Color, light : Css.Color }
+    , secondary : { dark : Css.Color, light : Css.Color }
+    }
 colors =
     { primary =
-        {}
+        { light = Css.hex "9469a9"
+        , dark = Css.hex "9469a9"
+        }
     , secondary =
         { light = Css.hex "f8f8f8"
         , dark = Css.hex "e7e7e7"
@@ -156,11 +163,21 @@ colors =
 css : Css.Stylesheet
 css =
     (Css.stylesheet << Css.Namespace.namespace namespace)
-        [ Css.class NavBar
+        [ Css.Elements.body
+            [ Css.margin Css.zero
+            , Css.fontFamily Css.sansSerif
+            ]
+        , Css.Elements.a
+            [ Css.color colors.primary.light
+            , Css.textDecoration Css.none
+            , Css.hover
+                [ Css.color colors.primary.dark
+                ]
+            ]
+        , Css.class NavBar
             [ Css.displayFlex
             , Css.height navBarHeight
             , Css.width (Css.vw 100)
-            , Css.alignItems Css.center
             , Css.position Css.fixed
             , Css.borderBottom3 (Css.px 1) Css.solid colors.secondary.dark
             , Css.backgroundColor colors.secondary.light
@@ -168,11 +185,22 @@ css =
         , Css.class Sections
             []
         , Css.class SectionLink
-            [ Css.margin2 Css.zero (rem 1)
+            [ Css.padding2 Css.zero (rem 1)
+            , Css.displayFlex
+            , Css.alignItems Css.center
+            , Css.hover
+                [ Css.backgroundColor colors.secondary.dark
+                ]
             ]
         , Css.class SectionSection
-            [ Css.height (rem 12)
+            [ Css.minHeight (Css.vh 100)
             , Css.paddingTop navBarHeight
+            , Css.nthChild "odd"
+                [ Css.backgroundColor colors.secondary.light
+                ]
+            , Css.nthChild "even"
+                [ Css.backgroundColor colors.secondary.dark
+                ]
             ]
         ]
 
