@@ -1,6 +1,6 @@
-module Main exposing (..)
+module Main exposing (main)
 
-import Html exposing (Html, text, div, h1, img)
+import Accessibility as Html exposing (Html, decorativeImg, div, h1, text)
 import Html.Attributes exposing (src)
 
 
@@ -36,7 +36,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ img [ src "/logo.svg" ] []
+        [ decorativeImg [ src "/logo.svg" ]
         , h1 [] [ text "Your Elm App is working!" ]
         ]
 
