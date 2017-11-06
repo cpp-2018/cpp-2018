@@ -143,14 +143,27 @@ navBarHeight =
     rem 3
 
 
+colors =
+    { primary =
+        {}
+    , secondary =
+        { light = Css.hex "f8f8f8"
+        , dark = Css.hex "e7e7e7"
+        }
+    }
+
+
 css : Css.Stylesheet
 css =
     (Css.stylesheet << Css.Namespace.namespace namespace)
         [ Css.class NavBar
             [ Css.displayFlex
             , Css.height navBarHeight
+            , Css.width (Css.vw 100)
             , Css.alignItems Css.center
             , Css.position Css.fixed
+            , Css.borderBottom3 (Css.px 1) Css.solid colors.secondary.dark
+            , Css.backgroundColor colors.secondary.light
             ]
         , Css.class Sections
             []
