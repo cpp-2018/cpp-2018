@@ -13,12 +13,14 @@ import Html.CssHelpers
 
 
 type alias Model =
-    {}
+    { active : Section
+    }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}
+    ( { active = Home
+      }
     , sections
         |> List.reverse
         |> List.map getSectionHash
@@ -31,12 +33,43 @@ init =
 
 
 type Msg
-    = NoOp
+    = HashChanged String
+
+
+getSectionFromHash : String -> Result String Section
+getSectionFromHash section =
+    case section of
+        "#home" ->
+            Ok Home
+
+        "#about" ->
+            Ok About
+
+        "#speakers" ->
+            Ok Speakers
+
+        "#location" ->
+            Ok Location
+
+        "#tickets" ->
+            Ok Tickets
+
+        _ ->
+            Err "Invalid hash"
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    ( model, Cmd.none )
+    case msg of
+        HashChanged location ->
+            ( { model
+                | active =
+                    location
+                        |> getSectionFromHash
+                        |> Result.withDefault Home
+              }
+            , Cmd.none
+            )
 
 
 
@@ -70,16 +103,25 @@ view model =
     Html.div []
         [ CoreHtml.node "style" [] [ Html.text (Css.compile [ css ] |> .css) ]
         , Html.nav [ class [ NavBar ] ] <|
-            List.map viewLink sections
+            List.map (viewLink model.active) sections
         , Html.main_ [ class [ Sections ] ] <|
             List.map viewSection sections
         ]
 
 
-viewLink : Section -> Html Msg
-viewLink section =
+viewLink : Section -> Section -> Html Msg
+viewLink active section =
+    let
+        classes =
+            SectionLink
+                :: (if section == active then
+                        [ ActiveSectionLink ]
+                    else
+                        []
+                   )
+    in
     Html.a
-        [ class [ SectionLink ]
+        [ class classes
         , Attrs.href <| getSectionHash section
         ]
         [ Html.text <| getSectionName section ]
@@ -135,6 +177,7 @@ namespace =
 type CssClasses
     = NavBar
     | SectionLink
+    | ActiveSectionLink
     | SectionSection
     | Sections
 
@@ -197,6 +240,9 @@ css =
                 [ Css.backgroundColor colors.secondary.dark
                 ]
             ]
+        , Css.class ActiveSectionLink
+            [ Css.backgroundColor colors.secondary.dark
+            ]
         , Css.class SectionSection
             [ Css.minHeight (Css.vh 100)
             , Css.paddingTop navBarHeight
@@ -220,7 +266,7 @@ main =
         { view = view
         , init = init
         , update = update
-        , subscriptions = always Sub.none
+        , subscriptions = subscriptions
         }
 
 
@@ -228,4 +274,16 @@ main =
 ---- PORTS ----
 
 
+port activeHash : (String -> msg) -> Sub msg
+
+
 port setupScrollSpy : List String -> Cmd msg
+
+
+
+---- SUBSCRIPTIONS ----
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    activeHash HashChanged
