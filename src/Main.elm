@@ -1,4 +1,4 @@
-module Main exposing (main)
+port module Main exposing (main)
 
 import Accessibility as Html exposing (Html)
 import Css
@@ -18,7 +18,12 @@ type alias Model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( {}
+    , sections
+        |> List.reverse
+        |> List.map getSectionHash
+        |> setupScrollSpy
+    )
 
 
 
@@ -75,7 +80,7 @@ viewLink : Section -> Html Msg
 viewLink section =
     Html.a
         [ class [ SectionLink ]
-        , Attrs.href <| getSectionIdentifier section
+        , Attrs.href <| getSectionHash section
         ]
         [ Html.text <| getSectionName section ]
 
@@ -89,8 +94,8 @@ viewSection section =
         [ Html.text <| getSectionName section ]
 
 
-getSectionIdentifier : Section -> String
-getSectionIdentifier section =
+getSectionHash : Section -> String
+getSectionHash section =
     "#" ++ getSectionId section
 
 
@@ -217,3 +222,10 @@ main =
         , update = update
         , subscriptions = always Sub.none
         }
+
+
+
+---- PORTS ----
+
+
+port setupScrollSpy : List String -> Cmd msg
