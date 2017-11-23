@@ -190,34 +190,28 @@ type CssClasses
     | Sections
 
 
-rem : Float -> Css.Px
-rem =
-    Css.px << (*) 14
-
-
-navBarHeight : Css.Px
-navBarHeight =
-    rem 3
-
-
-colors :
-    { primary : { dark : Css.Color, light : Css.Color }
-    , secondary : { dark : Css.Color, light : Css.Color }
-    }
-colors =
-    { primary =
-        { light = Css.hex "9469a9"
-        , dark = Css.hex "9469a9"
-        }
-    , secondary =
-        { light = Css.hex "f8f8f8"
-        , dark = Css.hex "e7e7e7"
-        }
-    }
-
-
 css : Css.Stylesheet
 css =
+    let
+        rem : Float -> Css.Px
+        rem =
+            Css.px << (*) 14
+
+        navBarHeight : Css.Px
+        navBarHeight =
+            rem 3
+
+        colors =
+            { primary =
+                { light = Css.hex "9469a9"
+                , dark = Css.hex "9469a9"
+                }
+            , secondary =
+                { light = Css.hex "f8f8f8"
+                , dark = Css.hex "#e7e7e7"
+                }
+            }
+    in
     (Css.stylesheet << Css.Namespace.namespace namespace)
         [ Css.Elements.body
             [ Css.margin Css.zero
