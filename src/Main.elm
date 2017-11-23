@@ -98,10 +98,18 @@ sections =
     ]
 
 
+injectCss : Html msg
+injectCss =
+    CoreHtml.node "style"
+        []
+        [ Html.text (Css.compile [ css ] |> .css)
+        ]
+
+
 view : Model -> Html Msg
 view model =
     Html.div []
-        [ CoreHtml.node "style" [] [ Html.text (Css.compile [ css ] |> .css) ]
+        [ injectCss
         , Html.nav [ class [ NavBar ] ] <|
             List.map (viewLink model.active) sections
         , Html.main_ [ class [ Sections ] ] <|
