@@ -177,6 +177,51 @@ viewHome =
         ]
 
 
+viewAboutTitle : Html msg
+viewAboutTitle =
+    Html.div [ class [ Style.AboutTitle ] ]
+        [ Html.div
+            [ class [ Style.AboutTitleLeft ] ]
+            [ Html.text "'18" ]
+        , Html.div [ class [ Style.AboutTitleRight ] ]
+            [ Html.div
+                [ class [ Style.AboutTitleRightTop ] ]
+                [ Html.text "Colloquium on" ]
+            , Html.div
+                [ class [ Style.AboutTitleRightBottom ] ]
+                [ Html.text "Psychedelic Psychiatry" ]
+            ]
+        ]
+
+
+viewAboutIntroText : Html msg
+viewAboutIntroText =
+    Html.div [ class [ Style.AboutIntroText ] ]
+        [ Html.text "A high quality, 2-day international academic seminar on psychedelic science, with a special focus on the use of psychedelics in psychiatry"
+        ]
+
+
+viewAboutText : Html msg
+viewAboutText =
+    Html.div [ class [ Style.AboutText ] ]
+        [ Html.h4 [ class [ Style.AboutTextTitle ] ] [ Html.text "Stockholm, December 20th, 2017." ]
+        , Html.p [] [ Html.text "Before venturing forth into the tripartite reasoning behind choosing such a quaint and “whatchamacallit” name for this scientific conference, please allow us to first bid you a very warm welcome to this digital home of ours!" ]
+        , Html.p [] [ Html.text "Now, one definition of the word colloquium is that of an academic seminar. Which of course fits the bill perfectly. Psychedelic Colloquium 2018 will be a high quality, 2-day international academic seminar on psychedelic science, with a special focus on the use of psychedelics in psychiatry.  We hope to see you there." ]
+        , Html.p [] [ Html.text "Interestingly enough colloquium can however also mean a “musical piece celebrating birth or distribution of good news”. A hymn in other words.  And upon learning that--while hearing a faint fanfare from somewhere at the back of our minds-- we thought: “Couldn’t that be an apt metaphor for the current state of affairs of psychedelic research, with its plethora of promising results coming in from one study more groundbreaking than the next; each offering a hopeful piece to the otherwise somewhat gloomy jigsaw puzzle that is our world and its future”. Wouldn’t you agree?" ]
+        , Html.p [] [ Html.text "Last but not least colloquium is also a legal term used to describe the part of a defamation complaint in which the plaintiff avers that the defamatory remarks related to him or her. As such we would like to regard this conference as a symbolic colloquium on the behalf of psychedelic science against the defamation campaigns carried out against it, starting in the mid 60’s and still continuing in our present day and age. May the current research renaissance shed much needed light and help disperse the lies woven around these important substances and their therapeutic as well as medicinal potential." ]
+        , Html.p [] [ Html.text "It’s with great honour and anticipation that we hereby invite the rest of the psychedelic science community to gather in Sweden this coming October." ]
+        ]
+
+
+viewAbout : Html msg
+viewAbout =
+    Html.div [ class [ Style.About ] ]
+        [ viewAboutTitle
+        , viewAboutIntroText
+        , viewAboutText
+        ]
+
+
 viewSection : Section -> Html Msg
 viewSection section =
     Html.section
@@ -188,7 +233,7 @@ viewSection section =
                 viewHome
 
             About ->
-                Html.text <| getSectionName section
+                viewAbout
 
             Speakers ->
                 Html.text <| getSectionName section

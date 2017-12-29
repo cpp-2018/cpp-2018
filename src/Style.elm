@@ -29,6 +29,15 @@ type CssClasses
     | Home
     | HomeText
     | HomeTextBorder
+    | About
+    | AboutTitle
+    | AboutTitleLeft
+    | AboutTitleRight
+    | AboutTitleRightTop
+    | AboutTitleRightBottom
+    | AboutIntroText
+    | AboutText
+    | AboutTextTitle
 
 
 css : Css.Stylesheet
@@ -48,8 +57,8 @@ css =
                 , dark = Css.hex "9469a9"
                 }
             , secondary =
-                { light = Css.hex "f8f8f8"
-                , dark = Css.hex "#808184"
+                { light = Css.hex "#808184"
+                , dark = Css.hex "#4f4f4f"
                 }
             , accent = Css.hex "#6affc2"
             , background = Css.hex "#fff7f5"
@@ -72,7 +81,9 @@ css =
             ]
         , Css.Elements.body
             [ Css.margin Css.zero
-            , Css.fontFamily Css.sansSerif
+            , Css.fontFamilies [ "DIN Regular Alternate", "sans-serif" ]
+            , Css.backgroundColor colors.background
+            , Css.fontSize (rem 1)
             ]
         , Css.Elements.a
             [ Css.color colors.accent
@@ -105,7 +116,7 @@ css =
             , Css.alignItems Css.center
             , Css.fontSize (rem 0.8)
             , Css.letterSpacing (Css.em 0.3)
-            , Css.color colors.secondary.dark
+            , Css.color colors.secondary.light
             , Css.hover [ Css.color colors.blue ]
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             ]
@@ -115,14 +126,11 @@ css =
             ]
         , Css.class SectionSection
             [ Css.minHeight (Css.vh 100)
+            , Css.maxWidth (rem 72)
+            , Css.margin2 Css.zero Css.auto
             , Css.displayFlex
-            , Css.paddingTop navBarHeight
-            , Css.nthChild "odd"
-                [ Css.backgroundColor colors.background
-                ]
-            , Css.nthChild "even"
-                [ Css.backgroundColor colors.secondary.dark
-                ]
+            , Css.alignItems Css.flexStart
+            , Css.padding navBarHeight
             ]
         , Css.class HeaderChild
             [ Css.displayFlex
@@ -131,13 +139,14 @@ css =
         , Css.class TicketLink
             [ Css.alignSelf Css.center
             , Css.backgroundColor colors.accent
-            , Css.color colors.secondary.dark
+            , Css.color colors.secondary.light
             , Css.padding2 (rem 0.5) (rem 2)
             , Css.borderRadius (Css.em 2)
             ]
         , Css.class Home
             [ Css.displayFlex
             , Css.alignItems Css.center
+            , Css.alignSelf Css.center
             , Css.justifyContent Css.center
             , Css.flexGrow (Css.num 1)
             ]
@@ -146,7 +155,6 @@ css =
             , Css.textAlign Css.center
             , Css.fontWeight Css.bold
             , Css.fontSize (rem 1.4)
-            , Css.fontFamilies [ "DIN Regular Alternate", "sans-serif" ]
             , Css.margin (rem 3)
             ]
         , Css.class HomeTextBorder
@@ -154,5 +162,46 @@ css =
             , Css.height (rem 0.4)
             , Css.width (rem 4)
             , Css.margin2 Css.zero Css.auto
+            ]
+        , Css.class About
+            [ Css.displayFlex
+            , Css.flexGrow (Css.num 1)
+            , Css.flexDirection Css.column
+            , Css.children
+                [ Css.everything
+                    [ Css.marginBottom (rem 2)
+                    ]
+                ]
+            ]
+        , Css.class AboutTitle
+            [ Css.displayFlex
+            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
+            , Css.alignItems Css.center
+            , Css.property "align-items" "last baseline"
+            ]
+        , Css.class AboutTitleLeft
+            [ Css.color colors.accent
+            , Css.fontSize (rem 10)
+            ]
+        , Css.class AboutTitleRight [ Css.color colors.blue ]
+        , Css.class AboutTitleRightTop
+            [ Css.fontSize (rem 2)
+            , Css.fontStyle Css.italic
+            ]
+        , Css.class AboutTitleRightBottom
+            [ Css.fontSize (rem 4)
+            ]
+        , Css.class AboutIntroText
+            [ Css.fontSize (rem 2)
+            , Css.color colors.blue
+            ]
+        , Css.class AboutText
+            [ Css.color colors.secondary.dark
+            , Css.property "column-count" "3"
+            ]
+        , Css.class AboutTextTitle
+            [ Css.textTransform Css.uppercase
+            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
+            , Css.marginTop Css.zero
             ]
         ]
