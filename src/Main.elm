@@ -235,7 +235,10 @@ css =
                     []
     in
     (Css.stylesheet << Css.Namespace.namespace namespace)
-        [ Css.Elements.body
+        [ Css.everything
+            [ Css.boxSizing Css.borderBox
+            ]
+        , Css.Elements.body
             [ Css.margin Css.zero
             , Css.fontFamily Css.sansSerif
             ]
