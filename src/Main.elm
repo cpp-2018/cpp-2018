@@ -5,7 +5,7 @@ import Css
 import Html as CoreHtml
 import Html.Attributes as Attrs
 import Ports
-import Style exposing (CssClasses(..), class)
+import Style exposing (class)
 
 
 ---- MODEL ----
@@ -109,7 +109,11 @@ injectCss =
 viewTicketLink : Html msg
 viewTicketLink =
     Html.a
-        [ class [ SectionLink, TicketLink, HeaderChild ]
+        [ class
+            [ Style.SectionLink
+            , Style.TicketLink
+            , Style.HeaderChild
+            ]
         , Attrs.href "/tickets"
         ]
         [ Html.text "Get tickets"
@@ -118,10 +122,10 @@ viewTicketLink =
 
 viewHeader : Section -> Html Msg
 viewHeader active =
-    Html.header [ class [ Header ] ]
-        [ Html.div [ class [ HeaderGradient ] ] []
-        , Html.div [ class [ HeaderContent ] ]
-            [ Html.nav [ class [ NavBar, HeaderChild ] ] <|
+    Html.header [ class [ Style.Header ] ]
+        [ Html.div [ class [ Style.HeaderGradient ] ] []
+        , Html.div [ class [ Style.HeaderContent ] ]
+            [ Html.nav [ class [ Style.NavBar, Style.HeaderChild ] ] <|
                 List.map (viewSectionLink active) sections
             , viewTicketLink
             ]
@@ -133,7 +137,7 @@ view model =
     Html.div []
         [ injectCss
         , viewHeader model.active
-        , Html.main_ [ class [ Sections ] ] <|
+        , Html.main_ [ class [ Style.Sections ] ] <|
             List.map viewSection sections
         ]
 
@@ -142,9 +146,9 @@ viewSectionLink : Section -> Section -> Html Msg
 viewSectionLink active section =
     let
         classes =
-            SectionLink
+            Style.SectionLink
                 :: (if section == active then
-                        [ ActiveSectionLink ]
+                        [ Style.ActiveSectionLink ]
                     else
                         []
                    )
@@ -160,7 +164,7 @@ viewSection : Section -> Html Msg
 viewSection section =
     Html.section
         [ Attrs.id <| getSectionId section
-        , class [ SectionSection ]
+        , class [ Style.SectionSection ]
         ]
         [ Html.text <| getSectionName section ]
 
