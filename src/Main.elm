@@ -106,12 +106,19 @@ injectCss =
         ]
 
 
+viewHeader : Section -> Html Msg
+viewHeader active =
+    Html.header [ class [ Header ] ]
+        [ Html.div [ class [ HeaderGradient ] ] []
+        , Html.div [ class [ HeaderContent ] ] []
+        ]
+
+
 view : Model -> Html Msg
 view model =
     Html.div []
         [ injectCss
-        , Html.nav [ class [ NavBar ] ] <|
-            List.map (viewLink model.active) sections
+        , viewHeader model.active
         , Html.main_ [ class [ Sections ] ] <|
             List.map viewSection sections
         ]
@@ -183,7 +190,9 @@ namespace =
 
 
 type CssClasses
-    = NavBar
+    = Header
+    | HeaderGradient
+    | HeaderContent
     | SectionLink
     | ActiveSectionLink
     | SectionSection
@@ -199,7 +208,7 @@ css =
 
         navBarHeight : Css.Px
         navBarHeight =
-            rem 3
+            rem 5
 
         colors =
             { primary =
@@ -208,9 +217,22 @@ css =
                 }
             , secondary =
                 { light = Css.hex "f8f8f8"
-                , dark = Css.hex "#e7e7e7"
+                , dark = Css.hex "#808184"
                 }
+            , accent = Css.hex "#6affc2"
+            , background = Css.hex "#fff7f5"
+            , white = Css.hex "#ffffff"
+            , blue = Css.hex "#0000ff"
+            , orange = Css.hex "#ff9c8a"
             }
+
+        gradientBackground =
+            Css.backgroundImage <|
+                Css.linearGradient2
+                    Css.toRight
+                    (Css.stop colors.blue)
+                    (Css.stop colors.orange)
+                    []
     in
     (Css.stylesheet << Css.Namespace.namespace namespace)
         [ Css.Elements.body
@@ -224,13 +246,22 @@ css =
                 [ Css.color colors.primary.dark
                 ]
             ]
-        , Css.class NavBar
-            [ Css.displayFlex
-            , Css.height navBarHeight
-            , Css.width (Css.vw 100)
+        , Css.class Header
+            [ Css.height navBarHeight
+            , Css.displayFlex
+            , Css.flexDirection Css.column
             , Css.position Css.fixed
-            , Css.borderBottom3 (Css.px 1) Css.solid colors.secondary.dark
-            , Css.backgroundColor colors.secondary.light
+            ]
+        , Css.class HeaderContent
+            [ Css.displayFlex
+            , Css.justifyContent Css.spaceAround
+            , Css.width (Css.vw 100)
+            , Css.backgroundColor colors.background
+            , Css.flexGrow (Css.num 1)
+            ]
+        , Css.class HeaderGradient
+            [ Css.height (rem 0.5)
+            , gradientBackground
             ]
         , Css.class Sections
             []
@@ -254,6 +285,10 @@ css =
             , Css.nthChild "even"
                 [ Css.backgroundColor colors.secondary.dark
                 ]
+            ]
+        , Css.class HeaderChild
+            [ Css.displayFlex
+            , Css.alignItems Css.center
             ]
         ]
 
