@@ -111,6 +111,16 @@ injectCss =
         ]
 
 
+viewTicketLink : Html msg
+viewTicketLink =
+    Html.a
+        [ class [ SectionLink, TicketLink, HeaderChild ]
+        , Attrs.href "/tickets"
+        ]
+        [ Html.text "Get tickets"
+        ]
+
+
 viewHeader : Section -> Html Msg
 viewHeader active =
     Html.header [ class [ Header ] ]
@@ -118,6 +128,7 @@ viewHeader active =
         , Html.div [ class [ HeaderContent ] ]
             [ Html.nav [ class [ NavBar, HeaderChild ] ] <|
                 List.map (viewSectionLink active) sections
+            , viewTicketLink
             ]
         ]
 
@@ -210,6 +221,7 @@ type CssClasses
     | Sections
     | NavBar
     | HeaderChild
+    | TicketLink
 
 
 css : Css.Stylesheet
@@ -259,6 +271,7 @@ css =
             [ Css.color colors.accent
             , Css.textDecoration Css.none
             , Css.textTransform Css.uppercase
+            , Css.cursor Css.pointer
             ]
         , Css.class Header
             [ Css.height navBarHeight
@@ -310,6 +323,13 @@ css =
         , Css.class HeaderChild
             [ Css.displayFlex
             , Css.margin2 (rem 0) (rem 2)
+            ]
+        , Css.class TicketLink
+            [ Css.alignSelf Css.center
+            , Css.backgroundColor colors.accent
+            , Css.color colors.secondary.dark
+            , Css.padding2 (rem 0.5) (rem 2)
+            , Css.borderRadius (Css.em 2)
             ]
         ]
 
