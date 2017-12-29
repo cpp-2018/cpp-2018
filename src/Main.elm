@@ -48,11 +48,14 @@ getSectionFromHash section =
         "#speakers" ->
             Ok Speakers
 
+        "#program" ->
+            Ok Program
+
         "#location" ->
             Ok Location
 
-        "#tickets" ->
-            Ok Tickets
+        "#contact" ->
+            Ok Contact
 
         _ ->
             Err "Invalid hash"
@@ -84,8 +87,9 @@ type Section
     = Home
     | About
     | Speakers
+    | Program
     | Location
-    | Tickets
+    | Contact
 
 
 sections : List Section
@@ -93,8 +97,9 @@ sections =
     [ Home
     , About
     , Speakers
+    , Program
     , Location
-    , Tickets
+    , Contact
     ]
 
 
@@ -110,7 +115,10 @@ viewHeader : Section -> Html Msg
 viewHeader active =
     Html.header [ class [ Header ] ]
         [ Html.div [ class [ HeaderGradient ] ] []
-        , Html.div [ class [ HeaderContent ] ] []
+        , Html.div [ class [ HeaderContent ] ]
+            [ Html.nav [ class [ NavBar, HeaderChild ] ] <|
+                List.map (viewSectionLink active) sections
+            ]
         ]
 
 
@@ -124,8 +132,8 @@ view model =
         ]
 
 
-viewLink : Section -> Section -> Html Msg
-viewLink active section =
+viewSectionLink : Section -> Section -> Html Msg
+viewSectionLink active section =
     let
         classes =
             SectionLink
@@ -168,11 +176,14 @@ getSectionId section =
         Speakers ->
             "speakers"
 
+        Program ->
+            "program"
+
         Location ->
             "location"
 
-        Tickets ->
-            "tickets"
+        Contact ->
+            "contact"
 
 
 getSectionName : Section -> String
@@ -197,6 +208,8 @@ type CssClasses
     | ActiveSectionLink
     | SectionSection
     | Sections
+    | NavBar
+    | HeaderChild
 
 
 css : Css.Stylesheet
@@ -243,11 +256,9 @@ css =
             , Css.fontFamily Css.sansSerif
             ]
         , Css.Elements.a
-            [ Css.color colors.primary.light
+            [ Css.color colors.accent
             , Css.textDecoration Css.none
-            , Css.hover
-                [ Css.color colors.primary.dark
-                ]
+            , Css.textTransform Css.uppercase
             ]
         , Css.class Header
             [ Css.height navBarHeight
@@ -257,7 +268,7 @@ css =
             ]
         , Css.class HeaderContent
             [ Css.displayFlex
-            , Css.justifyContent Css.spaceAround
+            , Css.justifyContent Css.spaceBetween
             , Css.width (Css.vw 100)
             , Css.backgroundColor colors.background
             , Css.flexGrow (Css.num 1)
@@ -272,12 +283,19 @@ css =
             [ Css.padding2 Css.zero (rem 1)
             , Css.displayFlex
             , Css.alignItems Css.center
-            , Css.hover
-                [ Css.backgroundColor colors.secondary.dark
+            , Css.fontSize (rem 0.8)
+            , Css.letterSpacing (Css.em 0.3)
+            , Css.fontFamilies
+                [ "DIN Bold"
+                , "DIN Regular Alternate"
+                , "sans-serif"
                 ]
+            , Css.color colors.secondary.dark
+            , Css.hover [ Css.color colors.blue ]
             ]
         , Css.class ActiveSectionLink
-            [ Css.backgroundColor colors.secondary.dark
+            [ Css.color colors.blue
+            , Css.hover [ Css.color colors.blue ]
             ]
         , Css.class SectionSection
             [ Css.minHeight (Css.vh 100)
@@ -291,7 +309,7 @@ css =
             ]
         , Css.class HeaderChild
             [ Css.displayFlex
-            , Css.alignItems Css.center
+            , Css.margin2 (rem 0) (rem 2)
             ]
         ]
 
