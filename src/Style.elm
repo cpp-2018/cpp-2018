@@ -26,6 +26,9 @@ type CssClasses
     | NavBar
     | HeaderChild
     | TicketLink
+    | Home
+    | HomeText
+    | HomeTextBorder
 
 
 css : Css.Stylesheet
@@ -102,13 +105,9 @@ css =
             , Css.alignItems Css.center
             , Css.fontSize (rem 0.8)
             , Css.letterSpacing (Css.em 0.3)
-            , Css.fontFamilies
-                [ "DIN Bold"
-                , "DIN Regular Alternate"
-                , "sans-serif"
-                ]
             , Css.color colors.secondary.dark
             , Css.hover [ Css.color colors.blue ]
+            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             ]
         , Css.class ActiveSectionLink
             [ Css.color colors.blue
@@ -116,9 +115,10 @@ css =
             ]
         , Css.class SectionSection
             [ Css.minHeight (Css.vh 100)
+            , Css.displayFlex
             , Css.paddingTop navBarHeight
             , Css.nthChild "odd"
-                [ Css.backgroundColor colors.secondary.light
+                [ Css.backgroundColor colors.background
                 ]
             , Css.nthChild "even"
                 [ Css.backgroundColor colors.secondary.dark
@@ -126,7 +126,7 @@ css =
             ]
         , Css.class HeaderChild
             [ Css.displayFlex
-            , Css.margin2 (rem 0) (rem 2)
+            , Css.margin2 Css.zero (rem 2)
             ]
         , Css.class TicketLink
             [ Css.alignSelf Css.center
@@ -134,5 +134,25 @@ css =
             , Css.color colors.secondary.dark
             , Css.padding2 (rem 0.5) (rem 2)
             , Css.borderRadius (Css.em 2)
+            ]
+        , Css.class Home
+            [ Css.displayFlex
+            , Css.alignItems Css.center
+            , Css.justifyContent Css.center
+            , Css.flexGrow (Css.num 1)
+            ]
+        , Css.class HomeText
+            [ Css.color colors.blue
+            , Css.textAlign Css.center
+            , Css.fontWeight Css.bold
+            , Css.fontSize (rem 1.4)
+            , Css.fontFamilies [ "DIN Regular Alternate", "sans-serif" ]
+            , Css.margin (rem 3)
+            ]
+        , Css.class HomeTextBorder
+            [ Css.backgroundColor colors.accent
+            , Css.height (rem 0.4)
+            , Css.width (rem 4)
+            , Css.margin2 Css.zero Css.auto
             ]
         ]

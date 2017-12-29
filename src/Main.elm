@@ -160,13 +160,48 @@ viewSectionLink active section =
         [ Html.text <| getSectionName section ]
 
 
+viewHomeText : String -> String -> Html msg
+viewHomeText topText bottomText =
+    Html.div [ class [ Style.HomeText ] ]
+        [ Html.div [] [ Html.text topText ]
+        , Html.div [] [ Html.text bottomText ]
+        , Html.div [ class [ Style.HomeTextBorder ] ] []
+        ]
+
+
+viewHome : Html msg
+viewHome =
+    Html.div [ class [ Style.Home ] ]
+        [ viewHomeText "Stockholm" "2018"
+        , viewHomeText "13th to 14th" "of October"
+        ]
+
+
 viewSection : Section -> Html Msg
 viewSection section =
     Html.section
         [ Attrs.id <| getSectionId section
         , class [ Style.SectionSection ]
         ]
-        [ Html.text <| getSectionName section ]
+        [ case section of
+            Home ->
+                viewHome
+
+            About ->
+                Html.text <| getSectionName section
+
+            Speakers ->
+                Html.text <| getSectionName section
+
+            Program ->
+                Html.text <| getSectionName section
+
+            Location ->
+                Html.text <| getSectionName section
+
+            Contact ->
+                Html.text <| getSectionName section
+        ]
 
 
 getSectionHash : Section -> String
