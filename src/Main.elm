@@ -1,9 +1,10 @@
-port module Main exposing (main)
+module Main exposing (main)
 
 import Accessibility as Html exposing (Html)
 import Css
 import Html as CoreHtml
 import Html.Attributes as Attrs
+import Ports
 import Style exposing (CssClasses(..), class)
 
 
@@ -22,7 +23,7 @@ init =
     , sections
         |> List.reverse
         |> List.map getSectionHash
-        |> setupScrollSpy
+        |> Ports.setupScrollSpy
     )
 
 
@@ -211,19 +212,9 @@ main =
 
 
 
----- PORTS ----
-
-
-port activeHash : (String -> msg) -> Sub msg
-
-
-port setupScrollSpy : List String -> Cmd msg
-
-
-
 ---- SUBSCRIPTIONS ----
 
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    activeHash HashChanged
+    Ports.activeHash HashChanged
