@@ -224,28 +224,34 @@ viewAbout =
 
 viewSection : Section -> Html Msg
 viewSection section =
+    let
+        ( sectionClasses, contentClasses, content ) =
+            case section of
+                Home ->
+                    ( [], [], viewHome )
+
+                About ->
+                    ( [], [], viewAbout )
+
+                Speakers ->
+                    ( [], [], Html.text <| getSectionName section )
+
+                Program ->
+                    ( [], [], Html.text <| getSectionName section )
+
+                Location ->
+                    ( [], [], Html.text <| getSectionName section )
+
+                Contact ->
+                    ( [], [], Html.text <| getSectionName section )
+    in
     Html.section
         [ Attrs.id <| getSectionId section
-        , class [ Style.SectionSection ]
+        , class <| Style.SectionSection :: sectionClasses
         ]
-        [ case section of
-            Home ->
-                viewHome
-
-            About ->
-                viewAbout
-
-            Speakers ->
-                Html.text <| getSectionName section
-
-            Program ->
-                Html.text <| getSectionName section
-
-            Location ->
-                Html.text <| getSectionName section
-
-            Contact ->
-                Html.text <| getSectionName section
+        [ Html.div
+            [ class <| Style.SectionContent :: contentClasses ]
+            [ content ]
         ]
 
 

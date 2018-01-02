@@ -22,6 +22,7 @@ type CssClasses
     | SectionLink
     | ActiveSectionLink
     | SectionSection
+    | SectionContent
     | Sections
     | NavBar
     | HeaderChild
@@ -126,10 +127,13 @@ css =
             ]
         , Css.class SectionSection
             [ Css.minHeight (Css.vh 100)
-            , Css.maxWidth (rem 72)
             , Css.margin2 Css.zero Css.auto
             , Css.displayFlex
-            , Css.alignItems Css.flexStart
+            , Css.alignItems Css.center
+            , Css.justifyContent Css.center
+            ]
+        , Css.class SectionContent
+            [ Css.maxWidth (rem 72)
             , Css.padding navBarHeight
             ]
         , Css.class HeaderChild
