@@ -354,6 +354,13 @@ viewTickets =
         ]
 
 
+viewContact : Html msg
+viewContact =
+    Html.div
+        [ class [ Style.Contact ] ]
+        []
+
+
 viewSection : Section -> Html Msg
 viewSection section =
     let
@@ -372,7 +379,7 @@ viewSection section =
                     ( [], [], viewTickets )
 
                 Contact ->
-                    ( [], [], Html.text <| getSectionName section )
+                    ( [ Style.ContactSection ], [], viewContact )
     in
     Html.section
         [ Attrs.id <| getSectionId section

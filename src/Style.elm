@@ -49,6 +49,8 @@ type CssClasses
     | SpeakerImage
     | Tickets
     | TicketsTitle
+    | ContactSection
+    | Contact
     | Underline
     | DarkBackground
 
@@ -265,6 +267,9 @@ css =
             [ Css.color colors.blue
             , Css.fontSize (rem 2)
             , Css.fontWeight Css.bold
+            ]
+        , Css.class ContactSection
+            [ gradientBackground
             ]
         , Css.class Underline
             [ Css.backgroundColor colors.accent
