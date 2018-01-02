@@ -39,6 +39,11 @@ type CssClasses
     | AboutIntroText
     | AboutText
     | AboutTextTitle
+    | Speakers
+    | SpeakersTitle
+    | SpeakersTitleTop
+    | SpeakersTitleBottom
+    | DarkBackground
 
 
 css : Css.Stylesheet
@@ -207,5 +212,26 @@ css =
             [ Css.textTransform Css.uppercase
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             , Css.marginTop Css.zero
+            ]
+        , Css.class Speakers []
+        , Css.class SpeakersTitle
+            [ Css.textAlign Css.center
+            ]
+        , Css.class SpeakersTitleTop
+            [ Css.color colors.white
+            , Css.fontStyle Css.italic
+            , Css.fontSize (rem 1.2)
+            , Css.fontWeight Css.normal
+            , Css.margin Css.zero
+            ]
+        , Css.class SpeakersTitleBottom
+            [ Css.color colors.accent
+            , Css.fontSize (rem 3.5)
+            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
+            , Css.fontWeight Css.normal
+            , Css.margin Css.zero
+            ]
+        , Css.class DarkBackground
+            [ Css.backgroundColor colors.secondary.dark
             ]
         ]

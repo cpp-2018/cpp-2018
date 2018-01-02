@@ -222,6 +222,25 @@ viewAbout =
         ]
 
 
+viewSpeakersTitle : Html msg
+viewSpeakersTitle =
+    Html.div [ class [ Style.SpeakersTitle ] ]
+        [ Html.h2
+            [ class [ Style.SpeakersTitleTop ] ]
+            [ Html.text "Preliminary bookings:" ]
+        , Html.h1
+            [ class [ Style.SpeakersTitleBottom ] ]
+            [ Html.text "Speakers" ]
+        ]
+
+
+viewSpeakers : Html msg
+viewSpeakers =
+    Html.div [ class [ Style.Speakers ] ]
+        [ viewSpeakersTitle
+        ]
+
+
 viewSection : Section -> Html Msg
 viewSection section =
     let
@@ -234,7 +253,7 @@ viewSection section =
                     ( [], [], viewAbout )
 
                 Speakers ->
-                    ( [], [], Html.text <| getSectionName section )
+                    ( [ Style.DarkBackground ], [], viewSpeakers )
 
                 Program ->
                     ( [], [], Html.text <| getSectionName section )
