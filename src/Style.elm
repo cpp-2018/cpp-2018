@@ -221,6 +221,7 @@ css =
         , Css.class Speakers []
         , Css.class SpeakersTitle
             [ Css.textAlign Css.center
+            , Css.marginTop (rem 1)
             ]
         , Css.class SpeakersTitleTop
             [ Css.color colors.white
