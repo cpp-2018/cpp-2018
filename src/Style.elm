@@ -43,6 +43,11 @@ type CssClasses
     | SpeakersTitle
     | SpeakersTitleTop
     | SpeakersTitleBottom
+    | SpeakersSpeakers
+    | Speaker
+    | SpeakerName
+    | SpeakerText
+    | SpeakerImage
     | DarkBackground
 
 
@@ -230,6 +235,31 @@ css =
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             , Css.fontWeight Css.normal
             , Css.margin Css.zero
+            ]
+        , Css.class SpeakersSpeakers
+            [ Css.displayFlex
+            , Css.flexWrap Css.wrap
+            ]
+        , Css.class Speaker
+            [ Css.textAlign Css.center
+            , Css.flexBasis (Css.pct 33)
+            , Css.flexGrow (Css.num 1)
+            , Css.marginTop (rem 4)
+            , Css.padding2 Css.zero (rem 1)
+            ]
+        , Css.class SpeakerName
+            [ Css.textTransform Css.uppercase
+            , Css.color colors.accent
+            ]
+        , Css.class SpeakerText
+            [ Css.color colors.white
+            , Css.fontStyle Css.italic
+            , Css.marginBottom (Css.em 0.5)
+            ]
+        , Css.class SpeakerImage
+            [ Css.borderRadius (Css.pct 50)
+            , Css.width (rem 12)
+            , Css.height (rem 12)
             ]
         , Css.class DarkBackground
             [ Css.backgroundColor colors.secondary.dark

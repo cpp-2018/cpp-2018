@@ -5,6 +5,7 @@ import Css
 import Html as CoreHtml
 import Html.Attributes as Attrs
 import Ports
+import Regex exposing (Regex, regex)
 import Style exposing (class)
 
 
@@ -95,6 +96,62 @@ sections =
     , Program
     , Location
     , Contact
+    ]
+
+
+type alias Speaker =
+    { name : String
+    , description : String
+    , location : String
+    }
+
+
+speakers : List Speaker
+speakers =
+    [ Speaker
+        "Jordi Riba"
+        "Head of Reaserch Group Human Neuropsychopharmacology"
+        "Barcelona, Spain"
+    , Speaker
+        "Alicia Dansworth"
+        "Clinical Psychologist - Private Practise Institute of Transpersonal Psychology"
+        "San Francisco, USA"
+    , Speaker
+        "Charles Grob"
+        "Director of Division of Child and Adolescent Psychiatry"
+        "Los Angeles, USA"
+    , Speaker
+        "Kim Kuypers"
+        "Assistant Professor - Section Psychopharmacology, Neuropsychology & Psychopharmacology, Departments, Faculty of Psychology and Neuroscience"
+        "Maastricht, Netherlands"
+    , Speaker
+        "Franz X Vollenweider"
+        "Co-Director Center for Psychiatric Research Director Neuropsychopharmacology and Brain Imaging"
+        "Zürich, Switzerland"
+    , Speaker
+        "Elizabeth Nielson"
+        "Psychologist at Center for Optimal Living Center for Optimal Living"
+        "Greater New York area, USA"
+    , Speaker
+        "Adele Robinson"
+        "Associate Professor, Psychology"
+        "Sudbury, USA"
+    , Speaker
+        "Anne Wagner"
+        "Professor Emerita Modern and Contemporary Art"
+        "San Francisco, USA"
+    , Speaker
+        "Déborah Gonzàlez"
+        ""
+        "Barcelona, Spain"
+    , Speaker
+        "Anja Loizaga-Velder"
+        ""
+        ""
+    , Speaker
+        "Gabrielle Agin-Liebes"
+        ""
+        ""
     ]
 
 
@@ -234,10 +291,46 @@ viewSpeakersTitle =
         ]
 
 
+whitespace : Regex
+whitespace =
+    regex "\\s+"
+
+
+getImageUrl : String -> String
+getImageUrl name =
+    let
+        normalized =
+            name
+                |> String.toLower
+                |> Regex.replace Regex.All whitespace (\_ -> "-")
+    in
+    "/assets/speakers/" ++ normalized ++ ".jpg"
+
+
+viewSpeaker : Speaker -> Html msg
+viewSpeaker speaker =
+    Html.div [ class [ Style.Speaker ] ]
+        [ Html.decorativeImg
+            [ Attrs.src <| getImageUrl speaker.name
+            , class [ Style.SpeakerImage ]
+            ]
+        , Html.h1 [ class [ Style.SpeakerName ] ] [ Html.text speaker.name ]
+        , Html.div [ class [ Style.SpeakerText ] ] [ Html.text speaker.description ]
+        , Html.div [ class [ Style.SpeakerText ] ] [ Html.text speaker.location ]
+        ]
+
+
+viewSpeakersSpeakers : Html msg
+viewSpeakersSpeakers =
+    Html.div [ class [ Style.SpeakersSpeakers ] ] <|
+        List.map viewSpeaker speakers
+
+
 viewSpeakers : Html msg
 viewSpeakers =
     Html.div [ class [ Style.Speakers ] ]
         [ viewSpeakersTitle
+        , viewSpeakersSpeakers
         ]
 
 
