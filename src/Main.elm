@@ -21,7 +21,7 @@ init : ( Model, Cmd Msg )
 init =
     ( { active = Home
       }
-    , sections
+    , allSections
         |> List.reverse
         |> List.map getSectionHash
         |> Ports.setupScrollSpy
@@ -48,11 +48,8 @@ getSectionFromHash section =
         "#speakers" ->
             Ok Speakers
 
-        "#program" ->
-            Ok Program
-
-        "#location" ->
-            Ok Location
+        "#tickets" ->
+            Ok Tickets
 
         "#contact" ->
             Ok Contact
@@ -83,18 +80,25 @@ type Section
     = Home
     | About
     | Speakers
-    | Program
-    | Location
+    | Tickets
     | Contact
 
 
-sections : List Section
-sections =
+allSections : List Section
+allSections =
     [ Home
     , About
     , Speakers
-    , Program
-    , Location
+    , Tickets
+    , Contact
+    ]
+
+
+navbarSections : List Section
+navbarSections =
+    [ Home
+    , About
+    , Speakers
     , Contact
     ]
 
@@ -183,7 +187,7 @@ viewHeader active =
         [ Html.div [ class [ Style.HeaderGradient ] ] []
         , Html.div [ class [ Style.HeaderContent ] ]
             [ Html.nav [ class [ Style.NavBar, Style.HeaderChild ] ] <|
-                List.map (viewSectionLink active) sections
+                List.map (viewSectionLink active) navbarSections
             , viewTicketLink
             ]
         ]
@@ -195,7 +199,7 @@ view model =
         [ injectCss
         , viewHeader model.active
         , Html.main_ [ class [ Style.Sections ] ] <|
-            List.map viewSection sections
+            List.map viewSection allSections
         ]
 
 
@@ -222,7 +226,7 @@ viewHomeText topText bottomText =
     Html.div [ class [ Style.HomeText ] ]
         [ Html.div [] [ Html.text topText ]
         , Html.div [] [ Html.text bottomText ]
-        , Html.div [ class [ Style.HomeTextBorder ] ] []
+        , viewUnderline
         ]
 
 
@@ -334,6 +338,22 @@ viewSpeakers =
         ]
 
 
+viewUnderline : Html msg
+viewUnderline =
+    Html.div [ class [ Style.Underline ] ] []
+
+
+viewTickets : Html msg
+viewTickets =
+    Html.div
+        [ class [ Style.Tickets ] ]
+        [ Html.a
+            [ class [ Style.TicketsTitle ] ]
+            [ Html.text "Get your tickets now" ]
+        , viewUnderline
+        ]
+
+
 viewSection : Section -> Html Msg
 viewSection section =
     let
@@ -348,11 +368,8 @@ viewSection section =
                 Speakers ->
                     ( [ Style.DarkBackground ], [], viewSpeakers )
 
-                Program ->
-                    ( [], [], Html.text <| getSectionName section )
-
-                Location ->
-                    ( [], [], Html.text <| getSectionName section )
+                Tickets ->
+                    ( [], [], viewTickets )
 
                 Contact ->
                     ( [], [], Html.text <| getSectionName section )
@@ -384,11 +401,8 @@ getSectionId section =
         Speakers ->
             "speakers"
 
-        Program ->
-            "program"
-
-        Location ->
-            "location"
+        Tickets ->
+            "tickets"
 
         Contact ->
             "contact"

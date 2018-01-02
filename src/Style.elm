@@ -29,7 +29,6 @@ type CssClasses
     | TicketLink
     | Home
     | HomeText
-    | HomeTextBorder
     | About
     | AboutTitle
     | AboutTitleLeft
@@ -48,6 +47,9 @@ type CssClasses
     | SpeakerName
     | SpeakerText
     | SpeakerImage
+    | Tickets
+    | TicketsTitle
+    | Underline
     | DarkBackground
 
 
@@ -136,8 +138,7 @@ css =
             , Css.hover [ Css.color colors.blue ]
             ]
         , Css.class SectionSection
-            [ Css.minHeight (Css.vh 100)
-            , Css.margin2 Css.zero Css.auto
+            [ Css.margin2 Css.zero Css.auto
             , Css.displayFlex
             , Css.alignItems Css.center
             , Css.justifyContent Css.center
@@ -170,12 +171,6 @@ css =
             , Css.fontWeight Css.bold
             , Css.fontSize (rem 1.4)
             , Css.margin (rem 3)
-            ]
-        , Css.class HomeTextBorder
-            [ Css.backgroundColor colors.accent
-            , Css.height (rem 0.4)
-            , Css.width (rem 4)
-            , Css.margin2 Css.zero Css.auto
             ]
         , Css.class About
             [ Css.displayFlex
@@ -261,6 +256,21 @@ css =
             [ Css.borderRadius (Css.pct 50)
             , Css.width (rem 12)
             , Css.height (rem 12)
+            ]
+        , Css.class Tickets
+            [ Css.displayFlex
+            , Css.flexDirection Css.column
+            ]
+        , Css.class TicketsTitle
+            [ Css.color colors.blue
+            , Css.fontSize (rem 2)
+            , Css.fontWeight Css.bold
+            ]
+        , Css.class Underline
+            [ Css.backgroundColor colors.accent
+            , Css.width <| Css.calc (Css.pct 100) Css.minus (rem 4)
+            , Css.height (rem 0.4)
+            , Css.margin2 Css.zero Css.auto
             ]
         , Css.class DarkBackground
             [ Css.backgroundColor colors.secondary.dark
