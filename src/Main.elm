@@ -238,18 +238,18 @@ viewHome =
         ]
 
 
-viewAboutTitle : Html msg
-viewAboutTitle =
-    Html.div [ class [ Style.AboutTitle ] ]
+viewCPPText : Html msg
+viewCPPText =
+    Html.div [ class [ Style.CPPText ] ]
         [ Html.div
-            [ class [ Style.AboutTitleLeft ] ]
+            [ class [ Style.CPPTextLeft ] ]
             [ Html.text "'18" ]
-        , Html.div [ class [ Style.AboutTitleRight ] ]
+        , Html.div [ class [ Style.CPPTextRight ] ]
             [ Html.div
-                [ class [ Style.AboutTitleRightTop ] ]
+                [ class [ Style.CPPTextRightTop ] ]
                 [ Html.text "Colloquium on" ]
             , Html.div
-                [ class [ Style.AboutTitleRightBottom ] ]
+                [ class [ Style.CPPTextRightBottom ] ]
                 [ Html.text "Psychedelic Psychiatry" ]
             ]
         ]
@@ -277,7 +277,7 @@ viewAboutText =
 viewAbout : Html msg
 viewAbout =
     Html.div [ class [ Style.About ] ]
-        [ viewAboutTitle
+        [ viewCPPText
         , viewAboutIntroText
         , viewAboutText
         ]

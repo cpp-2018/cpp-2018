@@ -30,11 +30,11 @@ type CssClasses
     | Home
     | HomeText
     | About
-    | AboutTitle
-    | AboutTitleLeft
-    | AboutTitleRight
-    | AboutTitleRightTop
-    | AboutTitleRightBottom
+    | CPPText
+    | CPPTextLeft
+    | CPPTextRight
+    | CPPTextRightTop
+    | CPPTextRightBottom
     | AboutIntroText
     | AboutText
     | AboutTextTitle
@@ -184,22 +184,22 @@ css =
                     ]
                 ]
             ]
-        , Css.class AboutTitle
+        , Css.class CPPText
             [ Css.displayFlex
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             , Css.alignItems Css.center
             , Css.property "align-items" "last baseline"
             ]
-        , Css.class AboutTitleLeft
+        , Css.class CPPTextLeft
             [ Css.color colors.accent
             , Css.fontSize (rem 10)
             ]
-        , Css.class AboutTitleRight [ Css.color colors.blue ]
-        , Css.class AboutTitleRightTop
+        , Css.class CPPTextRight [ Css.color colors.blue ]
+        , Css.class CPPTextRightTop
             [ Css.fontSize (rem 2)
             , Css.fontStyle Css.italic
             ]
-        , Css.class AboutTitleRightBottom
+        , Css.class CPPTextRightBottom
             [ Css.fontSize (rem 4)
             ]
         , Css.class AboutIntroText
