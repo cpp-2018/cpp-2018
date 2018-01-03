@@ -208,7 +208,10 @@ css =
             ]
         , Css.class AboutText
             [ Css.color colors.secondary.dark
-            , Css.property "column-count" "3"
+            , Css.textAlign Css.justify
+            , Css.property "column-width" "16em"
+            , Css.property "column-count" "auto"
+            , Css.property "column-gap" "2em"
             ]
         , Css.class AboutTextTitle
             [ Css.textTransform Css.uppercase
@@ -244,6 +247,7 @@ css =
             , Css.flexGrow (Css.num 1)
             , Css.marginTop (rem 4)
             , Css.padding2 Css.zero (rem 1)
+            , Css.minWidth (rem 16)
             ]
         , Css.class SpeakerName
             [ Css.textTransform Css.uppercase
@@ -267,6 +271,7 @@ css =
             [ Css.color colors.blue
             , Css.fontSize (rem 2)
             , Css.fontWeight Css.bold
+            , Css.textAlign Css.center
             ]
         , Css.class ContactSection
             [ gradientBackground
