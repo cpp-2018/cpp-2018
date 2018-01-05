@@ -243,7 +243,7 @@ viewCPPText =
     Html.div [ class [ Style.CPPText ] ]
         [ Html.div
             [ class [ Style.CPPTextLeft ] ]
-            [ Html.text "'18" ]
+            [ Html.text "‘18" ]
         , Html.div [ class [ Style.CPPTextRight ] ]
             [ Html.div
                 [ class [ Style.CPPTextRightTop ] ]
