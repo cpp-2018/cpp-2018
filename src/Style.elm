@@ -2,6 +2,7 @@ module Style exposing (CssClasses(..), class, css)
 
 import Css
 import Css.Elements
+import Css.Media
 import Css.Namespace
 import Html.CssHelpers
 
@@ -89,6 +90,21 @@ css =
                     (Css.stop colors.blue)
                     (Css.stop colors.orange)
                     []
+
+        size =
+            { medium =
+                Css.Media.withMediaQuery
+                    [ "(min-width: 751px) and (max-width: 950px)" ]
+            , small =
+                Css.Media.withMediaQuery
+                    [ "(min-width: 551px) and (max-width: 750px)" ]
+            , smaller =
+                Css.Media.withMediaQuery
+                    [ "(min-width: 351px) and (max-width: 550px)" ]
+            , smallest =
+                Css.Media.withMediaQuery
+                    [ "(max-width: 350px)" ]
+            }
     in
     (Css.stylesheet << Css.Namespace.namespace namespace)
         [ Css.everything
@@ -148,6 +164,12 @@ css =
         , Css.class SectionContent
             [ Css.maxWidth (rem 72)
             , Css.padding navBarHeight
+            , size.small
+                [ Css.padding2 navBarHeight (rem 3) ]
+            , size.smaller
+                [ Css.padding2 navBarHeight (rem 2) ]
+            , size.smallest
+                [ Css.padding2 navBarHeight (rem 2) ]
             ]
         , Css.class HeaderChild
             [ Css.displayFlex
@@ -188,19 +210,29 @@ css =
             [ Css.displayFlex
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             , Css.alignItems Css.center
+            , Css.justifyContent Css.center
             , Css.property "align-items" "last baseline"
+            , Css.whiteSpace Css.noWrap
+            , size.medium
+                [ Css.fontSize (rem 0.75) ]
+            , size.small
+                [ Css.fontSize (rem 0.5) ]
+            , size.smaller
+                [ Css.fontSize (rem 0.4) ]
+            , size.smallest
+                [ Css.fontSize (rem 0.3) ]
             ]
         , Css.class CPPTextLeft
             [ Css.color colors.accent
-            , Css.fontSize (rem 10)
+            , Css.fontSize (Css.em 10)
             ]
         , Css.class CPPTextRight [ Css.color colors.blue ]
         , Css.class CPPTextRightTop
-            [ Css.fontSize (rem 2)
+            [ Css.fontSize (Css.em 2)
             , Css.fontStyle Css.italic
             ]
         , Css.class CPPTextRightBottom
-            [ Css.fontSize (rem 4)
+            [ Css.fontSize (Css.em 4)
             ]
         , Css.class AboutIntroText
             [ Css.fontSize (rem 2)
