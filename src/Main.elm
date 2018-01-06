@@ -354,11 +354,36 @@ viewTickets =
         ]
 
 
+viewContactText : String -> List String -> Html msg
+viewContactText title paragraphs =
+    Html.div [ class [ Style.ContactText ] ]
+        [ Html.h1 [ class [ Style.ContactTitle ] ] [ Html.text title ]
+        , Html.div [ class [ Style.ContactParagraphs ] ] <|
+            List.map
+                (\paragraph -> Html.p [ class [ Style.ContactParagraph ] ] [ Html.text paragraph ])
+                paragraphs
+        ]
+
+
 viewContact : Html msg
 viewContact =
     Html.div
         [ class [ Style.Contact ] ]
-        []
+        [ Html.div [ class [ Style.ContactLeft ] ]
+            [ viewContactText
+                "*Colloquium"
+                [ "An academic seminar usually led by a different lecturer and on a different topic at each meeting or similarly to a tutorial led by students as is the case in Norway."
+                , "The Parliament of Scotland, called a \"colloquium\" in Latin records \"Any musical piece celebrating birth or distribution of good news, a hymn (antonyms: requiem, coronach)\""
+                , "The part of a complaint for defamation in which the plaintiff avers that the defamatory remarks related to him or her"
+                ]
+            , viewContactText
+                "Contact"
+                [ "FILIP BROMBERG - Project manager: filip@npv.se"
+                , "Sponsor inquiries: patreon@npv.se"
+                ]
+            ]
+        , Html.div [] [ Html.text "about circle" ]
+        ]
 
 
 viewSection : Section -> Html Msg
@@ -379,7 +404,7 @@ viewSection section =
                     ( [], [], viewTickets )
 
                 Contact ->
-                    ( [ Style.ContactSection ], [], viewContact )
+                    ( [ Style.ContactSection ], [ Style.ContactContent ], viewContact )
     in
     Html.section
         [ Attrs.id <| getSectionId section

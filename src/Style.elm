@@ -51,7 +51,13 @@ type CssClasses
     | Tickets
     | TicketsTitle
     | ContactSection
+    | ContactContent
     | Contact
+    | ContactText
+    | ContactLeft
+    | ContactTitle
+    | ContactParagraph
+    | ContactParagraphs
     | Underline
     | DarkBackground
 
@@ -307,6 +313,44 @@ css =
             ]
         , Css.class ContactSection
             [ gradientBackground
+            ]
+        , Css.class ContactContent
+            [ Css.displayFlex
+            , Css.flexGrow (Css.num 1)
+            ]
+        , Css.class Contact
+            [ Css.displayFlex
+            , Css.flexGrow (Css.num 1)
+            ]
+        , Css.class ContactText
+            [ Css.displayFlex
+            , Css.flexGrow (Css.num 1)
+            , Css.marginBottom (rem 1)
+            ]
+        , Css.class ContactLeft
+            [ Css.displayFlex
+            , Css.flexGrow (Css.num 1)
+            , Css.flexDirection Css.column
+            ]
+        , Css.class ContactTitle
+            [ Css.color colors.accent
+            , Css.margin Css.zero
+            , Css.fontSize (rem 1.2)
+            , Css.flexBasis (Css.em 8)
+            , Css.textAlign Css.right
+            ]
+        , Css.class ContactParagraph
+            [ Css.marginTop Css.zero
+            ]
+        , Css.class ContactParagraphs
+            [ Css.textAlign Css.justify
+            , Css.property "column-width" "16em"
+            , Css.property "column-count" "auto"
+            , Css.property "column-gap" "2em"
+            , Css.color colors.white
+            , Css.flexGrow (Css.num 1)
+            , Css.margin2 (rem 0.5) (rem 1)
+            , Css.fontSize (rem 0.9)
             ]
         , Css.class Underline
             [ Css.backgroundColor colors.accent
