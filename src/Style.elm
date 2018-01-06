@@ -56,6 +56,7 @@ type CssClasses
     | ContactTitle
     | ContactParagraph
     | ContactParagraphs
+    | ContactCPPLogo
     | AboutCircle
     | AboutNPVLogo
     | Underline
@@ -343,6 +344,12 @@ css =
             , Css.color colors.white
             , Css.flexGrow (Css.num 1)
             , Css.margin2 (rem 0.5) (rem 1)
+            ]
+        , Css.class ContactCPPLogo
+            [ Css.width (Css.pct 60)
+            , Css.maxWidth (rem 48)
+            , Css.marginBottom (rem 2)
+            , Css.marginLeft (rem 3)
             ]
         , Css.class AboutCircle
             [ Css.borderRadius (Css.pct 50)
