@@ -61,6 +61,7 @@ type CssClasses
     | ContactParagraph
     | ContactParagraphs
     | AboutCircle
+    | AboutNPVLogo
     | Underline
     | DarkBackground
 
@@ -375,6 +376,7 @@ css =
             , Css.backgroundColor colors.background
             , Css.color colors.blue
             , Css.displayFlex
+            , Css.flexDirection Css.column
             , Css.justifyContent Css.center
             , Css.alignItems Css.center
             , Css.width (rem 24)
@@ -383,8 +385,12 @@ css =
             , Css.maxHeight (Css.pct 100)
             , Css.textAlign Css.center
             , Css.fontStyle Css.italic
-            , Css.padding (rem 4)
+            , Css.padding (rem 3)
             , Css.margin2 Css.zero (rem 2)
+            ]
+        , Css.class AboutNPVLogo
+            [ Css.width (rem 12)
+            , Css.marginBottom (rem 1)
             ]
         , Css.class Underline
             [ Css.backgroundColor colors.accent

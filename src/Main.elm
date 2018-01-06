@@ -390,7 +390,12 @@ viewContact =
             ]
         , Html.div
             [ class [ Style.AboutCircle ] ]
-            [ Html.p [] [ Html.text "Föreningens syfte är att främja ett vetenskapligt förhållningssätt till psykedeliska substanser och öka möjligheterna för forskare att undersöka verkningsmekanismer, risker och potentiella kliniska tillämpningar" ] ]
+            [ Html.decorativeImg
+                [ class [ Style.AboutNPVLogo ]
+                , Attrs.src "/assets/npv_logo.svg"
+                ]
+            , Html.p [] [ Html.text "Föreningens syfte är att främja ett vetenskapligt förhållningssätt till psykedeliska substanser och öka möjligheterna för forskare att undersöka verkningsmekanismer, risker och potentiella kliniska tillämpningar" ]
+            ]
         ]
 
 
