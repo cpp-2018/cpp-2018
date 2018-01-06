@@ -33,11 +33,7 @@ type CssClasses
     | HomeLogo
     | HomeLogoWrapper
     | About
-    | CPPText
-    | CPPTextLeft
-    | CPPTextRight
-    | CPPTextRightTop
-    | CPPTextRightBottom
+    | CPPLogo
     | AboutIntroText
     | AboutText
     | AboutTextTitle
@@ -230,33 +226,10 @@ css =
                     ]
                 ]
             ]
-        , Css.class CPPText
-            [ Css.displayFlex
-            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
-            , Css.alignItems Css.center
-            , Css.justifyContent Css.center
-            , Css.property "align-items" "last baseline"
-            , Css.whiteSpace Css.noWrap
-            , size.medium
-                [ Css.fontSize (rem 0.75) ]
-            , size.small
-                [ Css.fontSize (rem 0.5) ]
-            , size.smaller
-                [ Css.fontSize (rem 0.4) ]
-            , size.smallest
-                [ Css.fontSize (rem 0.3) ]
-            ]
-        , Css.class CPPTextLeft
-            [ Css.color colors.accent
-            , Css.fontSize (Css.em 10)
-            ]
-        , Css.class CPPTextRight [ Css.color colors.blue ]
-        , Css.class CPPTextRightTop
-            [ Css.fontSize (Css.em 2)
-            , Css.fontStyle Css.italic
-            ]
-        , Css.class CPPTextRightBottom
-            [ Css.fontSize (Css.em 4)
+        , Css.class CPPLogo
+            [ Css.width (Css.pct 100)
+            , Css.maxWidth (rem 48)
+            , Css.margin2 (rem 2) Css.auto
             ]
         , Css.class AboutIntroText
             [ Css.fontSize (rem 2)

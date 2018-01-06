@@ -244,23 +244,6 @@ viewHome =
         ]
 
 
-viewCPPText : Html msg
-viewCPPText =
-    Html.div [ class [ Style.CPPText ] ]
-        [ Html.div
-            [ class [ Style.CPPTextLeft ] ]
-            [ Html.text "‘18" ]
-        , Html.div [ class [ Style.CPPTextRight ] ]
-            [ Html.div
-                [ class [ Style.CPPTextRightTop ] ]
-                [ Html.text "Colloquium on" ]
-            , Html.div
-                [ class [ Style.CPPTextRightBottom ] ]
-                [ Html.text "Psychedelic Psychiatry" ]
-            ]
-        ]
-
-
 viewAboutIntroText : Html msg
 viewAboutIntroText =
     Html.div [ class [ Style.AboutIntroText ] ]
@@ -283,7 +266,10 @@ viewAboutText =
 viewAbout : Html msg
 viewAbout =
     Html.div [ class [ Style.About ] ]
-        [ viewCPPText
+        [ Html.decorativeImg
+            [ class [ Style.CPPLogo ]
+            , Attrs.src "/assets/cpp18_logo.svg"
+            ]
         , viewAboutIntroText
         , viewAboutText
         ]
