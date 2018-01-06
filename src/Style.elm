@@ -314,6 +314,7 @@ css =
         , Css.class Contact
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
+            , Css.flexWrap Css.wrap
             , Css.fontSize (rem 0.85)
             , Css.lineHeight (Css.em 1.4)
             ]
@@ -325,6 +326,7 @@ css =
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
             , Css.flexDirection Css.column
+            , Css.marginRight (rem 2)
             ]
         , Css.class ContactTitle
             [ Css.color colors.accent
@@ -366,7 +368,7 @@ css =
             , Css.textAlign Css.center
             , Css.fontStyle Css.italic
             , Css.padding (rem 3)
-            , Css.margin2 Css.zero (rem 2)
+            , Css.margin2 Css.zero Css.auto
             ]
         , Css.class AboutNPVLogo
             [ Css.width (rem 12)
