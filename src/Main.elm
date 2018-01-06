@@ -382,7 +382,9 @@ viewContact =
                 , "Sponsor inquiries: patreon@npv.se"
                 ]
             ]
-        , Html.div [] [ Html.text "about circle" ]
+        , Html.div
+            [ class [ Style.AboutCircle ] ]
+            [ Html.p [] [ Html.text "Föreningens syfte är att främja ett vetenskapligt förhållningssätt till psykedeliska substanser och öka möjligheterna för forskare att undersöka verkningsmekanismer, risker och potentiella kliniska tillämpningar" ] ]
         ]
 
 

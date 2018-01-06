@@ -58,6 +58,7 @@ type CssClasses
     | ContactTitle
     | ContactParagraph
     | ContactParagraphs
+    | AboutCircle
     | Underline
     | DarkBackground
 
@@ -317,14 +318,16 @@ css =
         , Css.class ContactContent
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
+            , Css.maxWidth (rem 96)
             ]
         , Css.class Contact
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
+            , Css.fontSize (rem 0.85)
+            , Css.lineHeight (Css.em 1.4)
             ]
         , Css.class ContactText
             [ Css.displayFlex
-            , Css.flexGrow (Css.num 1)
             , Css.marginBottom (rem 1)
             ]
         , Css.class ContactLeft
@@ -350,7 +353,22 @@ css =
             , Css.color colors.white
             , Css.flexGrow (Css.num 1)
             , Css.margin2 (rem 0.5) (rem 1)
-            , Css.fontSize (rem 0.9)
+            ]
+        , Css.class AboutCircle
+            [ Css.borderRadius (Css.pct 50)
+            , Css.backgroundColor colors.background
+            , Css.color colors.blue
+            , Css.displayFlex
+            , Css.justifyContent Css.center
+            , Css.alignItems Css.center
+            , Css.width (rem 24)
+            , Css.height (rem 24)
+            , Css.maxWidth (Css.pct 100)
+            , Css.maxHeight (Css.pct 100)
+            , Css.textAlign Css.center
+            , Css.fontStyle Css.italic
+            , Css.padding (rem 4)
+            , Css.margin2 Css.zero (rem 2)
             ]
         , Css.class Underline
             [ Css.backgroundColor colors.accent
