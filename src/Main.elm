@@ -234,6 +234,12 @@ viewHome : Html msg
 viewHome =
     Html.div [ class [ Style.Home ] ]
         [ viewHomeText "Stockholm" "2018"
+        , Html.div [ class [ Style.HomeLogoWrapper ] ]
+            [ Html.decorativeImg
+                [ class [ Style.HomeLogo ]
+                , Attrs.src "/assets/logomask.svg"
+                ]
+            ]
         , viewHomeText "13th to 14th" "of October"
         ]
 

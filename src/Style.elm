@@ -30,6 +30,8 @@ type CssClasses
     | TicketLink
     | Home
     | HomeText
+    | HomeLogo
+    | HomeLogoWrapper
     | About
     | CPPText
     | CPPTextLeft
@@ -195,6 +197,7 @@ css =
             , Css.alignSelf Css.center
             , Css.justifyContent Css.center
             , Css.flexGrow (Css.num 1)
+            , Css.flexWrap Css.wrap
             ]
         , Css.class HomeText
             [ Css.color colors.blue
@@ -202,6 +205,19 @@ css =
             , Css.fontWeight Css.bold
             , Css.fontSize (rem 1.4)
             , Css.margin (rem 3)
+            , Css.flexShrink (Css.num 0)
+            ]
+        , Css.class HomeLogo
+            [ Css.backgroundImage (Css.url "/assets/logobackground.png")
+            , Css.backgroundPosition Css.center
+            , Css.backgroundSize Css.cover
+            , Css.width (Css.pct 100)
+            , Css.flexShrink Css.zero
+            ]
+        , Css.class HomeLogoWrapper
+            [ Css.flexGrow (Css.num 1)
+            , Css.flexShrink Css.zero
+            , Css.flexBasis (rem 12)
             ]
         , Css.class About
             [ Css.displayFlex
