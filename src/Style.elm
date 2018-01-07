@@ -21,6 +21,7 @@ type CssClasses
     | HeaderGradient
     | HeaderContent
     | HamburgerMenuButton
+    | HamburgerMenuButtonImg
     | HamburgerMenuMenu
     | BigNav
     | SmallNav
@@ -158,11 +159,37 @@ css =
             , gradientBackground
             ]
         , Css.class HamburgerMenuButton
-            []
+            [ Css.backgroundColor colors.background
+            , Css.border Css.zero
+            , Css.borderStyle Css.none
+            , Css.padding Css.zero
+            , Css.cursor Css.pointer
+            , Css.color colors.secondary.light
+            , Css.hover [ Css.color colors.secondary.dark ]
+            , Css.children
+                [ Css.Elements.svg
+                    [ Css.margin2 Css.zero (Css.rem 1)
+                    ]
+                ]
+            ]
+        , Css.class HamburgerMenuButtonImg
+            [ Css.padding (Css.rem 1)
+            ]
         , Css.class HamburgerMenuMenu
             [ Css.position Css.absolute
             , Css.top (Css.pct 100)
             , Css.right Css.zero
+            , Css.fontSize (Css.em 1.5)
+            , Css.backgroundColor colors.background
+            , Css.padding (Css.rem 1)
+            , Css.border3 (Css.px 1) Css.solid colors.secondary.light
+            , Css.descendants
+                [ Css.class SectionLink
+                    [ Css.marginBottom (Css.em 1)
+                    , Css.lastChild
+                        [ Css.marginBottom Css.zero ]
+                    ]
+                ]
             ]
         , Css.class BigNav
             [ Css.displayFlex
@@ -182,7 +209,7 @@ css =
             [ Css.padding2 Css.zero (Css.rem 1)
             , Css.displayFlex
             , Css.alignItems Css.center
-            , Css.fontSize (Css.rem 0.8)
+            , Css.fontSize (Css.em 0.8)
             , Css.letterSpacing (Css.em 0.3)
             , Css.color colors.secondary.light
             , Css.hover [ Css.color colors.blue ]
@@ -213,6 +240,7 @@ css =
             , Css.backgroundColor colors.accent
             , Css.color colors.secondary.light
             , Css.padding2 (Css.rem 0.5) (Css.rem 2)
+            , Css.margin2 Css.zero (Css.rem 2)
             , Css.borderRadius (Css.em 2)
             , Css.alignItems Css.center
             , Css.fontSize (Css.rem 0.8)

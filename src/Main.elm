@@ -8,6 +8,8 @@ import Html.Events as Events
 import Ports
 import Regex exposing (Regex, regex)
 import Style exposing (class)
+import Svg exposing (Svg, svg)
+import Svg.Attributes
 
 
 ---- MODEL ----
@@ -196,10 +198,25 @@ injectCss =
 viewTicketLink : Html msg
 viewTicketLink =
     Html.a
-        [ class [ Style.TicketLink, Style.BigNav ]
+        [ class [ Style.TicketLink ]
         , Attrs.href "/tickets"
         ]
         [ Html.text "Get tickets"
+        ]
+
+
+viewHamburgerMenu : Html msg
+viewHamburgerMenu =
+    svg
+        [ Svg.Attributes.width "32"
+        , Svg.Attributes.height "32"
+        , Svg.Attributes.viewBox "0 0 32 32"
+        ]
+        [ Svg.path
+            [ Svg.Attributes.fill "currentColor"
+            , Svg.Attributes.d "M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+            ]
+            []
         ]
 
 
@@ -216,7 +233,8 @@ viewHeader active menu =
                     [ class [ Style.HamburgerMenuButton ]
                     , Events.onClick ToggleMenu
                     ]
-                    [ Html.text "..." ]
+                    [ viewHamburgerMenu
+                    ]
                 , case menu of
                     Visible ->
                         Html.nav [ class [ Style.HamburgerMenuMenu ] ] <|
