@@ -195,11 +195,17 @@ injectCss =
         ]
 
 
+ticketUrl : String
+ticketUrl =
+    "/tickets"
+
+
 viewTicketLink : Html msg
 viewTicketLink =
     Html.a
         [ class [ Style.TicketLink ]
-        , Attrs.href "/tickets"
+        , Attrs.href ticketUrl
+        , Attrs.target "_blank"
         ]
         [ Html.text "Get tickets"
         ]
@@ -395,7 +401,10 @@ viewTickets =
     Html.div
         [ class [ Style.Tickets ] ]
         [ Html.a
-            [ class [ Style.TicketsTitle ] ]
+            [ class [ Style.TicketsTitle ]
+            , Attrs.href ticketUrl
+            , Attrs.target "_blank"
+            ]
             [ Html.text "Get your tickets now" ]
         , viewUnderline
         ]
