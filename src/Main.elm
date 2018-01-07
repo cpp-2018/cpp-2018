@@ -346,15 +346,19 @@ viewTickets =
         ]
 
 
-viewContactText : String -> List String -> Html msg
-viewContactText title paragraphs =
+viewContactText : String -> Html msg -> Html msg
+viewContactText title content =
     Html.div [ class [ Style.ContactText ] ]
         [ Html.h1 [ class [ Style.ContactTitle ] ] [ Html.text title ]
-        , Html.div [ class [ Style.ContactParagraphs ] ] <|
-            List.map
-                (\paragraph -> Html.p [ class [ Style.ContactParagraph ] ] [ Html.text paragraph ])
-                paragraphs
+        , Html.div [ class [ Style.ContactTextContent ] ] [ content ]
         ]
+
+
+viewContactParagraph : String -> Html msg
+viewContactParagraph paragraph =
+    Html.p
+        [ class [ Style.ContactParagraph ] ]
+        [ Html.text paragraph ]
 
 
 viewContact : Html msg
@@ -368,15 +372,27 @@ viewContact =
                 ]
             , viewContactText
                 "*Colloquium"
-                [ "An academic seminar usually led by a different lecturer and on a different topic at each meeting or similarly to a tutorial led by students as is the case in Norway."
-                , "The Parliament of Scotland, called a \"colloquium\" in Latin records \"Any musical piece celebrating birth or distribution of good news, a hymn (antonyms: requiem, coronach)\""
-                , "The part of a complaint for defamation in which the plaintiff avers that the defamatory remarks related to him or her"
-                ]
+                (Html.div [ class [ Style.ContactParagraphs ] ] <|
+                    List.map
+                        viewContactParagraph
+                        [ "An academic seminar usually led by a different lecturer and on a different topic at each meeting or similarly to a tutorial led by students as is the case in Norway."
+                        , "The Parliament of Scotland, called a \"colloquium\" in Latin records \"Any musical piece celebrating birth or distribution of good news, a hymn (antonyms: requiem, coronach)\""
+                        , "The part of a complaint for defamation in which the plaintiff avers that the defamatory remarks related to him or her"
+                        ]
+                )
             , viewContactText
                 "Contact"
-                [ "FILIP BROMBERG - Project manager: filip@npv.se"
-                , "Sponsor inquiries: patreon@npv.se"
-                ]
+                (Html.div []
+                    [ Html.div [ class [ Style.ContactContactInfo ] ]
+                        [ Html.div [] [ Html.text "FILIP BROMBERG - Project manager" ]
+                        , Html.div [] [ Html.text "filip@npv.se" ]
+                        ]
+                    , Html.div [ class [ Style.ContactContactInfo ] ]
+                        [ Html.div [] [ Html.text "Sponsor inquiries" ]
+                        , Html.div [] [ Html.text "patreon@npv.se" ]
+                        ]
+                    ]
+                )
             ]
         , Html.div
             [ class [ Style.AboutCircle ] ]

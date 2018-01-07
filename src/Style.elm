@@ -56,6 +56,8 @@ type CssClasses
     | ContactTitle
     | ContactParagraph
     | ContactParagraphs
+    | ContactTextContent
+    | ContactContactInfo
     | ContactCPPLogo
     | AboutCircle
     | AboutNPVLogo
@@ -343,10 +345,14 @@ css =
             , Css.property "column-width" "16em"
             , Css.property "column-count" "auto"
             , Css.property "column-gap" "2em"
-            , Css.color colors.white
+            ]
+        , Css.class ContactTextContent
+            [ Css.color colors.white
             , Css.flexGrow (Css.num 1)
             , Css.margin2 (rem 0.5) (rem 1)
             ]
+        , Css.class ContactContactInfo
+            [ Css.marginBottom (rem 1) ]
         , Css.class ContactCPPLogo
             [ Css.width (Css.pct 60)
             , Css.maxWidth (rem 48)
