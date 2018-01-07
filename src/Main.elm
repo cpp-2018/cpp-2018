@@ -4,6 +4,7 @@ import Accessibility as Html exposing (Html)
 import Css
 import Html as CoreHtml
 import Html.Attributes as Attrs
+import Html.Events as Events
 import Ports
 import Regex exposing (Regex, regex)
 import Style exposing (class)
@@ -12,14 +13,21 @@ import Style exposing (class)
 ---- MODEL ----
 
 
+type Visibility
+    = Visible
+    | Invisible
+
+
 type alias Model =
     { active : Section
+    , menu : Visibility
     }
 
 
 init : ( Model, Cmd Msg )
 init =
     ( { active = Home
+      , menu = Invisible
       }
     , allSections
         |> List.reverse
@@ -34,6 +42,8 @@ init =
 
 type Msg
     = HashChanged String
+    | ToggleMenu
+    | CloseMenu
 
 
 getSectionFromHash : String -> Result String Section
@@ -70,6 +80,22 @@ update msg model =
               }
             , Cmd.none
             )
+
+        ToggleMenu ->
+            ( { model
+                | menu =
+                    case model.menu of
+                        Visible ->
+                            Invisible
+
+                        Invisible ->
+                            Visible
+              }
+            , Cmd.none
+            )
+
+        CloseMenu ->
+            ( { model | menu = Invisible }, Cmd.none )
 
 
 
@@ -170,25 +196,35 @@ injectCss =
 viewTicketLink : Html msg
 viewTicketLink =
     Html.a
-        [ class
-            [ Style.SectionLink
-            , Style.TicketLink
-            , Style.HeaderChild
-            ]
+        [ class [ Style.TicketLink, Style.BigNav ]
         , Attrs.href "/tickets"
         ]
         [ Html.text "Get tickets"
         ]
 
 
-viewHeader : Section -> Html Msg
-viewHeader active =
+viewHeader : Section -> Visibility -> Html Msg
+viewHeader active menu =
     Html.header [ class [ Style.Header ] ]
         [ Html.div [ class [ Style.HeaderGradient ] ] []
         , Html.div [ class [ Style.HeaderContent ] ]
-            [ Html.nav [ class [ Style.NavBar, Style.HeaderChild ] ] <|
+            [ Html.nav [ class [ Style.NavBar, Style.BigNav ] ] <|
                 List.map (viewSectionLink active) navbarSections
             , viewTicketLink
+            , Html.div [ class [ Style.SmallNav ] ]
+                [ Html.button
+                    [ class [ Style.HamburgerMenuButton ]
+                    , Events.onClick ToggleMenu
+                    ]
+                    [ Html.text "..." ]
+                , case menu of
+                    Visible ->
+                        Html.nav [ class [ Style.HamburgerMenuMenu ] ] <|
+                            List.map (viewSectionLink active) navbarSections
+
+                    Invisible ->
+                        Html.text ""
+                ]
             ]
         ]
 
@@ -197,7 +233,7 @@ view : Model -> Html Msg
 view model =
     Html.div []
         [ injectCss
-        , viewHeader model.active
+        , viewHeader model.active model.menu
         , Html.main_ [ class [ Style.Sections ] ] <|
             List.map viewSection allSections
         ]
@@ -214,9 +250,10 @@ viewSectionLink active section =
                         []
                    )
     in
-    Html.a
+    CoreHtml.a
         [ class classes
         , Attrs.href <| getSectionHash section
+        , Events.onClick CloseMenu
         ]
         [ Html.text <| getSectionName section ]
 

@@ -20,6 +20,10 @@ type CssClasses
     = Header
     | HeaderGradient
     | HeaderContent
+    | HamburgerMenuButton
+    | HamburgerMenuMenu
+    | BigNav
+    | SmallNav
     | SectionLink
     | ActiveSectionLink
     | SectionSection
@@ -109,6 +113,9 @@ css =
             , smallest =
                 Css.Media.withMediaQuery
                     [ "(max-width: 350px)" ]
+            , navLimit =
+                Css.Media.withMediaQuery
+                    [ "(max-width: 650px)" ]
             }
 
         maxSectionContentWidth =
@@ -150,6 +157,25 @@ css =
             [ Css.height (Css.rem 0.5)
             , gradientBackground
             ]
+        , Css.class HamburgerMenuButton
+            []
+        , Css.class HamburgerMenuMenu
+            [ Css.position Css.absolute
+            , Css.top (Css.pct 100)
+            , Css.right Css.zero
+            ]
+        , Css.class BigNav
+            [ Css.displayFlex
+            , Css.margin2 Css.zero (Css.rem 2)
+            , size.navLimit [ Css.display Css.none ]
+            ]
+        , Css.class SmallNav
+            [ Css.display Css.none
+            , Css.flexGrow (Css.num 1)
+            , Css.position Css.relative
+            , Css.justifyContent Css.flexEnd
+            , size.navLimit [ Css.displayFlex ]
+            ]
         , Css.class Sections
             []
         , Css.class SectionLink
@@ -182,16 +208,17 @@ css =
             , size.smallest
                 [ Css.padding2 navBarHeight (Css.rem 2) ]
             ]
-        , Css.class HeaderChild
-            [ Css.displayFlex
-            , Css.margin2 Css.zero (Css.rem 2)
-            ]
         , Css.class TicketLink
             [ Css.alignSelf Css.center
             , Css.backgroundColor colors.accent
             , Css.color colors.secondary.light
             , Css.padding2 (Css.rem 0.5) (Css.rem 2)
             , Css.borderRadius (Css.em 2)
+            , Css.alignItems Css.center
+            , Css.fontSize (Css.rem 0.8)
+            , Css.letterSpacing (Css.em 0.3)
+            , Css.hover [ Css.color colors.blue ]
+            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             ]
         , Css.class Home
             [ Css.displayFlex
