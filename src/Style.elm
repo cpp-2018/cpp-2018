@@ -268,6 +268,7 @@ css =
             ]
         , Css.class HomeLogo
             [ Css.backgroundImage (Css.url "/docs/assets/logobackground.png")
+            , Css.backgroundColor colors.blue
             , Css.backgroundPosition Css.center
             , Css.backgroundSize Css.cover
             , Css.flexShrink Css.zero
