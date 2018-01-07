@@ -234,7 +234,7 @@ css =
         , Css.class CPPLogo
             [ Css.width (Css.pct 100)
             , Css.maxWidth (Css.rem 48)
-            , Css.margin2 (Css.rem 2) Css.auto
+            , Css.margin2 (Css.rem 2) Css.zero
             ]
         , Css.class AboutIntroText
             [ Css.fontSize (Css.rem 2)
