@@ -68,13 +68,9 @@ type CssClasses
 css : Css.Stylesheet
 css =
     let
-        rem : Float -> Css.Px
-        rem =
-            Css.px << (*) 14
-
-        navBarHeight : Css.Px
+        navBarHeight : Css.Rem
         navBarHeight =
-            rem 5
+            Css.rem 5
 
         colors =
             { primary =
@@ -119,11 +115,14 @@ css =
         [ Css.everything
             [ Css.boxSizing Css.borderBox
             ]
+        , Css.Elements.html
+            [ Css.fontSize (Css.px 14)
+            ]
         , Css.Elements.body
             [ Css.margin Css.zero
             , Css.fontFamilies [ "DIN Regular Alternate", "sans-serif" ]
             , Css.backgroundColor colors.background
-            , Css.fontSize (rem 1)
+            , Css.fontSize (Css.rem 1)
             ]
         , Css.Elements.a
             [ Css.color colors.accent
@@ -145,16 +144,16 @@ css =
             , Css.flexGrow (Css.num 1)
             ]
         , Css.class HeaderGradient
-            [ Css.height (rem 0.5)
+            [ Css.height (Css.rem 0.5)
             , gradientBackground
             ]
         , Css.class Sections
             []
         , Css.class SectionLink
-            [ Css.padding2 Css.zero (rem 1)
+            [ Css.padding2 Css.zero (Css.rem 1)
             , Css.displayFlex
             , Css.alignItems Css.center
-            , Css.fontSize (rem 0.8)
+            , Css.fontSize (Css.rem 0.8)
             , Css.letterSpacing (Css.em 0.3)
             , Css.color colors.secondary.light
             , Css.hover [ Css.color colors.blue ]
@@ -171,24 +170,24 @@ css =
             , Css.justifyContent Css.center
             ]
         , Css.class SectionContent
-            [ Css.maxWidth (rem 72)
+            [ Css.maxWidth (Css.rem 72)
             , Css.padding navBarHeight
             , size.small
-                [ Css.padding2 navBarHeight (rem 3) ]
+                [ Css.padding2 navBarHeight (Css.rem 3) ]
             , size.smaller
-                [ Css.padding2 navBarHeight (rem 2) ]
+                [ Css.padding2 navBarHeight (Css.rem 2) ]
             , size.smallest
-                [ Css.padding2 navBarHeight (rem 2) ]
+                [ Css.padding2 navBarHeight (Css.rem 2) ]
             ]
         , Css.class HeaderChild
             [ Css.displayFlex
-            , Css.margin2 Css.zero (rem 2)
+            , Css.margin2 Css.zero (Css.rem 2)
             ]
         , Css.class TicketLink
             [ Css.alignSelf Css.center
             , Css.backgroundColor colors.accent
             , Css.color colors.secondary.light
-            , Css.padding2 (rem 0.5) (rem 2)
+            , Css.padding2 (Css.rem 0.5) (Css.rem 2)
             , Css.borderRadius (Css.em 2)
             ]
         , Css.class Home
@@ -203,8 +202,8 @@ css =
             [ Css.color colors.blue
             , Css.textAlign Css.center
             , Css.fontWeight Css.bold
-            , Css.fontSize (rem 1.4)
-            , Css.margin (rem 3)
+            , Css.fontSize (Css.rem 1.4)
+            , Css.margin (Css.rem 3)
             , Css.flexShrink (Css.num 0)
             ]
         , Css.class HomeLogo
@@ -217,7 +216,7 @@ css =
         , Css.class HomeLogoWrapper
             [ Css.flexGrow (Css.num 1)
             , Css.flexShrink Css.zero
-            , Css.flexBasis (rem 12)
+            , Css.flexBasis (Css.rem 12)
             ]
         , Css.class About
             [ Css.displayFlex
@@ -225,17 +224,17 @@ css =
             , Css.flexDirection Css.column
             , Css.children
                 [ Css.everything
-                    [ Css.marginBottom (rem 2)
+                    [ Css.marginBottom (Css.rem 2)
                     ]
                 ]
             ]
         , Css.class CPPLogo
             [ Css.width (Css.pct 100)
-            , Css.maxWidth (rem 48)
-            , Css.margin2 (rem 2) Css.auto
+            , Css.maxWidth (Css.rem 48)
+            , Css.margin2 (Css.rem 2) Css.auto
             ]
         , Css.class AboutIntroText
-            [ Css.fontSize (rem 2)
+            [ Css.fontSize (Css.rem 2)
             , Css.color colors.blue
             ]
         , Css.class AboutText
@@ -253,18 +252,18 @@ css =
         , Css.class Speakers []
         , Css.class SpeakersTitle
             [ Css.textAlign Css.center
-            , Css.marginTop (rem 1)
+            , Css.marginTop (Css.rem 1)
             ]
         , Css.class SpeakersTitleTop
             [ Css.color colors.white
             , Css.fontStyle Css.italic
-            , Css.fontSize (rem 1.2)
+            , Css.fontSize (Css.rem 1.2)
             , Css.fontWeight Css.normal
             , Css.margin Css.zero
             ]
         , Css.class SpeakersTitleBottom
             [ Css.color colors.accent
-            , Css.fontSize (rem 3.5)
+            , Css.fontSize (Css.rem 3.5)
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             , Css.fontWeight Css.normal
             , Css.margin Css.zero
@@ -277,9 +276,9 @@ css =
             [ Css.textAlign Css.center
             , Css.flexBasis (Css.pct 33)
             , Css.flexGrow (Css.num 1)
-            , Css.marginTop (rem 4)
-            , Css.padding2 Css.zero (rem 1)
-            , Css.minWidth (rem 16)
+            , Css.marginTop (Css.rem 4)
+            , Css.padding2 Css.zero (Css.rem 1)
+            , Css.minWidth (Css.rem 16)
             ]
         , Css.class SpeakerName
             [ Css.textTransform Css.uppercase
@@ -292,8 +291,8 @@ css =
             ]
         , Css.class SpeakerImage
             [ Css.borderRadius (Css.pct 50)
-            , Css.width (rem 12)
-            , Css.height (rem 12)
+            , Css.width (Css.rem 12)
+            , Css.height (Css.rem 12)
             ]
         , Css.class Tickets
             [ Css.displayFlex
@@ -301,7 +300,7 @@ css =
             ]
         , Css.class TicketsTitle
             [ Css.color colors.blue
-            , Css.fontSize (rem 2)
+            , Css.fontSize (Css.rem 2)
             , Css.fontWeight Css.bold
             , Css.textAlign Css.center
             ]
@@ -311,29 +310,29 @@ css =
         , Css.class ContactContent
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
-            , Css.maxWidth (rem 96)
+            , Css.maxWidth (Css.rem 96)
             ]
         , Css.class Contact
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
             , Css.flexWrap Css.wrap
-            , Css.fontSize (rem 0.85)
+            , Css.fontSize (Css.rem 0.85)
             , Css.lineHeight (Css.em 1.4)
             ]
         , Css.class ContactText
             [ Css.displayFlex
-            , Css.marginBottom (rem 1)
+            , Css.marginBottom (Css.rem 1)
             ]
         , Css.class ContactLeft
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
             , Css.flexDirection Css.column
-            , Css.marginRight (rem 2)
+            , Css.marginRight (Css.rem 2)
             ]
         , Css.class ContactTitle
             [ Css.color colors.accent
             , Css.margin Css.zero
-            , Css.fontSize (rem 1.2)
+            , Css.fontSize (Css.rem 1.2)
             , Css.flexBasis (Css.em 8)
             , Css.textAlign Css.right
             ]
@@ -349,15 +348,15 @@ css =
         , Css.class ContactTextContent
             [ Css.color colors.white
             , Css.flexGrow (Css.num 1)
-            , Css.margin2 (rem 0.5) (rem 1)
+            , Css.margin2 (Css.rem 0.5) (Css.rem 1)
             ]
         , Css.class ContactContactInfo
-            [ Css.marginBottom (rem 1) ]
+            [ Css.marginBottom (Css.rem 1) ]
         , Css.class ContactCPPLogo
             [ Css.width (Css.pct 60)
-            , Css.maxWidth (rem 48)
-            , Css.marginBottom (rem 2)
-            , Css.marginLeft (rem 3)
+            , Css.maxWidth (Css.rem 48)
+            , Css.marginBottom (Css.rem 2)
+            , Css.marginLeft (Css.rem 3)
             ]
         , Css.class AboutCircle
             [ Css.borderRadius (Css.pct 50)
@@ -367,23 +366,23 @@ css =
             , Css.flexDirection Css.column
             , Css.justifyContent Css.center
             , Css.alignItems Css.center
-            , Css.width (rem 24)
-            , Css.height (rem 24)
+            , Css.width (Css.rem 24)
+            , Css.height (Css.rem 24)
             , Css.maxWidth (Css.pct 100)
             , Css.maxHeight (Css.pct 100)
             , Css.textAlign Css.center
             , Css.fontStyle Css.italic
-            , Css.padding (rem 3)
+            , Css.padding (Css.rem 3)
             , Css.margin2 Css.zero Css.auto
             ]
         , Css.class AboutNPVLogo
-            [ Css.width (rem 12)
-            , Css.marginBottom (rem 1)
+            [ Css.width (Css.rem 12)
+            , Css.marginBottom (Css.rem 1)
             ]
         , Css.class Underline
             [ Css.backgroundColor colors.accent
-            , Css.width <| Css.calc (Css.pct 100) Css.minus (rem 4)
-            , Css.height (rem 0.4)
+            , Css.width <| Css.calc (Css.pct 100) Css.minus (Css.rem 4)
+            , Css.height (Css.rem 0.4)
             , Css.margin2 Css.zero Css.auto
             ]
         , Css.class DarkBackground
