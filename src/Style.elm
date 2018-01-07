@@ -78,27 +78,23 @@ css =
             Css.rem 5
 
         colors =
-            { primary =
-                { light = Css.hex "9469a9"
-                , dark = Css.hex "9469a9"
-                }
-            , secondary =
+            { background = Css.hex "#fff7f5"
+            , white = Css.hex "#ffffff"
+            , primary = Css.hex "#0000ff"
+            , secondary = Css.hex "#ff9c8a"
+            , accent = Css.hex "#6affc2"
+            , neutral =
                 { light = Css.hex "#808184"
                 , dark = Css.hex "#4f4f4f"
                 }
-            , accent = Css.hex "#6affc2"
-            , background = Css.hex "#fff7f5"
-            , white = Css.hex "#ffffff"
-            , blue = Css.hex "#0000ff"
-            , orange = Css.hex "#ff9c8a"
             }
 
         gradientBackground =
             Css.backgroundImage <|
                 Css.linearGradient2
                     Css.toRight
-                    (Css.stop colors.blue)
-                    (Css.stop colors.orange)
+                    (Css.stop colors.primary)
+                    (Css.stop colors.secondary)
                     []
 
         size =
@@ -164,8 +160,8 @@ css =
             , Css.borderStyle Css.none
             , Css.padding Css.zero
             , Css.cursor Css.pointer
-            , Css.color colors.secondary.light
-            , Css.hover [ Css.color colors.secondary.dark ]
+            , Css.color colors.neutral.light
+            , Css.hover [ Css.color colors.neutral.dark ]
             , Css.children
                 [ Css.Elements.svg
                     [ Css.margin2 Css.zero (Css.rem 1)
@@ -182,7 +178,7 @@ css =
             , Css.fontSize (Css.em 1.5)
             , Css.backgroundColor colors.background
             , Css.padding (Css.rem 1)
-            , Css.border3 (Css.px 1) Css.solid colors.secondary.light
+            , Css.border3 (Css.px 1) Css.solid colors.neutral.light
             , Css.descendants
                 [ Css.class SectionLink
                     [ Css.marginBottom (Css.em 1)
@@ -211,13 +207,13 @@ css =
             , Css.alignItems Css.center
             , Css.fontSize (Css.em 0.8)
             , Css.letterSpacing (Css.em 0.3)
-            , Css.color colors.secondary.light
-            , Css.hover [ Css.color colors.blue ]
+            , Css.color colors.neutral.light
+            , Css.hover [ Css.color colors.primary ]
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             ]
         , Css.class ActiveSectionLink
-            [ Css.color colors.blue
-            , Css.hover [ Css.color colors.blue ]
+            [ Css.color colors.primary
+            , Css.hover [ Css.color colors.primary ]
             ]
         , Css.class SectionSection
             [ Css.margin2 Css.zero Css.auto
@@ -238,14 +234,14 @@ css =
         , Css.class TicketLink
             [ Css.alignSelf Css.center
             , Css.backgroundColor colors.accent
-            , Css.color colors.secondary.light
+            , Css.color colors.neutral.light
             , Css.padding2 (Css.rem 0.5) (Css.rem 2)
             , Css.margin2 Css.zero (Css.rem 2)
             , Css.borderRadius (Css.em 2)
             , Css.alignItems Css.center
             , Css.fontSize (Css.rem 0.8)
             , Css.letterSpacing (Css.em 0.3)
-            , Css.hover [ Css.color colors.blue ]
+            , Css.hover [ Css.color colors.primary ]
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             ]
         , Css.class Home
@@ -259,7 +255,7 @@ css =
             , size.smallest [ Css.flexDirection Css.column ]
             ]
         , Css.class HomeText
-            [ Css.color colors.blue
+            [ Css.color colors.primary
             , Css.textAlign Css.center
             , Css.fontWeight Css.bold
             , Css.fontSize (Css.rem 1.4)
@@ -268,7 +264,7 @@ css =
             ]
         , Css.class HomeLogo
             [ Css.backgroundImage (Css.url "/docs/assets/logobackground.png")
-            , Css.backgroundColor colors.blue
+            , Css.backgroundColor colors.primary
             , Css.backgroundPosition Css.center
             , Css.backgroundSize Css.cover
             , Css.flexShrink Css.zero
@@ -304,10 +300,10 @@ css =
             ]
         , Css.class AboutIntroText
             [ Css.fontSize (Css.rem 2)
-            , Css.color colors.blue
+            , Css.color colors.primary
             ]
         , Css.class AboutText
-            [ Css.color colors.secondary.dark
+            [ Css.color colors.neutral.dark
             , Css.textAlign Css.justify
             , Css.property "column-width" "16em"
             , Css.property "column-count" "auto"
@@ -368,7 +364,7 @@ css =
             , Css.flexDirection Css.column
             ]
         , Css.class TicketsTitle
-            [ Css.color colors.blue
+            [ Css.color colors.primary
             , Css.fontSize (Css.rem 2)
             , Css.fontWeight Css.bold
             , Css.textAlign Css.center
@@ -430,7 +426,7 @@ css =
         , Css.class AboutCircle
             [ Css.borderRadius (Css.pct 50)
             , Css.backgroundColor colors.background
-            , Css.color colors.blue
+            , Css.color colors.primary
             , Css.displayFlex
             , Css.flexDirection Css.column
             , Css.justifyContent Css.center
@@ -459,6 +455,6 @@ css =
             , Css.margin2 Css.zero Css.auto
             ]
         , Css.class DarkBackground
-            [ Css.backgroundColor colors.secondary.dark
+            [ Css.backgroundColor colors.neutral.dark
             ]
         ]
