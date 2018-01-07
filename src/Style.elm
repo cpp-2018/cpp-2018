@@ -199,7 +199,9 @@ css =
             , Css.alignSelf Css.center
             , Css.justifyContent Css.center
             , Css.flexGrow (Css.num 1)
-            , Css.flexWrap Css.wrap
+            , size.small [ Css.flexDirection Css.column ]
+            , size.smaller [ Css.flexDirection Css.column ]
+            , size.smallest [ Css.flexDirection Css.column ]
             ]
         , Css.class HomeText
             [ Css.color colors.blue
@@ -213,13 +215,21 @@ css =
             [ Css.backgroundImage (Css.url "/assets/logobackground.png")
             , Css.backgroundPosition Css.center
             , Css.backgroundSize Css.cover
-            , Css.width (Css.pct 100)
             , Css.flexShrink Css.zero
+            , Css.display Css.block
+            , Css.margin2 Css.zero Css.auto
+            , Css.width (Css.pct 100)
+            , size.small [ Css.width (Css.pct 50) ]
+            , size.smaller [ Css.width (Css.pct 75) ]
+            , size.smallest [ Css.width (Css.pct 100) ]
             ]
         , Css.class HomeLogoWrapper
             [ Css.flexGrow (Css.num 1)
             , Css.flexShrink Css.zero
             , Css.flexBasis (Css.rem 12)
+            , size.small [ Css.order (Css.num -1) ]
+            , size.smaller [ Css.order (Css.num -1) ]
+            , size.smallest [ Css.order (Css.num -1) ]
             ]
         , Css.class About
             [ Css.displayFlex
