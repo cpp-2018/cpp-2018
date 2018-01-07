@@ -1,5 +1,5 @@
 import { Main } from "./Main.elm";
-import registerServiceWorker from "./registerServiceWorker";
+import { unregister } from "./registerServiceWorker";
 
 const app = Main.embed(document.getElementById("root"));
 
@@ -14,4 +14,4 @@ app.ports.setupScrollSpy.subscribe(sections => {
   });
 });
 
-registerServiceWorker();
+unregister();
