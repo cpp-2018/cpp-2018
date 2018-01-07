@@ -110,6 +110,9 @@ css =
                 Css.Media.withMediaQuery
                     [ "(max-width: 350px)" ]
             }
+
+        maxSectionContentWidth =
+            Css.calc (Css.vw 100) Css.minus (Css.rem 4)
     in
     (Css.stylesheet << Css.Namespace.namespace namespace)
         [ Css.everything
@@ -368,15 +371,19 @@ css =
             , Css.alignItems Css.center
             , Css.width (Css.rem 24)
             , Css.height (Css.rem 24)
-            , Css.maxWidth (Css.pct 100)
-            , Css.maxHeight (Css.pct 100)
+            , Css.maxWidth maxSectionContentWidth
+            , Css.maxHeight maxSectionContentWidth
             , Css.textAlign Css.center
             , Css.fontStyle Css.italic
             , Css.padding (Css.rem 3)
             , Css.margin2 Css.zero Css.auto
+            , size.smallest
+                [ Css.fontSize (Css.em 0.8)
+                , Css.lineHeight (Css.em 1.2)
+                ]
             ]
         , Css.class AboutNPVLogo
-            [ Css.width (Css.rem 12)
+            [ Css.width (Css.pct 66)
             , Css.marginBottom (Css.rem 1)
             ]
         , Css.class Underline
