@@ -292,7 +292,7 @@ viewHome =
         , Html.div [ class [ Style.HomeLogoWrapper ] ]
             [ Html.decorativeImg
                 [ class [ Style.HomeLogo ]
-                , Attrs.src "/assets/logomask.svg"
+                , Attrs.src "/docs/assets/logomask.svg"
                 ]
             ]
         , viewHomeText "13th to 14th" "of October"
@@ -323,7 +323,7 @@ viewAbout =
     Html.div [ class [ Style.About ] ]
         [ Html.decorativeImg
             [ class [ Style.CPPLogo ]
-            , Attrs.src "/assets/cpp18_logo.svg"
+            , Attrs.src "/docs/assets/cpp18_logo.svg"
             ]
         , viewAboutIntroText
         , viewAboutText
@@ -355,7 +355,7 @@ getImageUrl name =
                 |> String.toLower
                 |> Regex.replace Regex.All whitespace (\_ -> "-")
     in
-    "/assets/speakers/" ++ normalized ++ ".jpg"
+    "/docs/assets/speakers/" ++ normalized ++ ".jpg"
 
 
 viewSpeaker : Speaker -> Html msg
@@ -423,7 +423,7 @@ viewContact =
         [ Html.div [ class [ Style.ContactLeft ] ]
             [ Html.decorativeImg
                 [ class [ Style.ContactCPPLogo ]
-                , Attrs.src "/assets/cpp18_logo_white_green.svg"
+                , Attrs.src "/docs/assets/cpp18_logo_white_green.svg"
                 ]
             , viewContactText
                 "*Colloquium"
@@ -453,7 +453,7 @@ viewContact =
             [ class [ Style.AboutCircle ] ]
             [ Html.decorativeImg
                 [ class [ Style.AboutNPVLogo ]
-                , Attrs.src "/assets/npv_logo.svg"
+                , Attrs.src "/docs/assets/npv_logo.svg"
                 ]
             , Html.p [] [ Html.text "Föreningens syfte är att främja ett vetenskapligt förhållningssätt till psykedeliska substanser och öka möjligheterna för forskare att undersöka verkningsmekanismer, risker och potentiella kliniska tillämpningar" ]
             ]

@@ -267,7 +267,7 @@ css =
             , Css.flexShrink (Css.num 0)
             ]
         , Css.class HomeLogo
-            [ Css.backgroundImage (Css.url "/assets/logobackground.png")
+            [ Css.backgroundImage (Css.url "/docs/assets/logobackground.png")
             , Css.backgroundPosition Css.center
             , Css.backgroundSize Css.cover
             , Css.flexShrink Css.zero
