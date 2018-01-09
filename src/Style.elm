@@ -68,6 +68,7 @@ type CssClasses
     | AboutNPVLogo
     | Underline
     | DarkBackground
+    | MoreInfoSoon
 
 
 css : Css.Stylesheet
@@ -456,5 +457,11 @@ css =
             ]
         , Css.class DarkBackground
             [ Css.backgroundColor colors.neutral.dark
+            ]
+        , Css.class MoreInfoSoon
+            [ Css.textAlign Css.center
+            , Css.textTransform Css.uppercase
+            , Css.color colors.white
+            , Css.fontSize (Css.rem 2)
             ]
         ]

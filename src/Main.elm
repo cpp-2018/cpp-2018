@@ -397,6 +397,9 @@ viewSpeakers =
     Html.div [ class [ Style.Speakers ] ]
         [ viewSpeakersTitle
         , viewSpeakersSpeakers
+        , Html.h1
+            [ class [ Style.MoreInfoSoon ] ]
+            [ Html.text "More coming soon" ]
         ]
 
 
