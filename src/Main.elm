@@ -141,10 +141,6 @@ type alias Speaker =
 speakers : List Speaker
 speakers =
     [ Speaker
-        "Jordi Riba"
-        "Head of Reaserch Group Human Neuropsychopharmacology"
-        "Barcelona, Spain"
-    , Speaker
         "Alicia Dansworth"
         "Clinical Psychologist - Private Practise Institute of Transpersonal Psychology"
         "San Francisco, USA"
@@ -153,37 +149,50 @@ speakers =
         "Director of Division of Child and Adolescent Psychiatry"
         "Los Angeles, USA"
     , Speaker
-        "Kim Kuypers"
-        "Assistant Professor - Section Psychopharmacology, Neuropsychology & Psychopharmacology, Departments, Faculty of Psychology and Neuroscience"
-        "Maastricht, Netherlands"
-    , Speaker
-        "Franz X Vollenweider"
-        "Co-Director Center for Psychiatric Research Director Neuropsychopharmacology and Brain Imaging"
-        "Zürich, Switzerland"
-    , Speaker
-        "Elizabeth Nielson"
-        "Psychologist at Center for Optimal Living Center for Optimal Living"
-        "Greater New York area, USA"
-    , Speaker
-        "Adele Robinson"
-        "Associate Professor, Psychology"
-        "Sudbury, USA"
-    , Speaker
-        "Anne Wagner"
-        "Professor Emerita Modern and Contemporary Art"
-        "San Francisco, USA"
-    , Speaker
-        "Déborah Gonzàlez"
-        ""
-        "Barcelona, Spain"
-    , Speaker
-        "Anja Loizaga-Velder"
+        "Rosalind Watts"
         ""
         ""
     , Speaker
-        "Gabrielle Agin-Liebes"
+        "Alexander Lebedev"
         ""
         ""
+
+    -- , Speaker
+    --     "Jordi Riba"
+    --     "Head of Reaserch Group Human Neuropsychopharmacology"
+    --     "Barcelona, Spain"
+    -- , Speaker
+    --     "Kim Kuypers"
+    --     "Assistant Professor - Section Psychopharmacology, Neuropsychology & Psychopharmacology, Departments, Faculty of Psychology and Neuroscience"
+    --     "Maastricht, Netherlands"
+    -- , Speaker
+    --     "Franz X Vollenweider"
+    --     "Co-Director Center for Psychiatric Research Director Neuropsychopharmacology and Brain Imaging"
+    --     "Zürich, Switzerland"
+    -- , Speaker
+    --     "Elizabeth Nielson"
+    --     "Psychologist at Center for Optimal Living Center for Optimal Living"
+    --     "Greater New York area, USA"
+    -- , Speaker
+    --     "Adele Robinson"
+    --     "Associate Professor, Psychology"
+    --     "Sudbury, USA"
+    -- , Speaker
+    --     "Anne Wagner"
+    --     "Professor Emerita Modern and Contemporary Art"
+    --     "San Francisco, USA"
+    -- , Speaker
+    --     "Déborah Gonzàlez"
+    --     ""
+    --     "Barcelona, Spain"
+    -- , Speaker
+    --     "Anja Loizaga-Velder"
+    --     ""
+    --     ""
+    -- , Speaker
+    --     "Gabrielle Agin-Liebes"
+    --     ""
+    --     ""
     ]
 
 
