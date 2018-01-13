@@ -28,7 +28,7 @@ type alias Model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( { active = Home
+    ( { active = About
       , menu = Invisible
       }
     , allSections
@@ -51,9 +51,6 @@ type Msg
 getSectionFromHash : String -> Result String Section
 getSectionFromHash section =
     case section of
-        "#home" ->
-            Ok Home
-
         "#about" ->
             Ok About
 
@@ -78,7 +75,7 @@ update msg model =
                 | active =
                     location
                         |> getSectionFromHash
-                        |> Result.withDefault Home
+                        |> Result.withDefault About
               }
             , Cmd.none
             )
@@ -105,8 +102,7 @@ update msg model =
 
 
 type Section
-    = Home
-    | About
+    = About
     | Speakers
     | Tickets
     | Contact
@@ -114,8 +110,7 @@ type Section
 
 allSections : List Section
 allSections =
-    [ Home
-    , About
+    [ About
     , Speakers
     , Tickets
     , Contact
@@ -124,8 +119,7 @@ allSections =
 
 navbarSections : List Section
 navbarSections =
-    [ Home
-    , About
+    [ About
     , Speakers
     , Contact
     ]
@@ -486,11 +480,14 @@ viewSection section =
     let
         ( sectionClasses, contentClasses, content ) =
             case section of
-                Home ->
-                    ( [], [], viewHome )
-
                 About ->
-                    ( [], [], viewAbout )
+                    ( []
+                    , []
+                    , Html.div []
+                        [ viewHome
+                        , viewAbout
+                        ]
+                    )
 
                 Speakers ->
                     ( [ Style.DarkBackground ], [], viewSpeakers )
@@ -519,9 +516,6 @@ getSectionHash section =
 getSectionId : Section -> String
 getSectionId section =
     case section of
-        Home ->
-            "home"
-
         About ->
             "about"
 

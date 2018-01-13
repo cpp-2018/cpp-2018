@@ -262,6 +262,8 @@ css =
             , Css.fontSize (Css.rem 1.4)
             , Css.margin (Css.rem 3)
             , Css.flexShrink (Css.num 0)
+            , Css.flexBasis (Css.rem 0)
+            , Css.flexGrow (Css.num 1)
             ]
         , Css.class HomeLogo
             [ Css.backgroundImage (Css.url "/docs/assets/logobackground.png")
@@ -271,15 +273,15 @@ css =
             , Css.flexShrink Css.zero
             , Css.display Css.block
             , Css.margin2 Css.zero Css.auto
-            , Css.width (Css.pct 100)
+            , Css.width (Css.pct 75)
             , size.small [ Css.width (Css.pct 50) ]
             , size.smaller [ Css.width (Css.pct 75) ]
             , size.smallest [ Css.width (Css.pct 100) ]
             ]
         , Css.class HomeLogoWrapper
-            [ Css.flexGrow (Css.num 1)
+            [ Css.flexGrow (Css.num 3)
             , Css.flexShrink Css.zero
-            , Css.flexBasis (Css.rem 12)
+            , Css.flexBasis (Css.rem 0)
             , size.small [ Css.order (Css.num -1) ]
             , size.smaller [ Css.order (Css.num -1) ]
             , size.smallest [ Css.order (Css.num -1) ]

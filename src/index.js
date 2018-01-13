@@ -8,7 +8,7 @@ app.ports.setupScrollSpy.subscribe(sections => {
     const activeHash =
       sections.find(
         id => (document.querySelector(id) || {}).offsetTop <= e.pageY
-      ) || "#home";
+      ) || "#about";
     window.history.replaceState(null, null, activeHash);
     app.ports.activeHash.send(activeHash);
   });
