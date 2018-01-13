@@ -51,6 +51,8 @@ type CssClasses
     | SpeakerName
     | SpeakerText
     | SpeakerImage
+    | Location
+    | LocationMoreInfoSoon
     | Tickets
     | TicketsTitle
     | ContactSection
@@ -459,6 +461,12 @@ css =
             ]
         , Css.class DarkBackground
             [ Css.backgroundColor colors.neutral.dark
+            ]
+        , Css.class LocationMoreInfoSoon
+            [ Css.textAlign Css.center
+            , Css.textTransform Css.uppercase
+            , Css.color colors.neutral.dark
+            , Css.fontSize (Css.rem 2)
             ]
         , Css.class MoreInfoSoon
             [ Css.textAlign Css.center

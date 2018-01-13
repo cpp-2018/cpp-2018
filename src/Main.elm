@@ -57,6 +57,9 @@ getSectionFromHash section =
         "#speakers" ->
             Ok Speakers
 
+        "#location" ->
+            Ok Location
+
         "#tickets" ->
             Ok Tickets
 
@@ -104,6 +107,7 @@ update msg model =
 type Section
     = About
     | Speakers
+    | Location
     | Tickets
     | Contact
 
@@ -112,6 +116,7 @@ allSections : List Section
 allSections =
     [ About
     , Speakers
+    , Location
     , Tickets
     , Contact
     ]
@@ -121,6 +126,7 @@ navbarSections : List Section
 navbarSections =
     [ About
     , Speakers
+    , Location
     , Contact
     ]
 
@@ -397,6 +403,15 @@ viewSpeakers =
         ]
 
 
+viewLocation : Html msg
+viewLocation =
+    Html.div [ class [ Style.Location ] ]
+        [ Html.h1
+            [ class [ Style.LocationMoreInfoSoon ] ]
+            [ Html.text "CPP2018 will take place in a central Stockholm location. More information coming soon." ]
+        ]
+
+
 viewUnderline : Html msg
 viewUnderline =
     Html.div [ class [ Style.Underline ] ] []
@@ -492,6 +507,9 @@ viewSection section =
                 Speakers ->
                     ( [ Style.DarkBackground ], [], viewSpeakers )
 
+                Location ->
+                    ( [], [], viewLocation )
+
                 Tickets ->
                     ( [], [], viewTickets )
 
@@ -521,6 +539,9 @@ getSectionId section =
 
         Speakers ->
             "speakers"
+
+        Location ->
+            "location"
 
         Tickets ->
             "tickets"
