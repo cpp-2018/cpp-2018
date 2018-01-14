@@ -404,8 +404,18 @@ viewHome =
     Html.div [ class [ Style.Home ] ]
         [ viewHomeText "Stockholm" "2018"
         , Html.div [ class [ Style.HomeLogoWrapper ] ]
-            [ Html.decorativeImg
-                [ class [ Style.HomeLogo ]
+            [ Html.video
+                [ Attrs.src "/docs/assets/background.mp4"
+                , Attrs.autoplay True
+                , Attrs.loop True
+                , Attrs.preload "auto"
+                , Attrs.attribute "muted" "true"
+                , Attrs.attribute "playsinline" "true"
+                , class [ Style.HomeLogo ]
+                ]
+                []
+            , Html.decorativeImg
+                [ class [ Style.HomeLogoImg, Style.HomeLogo ]
                 , Attrs.src "/docs/assets/logomask.svg"
                 ]
             ]

@@ -36,6 +36,7 @@ type CssClasses
     | Home
     | HomeText
     | HomeLogo
+    | HomeLogoImg
     | HomeLogoWrapper
     | About
     | CPPLogo
@@ -152,6 +153,7 @@ css =
             , Css.displayFlex
             , Css.flexDirection Css.column
             , Css.position Css.fixed
+            , Css.zIndex (Css.int 1)
             ]
         , Css.class HeaderContent
             [ Css.displayFlex
@@ -278,17 +280,19 @@ css =
             , Css.flexGrow (Css.num 1)
             ]
         , Css.class HomeLogo
-            [ Css.backgroundImage (Css.url "/docs/assets/logobackground.png")
-            , Css.backgroundColor colors.primary
-            , Css.backgroundPosition Css.center
-            , Css.backgroundSize Css.cover
-            , Css.flexShrink Css.zero
+            [ Css.flexShrink Css.zero
             , Css.display Css.block
             , Css.margin2 Css.zero Css.auto
             , Css.width (Css.pct 75)
             , size.small [ Css.width (Css.pct 50) ]
             , size.smaller [ Css.width (Css.pct 75) ]
             , size.smallest [ Css.width (Css.pct 100) ]
+            ]
+        , Css.class HomeLogoImg
+            [ Css.position Css.absolute
+            , Css.top Css.zero
+            , Css.right Css.zero
+            , Css.left Css.zero
             ]
         , Css.class HomeLogoWrapper
             [ Css.flexGrow (Css.num 3)
@@ -297,6 +301,7 @@ css =
             , size.small [ Css.order (Css.num -1) ]
             , size.smaller [ Css.order (Css.num -1) ]
             , size.smallest [ Css.order (Css.num -1) ]
+            , Css.position Css.relative
             ]
         , Css.class About
             [ Css.displayFlex
