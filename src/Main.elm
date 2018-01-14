@@ -279,7 +279,7 @@ viewHeader active menu =
         ]
 
 
-viewMailChimp : Html msg
+viewMailChimp : Html Msg
 viewMailChimp =
     Html.div
         [ class [ Style.MailChimp ]
@@ -332,6 +332,7 @@ viewMailChimp =
                         , Attrs.id "mc-embedded-subscribe"
                         , Attrs.class "button"
                         , Attrs.style [ ( "margin", "0 0.25em" ) ]
+                        , Events.onClick CloseModal
                         ]
                         []
                     ]
@@ -554,7 +555,7 @@ viewContactParagraph paragraph =
         [ Html.text paragraph ]
 
 
-viewContact : Html msg
+viewContact : Html Msg
 viewContact =
     Html.div
         [ class [ Style.Contact ] ]
