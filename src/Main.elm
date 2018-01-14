@@ -168,12 +168,12 @@ speakers =
         "Los Angeles, USA"
     , Speaker
         "Rosalind Watts"
-        ""
-        ""
+        "Clinical psychologist at Imperial College London"
+        "London, UK"
     , Speaker
         "Alexander Lebedev"
-        ""
-        ""
+        "PostDoc at Department of Clinical Neuroscience, Karolinska Institutet"
+        "Stockholm, Sweden"
 
     -- , Speaker
     --     "Jordi Riba"
