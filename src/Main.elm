@@ -262,6 +262,67 @@ viewHeader active menu =
         ]
 
 
+viewMailChimp : Html msg
+viewMailChimp =
+    Html.div
+        [ class [ Style.MailChimp ]
+        , Attrs.id "mc_embed_signup"
+        ]
+        [ Html.form
+            [ Attrs.action "https://psykedeliskvetenskap.us13.list-manage.com/subscribe/post?u=3a55f04b8de66cab9b612bdcf&amp;id=a1ac2bad9a"
+            , Attrs.method "post"
+            , Attrs.id "mc-embedded-subscribe-form"
+            , Attrs.name "mc-embedded-subscribe-form"
+            , Attrs.class "validate"
+            , Attrs.target "_blank"
+            , Attrs.novalidate True
+            ]
+            [ Html.div [ Attrs.id "mc_embed_signup_scroll" ]
+                [ Html.label
+                    [ Attrs.for "mce-EMAIL" ]
+                    [ Html.text "Subscribe to our mailing list for news about tickets and speakers" ]
+                , CoreHtml.input
+                    [ Attrs.type_ "email"
+                    , Attrs.value ""
+                    , Attrs.name "EMAIL"
+                    , Attrs.class "email"
+                    , Attrs.id "mce-EMAIL"
+                    , Attrs.placeholder "Email address"
+                    , Attrs.required True
+                    ]
+                    []
+                , Html.div
+                    [ Attrs.style
+                        [ ( "position", "absolute" )
+                        , ( "left", "-5000px" )
+                        ]
+                    , Attrs.attribute "aria-hidden" "true"
+                    ]
+                    [ CoreHtml.input
+                        [ Attrs.type_ "text"
+                        , Attrs.name "b_3a55f04b8de66cab9b612bdcf_a1ac2bad9a"
+                        , Attrs.tabindex -1
+                        , Attrs.value ""
+                        ]
+                        []
+                    ]
+                , Html.div
+                    [ Attrs.class "clear" ]
+                    [ CoreHtml.input
+                        [ Attrs.type_ "submit"
+                        , Attrs.value "Subscribe"
+                        , Attrs.name "subscribe"
+                        , Attrs.id "mc-embedded-subscribe"
+                        , Attrs.class "button"
+                        , Attrs.style [ ( "margin", "0 0.25em" ) ]
+                        ]
+                        []
+                    ]
+                ]
+            ]
+        ]
+
+
 view : Model -> Html Msg
 view model =
     Html.div []
@@ -487,6 +548,7 @@ viewContact =
                 ]
             , Html.p [] [ Html.text "Föreningens syfte är att främja ett vetenskapligt förhållningssätt till psykedeliska substanser och öka möjligheterna för forskare att undersöka verkningsmekanismer, risker och potentiella kliniska tillämpningar" ]
             ]
+        , viewMailChimp
         ]
 
 

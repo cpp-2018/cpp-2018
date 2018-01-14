@@ -71,6 +71,7 @@ type CssClasses
     | Underline
     | DarkBackground
     | MoreInfoSoon
+    | MailChimp
 
 
 css : Css.Stylesheet
@@ -388,6 +389,9 @@ css =
             , Css.flexWrap Css.wrap
             , Css.fontSize (Css.rem 0.85)
             , Css.lineHeight (Css.em 1.4)
+            , Css.descendants
+                [ Css.class MailChimp [ Css.color colors.white ]
+                ]
             ]
         , Css.class ContactText
             [ Css.displayFlex
@@ -473,5 +477,11 @@ css =
             , Css.textTransform Css.uppercase
             , Css.color colors.white
             , Css.fontSize (Css.rem 2)
+            ]
+        , Css.class MailChimp
+            [ Css.property "clear" "left"
+            , Css.fontSize (Css.rem 1)
+            , Css.fontFamilies [ "DIN Regular Alternate", "sans-serif" ]
+            , Css.width (Css.pct 100)
             ]
         ]
