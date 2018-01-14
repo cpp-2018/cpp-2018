@@ -84,20 +84,24 @@ update msg model =
             )
 
         ToggleMenu ->
-            ( { model
-                | menu =
-                    case model.menu of
-                        Visible ->
-                            Invisible
-
-                        Invisible ->
-                            Visible
-              }
-            , Cmd.none
-            )
+            ( { model | menu = toggleVisibility model.menu }, Cmd.none )
 
         CloseMenu ->
             ( { model | menu = Invisible }, Cmd.none )
+
+
+
+---- HELPERS ----
+
+
+toggleVisibility : Visibility -> Visibility
+toggleVisibility visibility =
+    case visibility of
+        Visible ->
+            Invisible
+
+        Invisible ->
+            Visible
 
 
 
