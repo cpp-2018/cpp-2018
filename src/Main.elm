@@ -412,11 +412,11 @@ viewHome =
                 , Attrs.preload "auto"
                 , Attrs.attribute "muted" "true"
                 , Attrs.attribute "playsinline" "true"
-                , class [ Style.HomeLogo ]
+                , class [ Style.HomeLogoVideo, Style.HomeLogo ]
                 ]
                 []
             , Html.decorativeImg
-                [ class [ Style.HomeLogoImg, Style.HomeLogo ]
+                [ class [ Style.HomeLogo ]
                 , Attrs.src "/docs/assets/logomask.svg"
                 ]
             ]

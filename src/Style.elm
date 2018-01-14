@@ -36,7 +36,7 @@ type CssClasses
     | Home
     | HomeText
     | HomeLogo
-    | HomeLogoImg
+    | HomeLogoVideo
     | HomeLogoWrapper
     | About
     | CPPLogo
@@ -288,11 +288,12 @@ css =
             , size.smaller [ Css.width (Css.pct 75) ]
             , size.smallest [ Css.width (Css.pct 100) ]
             ]
-        , Css.class HomeLogoImg
+        , Css.class HomeLogoVideo
             [ Css.position Css.absolute
             , Css.top Css.zero
             , Css.right Css.zero
             , Css.left Css.zero
+            , Css.zIndex (Css.int -1)
             ]
         , Css.class HomeLogoWrapper
             [ Css.flexGrow (Css.num 3)
