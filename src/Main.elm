@@ -23,6 +23,7 @@ type Visibility
 type alias Model =
     { active : Section
     , menu : Visibility
+    , newsletterModal : Visibility
     }
 
 
@@ -30,6 +31,7 @@ init : ( Model, Cmd Msg )
 init =
     ( { active = About
       , menu = Invisible
+      , newsletterModal = Invisible
       }
     , allSections
         |> List.reverse
@@ -46,6 +48,8 @@ type Msg
     = HashChanged String
     | ToggleMenu
     | CloseMenu
+    | ToggleModal
+    | CloseModal
 
 
 getSectionFromHash : String -> Result String Section
@@ -88,6 +92,16 @@ update msg model =
 
         CloseMenu ->
             ( { model | menu = Invisible }, Cmd.none )
+
+        ToggleModal ->
+            ( { model
+                | newsletterModal = toggleVisibility model.newsletterModal
+              }
+            , Cmd.none
+            )
+
+        CloseModal ->
+            ( { model | newsletterModal = Invisible }, Cmd.none )
 
 
 
@@ -213,12 +227,11 @@ ticketUrl =
     "/tickets"
 
 
-viewTicketLink : Html msg
+viewTicketLink : Html Msg
 viewTicketLink =
-    Html.a
+    Html.button
         [ class [ Style.TicketLink ]
-        , Attrs.href ticketUrl
-        , Attrs.target "_blank"
+        , Events.onClick ToggleModal
         ]
         [ Html.text "Get tickets"
         ]
@@ -327,6 +340,26 @@ viewMailChimp =
         ]
 
 
+viewNewsletterModal : Visibility -> Html Msg
+viewNewsletterModal visibility =
+    case visibility of
+        Visible ->
+            Html.div [ class [ Style.ModalOverlay ] ]
+                [ Html.div
+                    [ class [ Style.Modal ] ]
+                    [ viewMailChimp
+                    , Html.button
+                        [ class [ Style.ModalClose ]
+                        , Events.onClick CloseModal
+                        ]
+                        [ Html.text "X" ]
+                    ]
+                ]
+
+        Invisible ->
+            Html.text ""
+
+
 view : Model -> Html Msg
 view model =
     Html.div []
@@ -334,6 +367,7 @@ view model =
         , viewHeader model.active model.menu
         , Html.main_ [ class [ Style.Sections ] ] <|
             List.map viewSection allSections
+        , viewNewsletterModal model.newsletterModal
         ]
 
 
@@ -482,14 +516,13 @@ viewUnderline =
     Html.div [ class [ Style.Underline ] ] []
 
 
-viewTickets : Html msg
+viewTickets : Html Msg
 viewTickets =
     Html.div
         [ class [ Style.Tickets ] ]
-        [ Html.a
+        [ Html.button
             [ class [ Style.TicketsTitle ]
-            , Attrs.href ticketUrl
-            , Attrs.target "_blank"
+            , Events.onClick ToggleModal
             ]
             [ Html.text "Get your tickets now" ]
         , viewUnderline

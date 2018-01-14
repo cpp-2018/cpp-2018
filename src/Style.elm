@@ -72,6 +72,9 @@ type CssClasses
     | DarkBackground
     | MoreInfoSoon
     | MailChimp
+    | ModalOverlay
+    | Modal
+    | ModalClose
 
 
 css : Css.Stylesheet
@@ -90,6 +93,9 @@ css =
             , neutral =
                 { light = Css.hex "#808184"
                 , dark = Css.hex "#4f4f4f"
+                }
+            , transparent =
+                { light = Css.hex "#80818455"
                 }
             }
 
@@ -247,6 +253,9 @@ css =
             , Css.letterSpacing (Css.em 0.3)
             , Css.hover [ Css.color colors.primary ]
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
+            , Css.textTransform Css.uppercase
+            , Css.border (Css.rem 0)
+            , Css.cursor Css.pointer
             ]
         , Css.class Home
             [ Css.displayFlex
@@ -374,6 +383,10 @@ css =
             , Css.fontSize (Css.rem 2)
             , Css.fontWeight Css.bold
             , Css.textAlign Css.center
+            , Css.textTransform Css.uppercase
+            , Css.backgroundColor Css.transparent
+            , Css.border (Css.rem 0)
+            , Css.cursor Css.pointer
             ]
         , Css.class ContactSection
             [ gradientBackground
@@ -483,5 +496,48 @@ css =
             , Css.fontSize (Css.rem 1)
             , Css.fontFamilies [ "DIN Regular Alternate", "sans-serif" ]
             , Css.width (Css.pct 100)
+            ]
+        , Css.class ModalOverlay
+            [ Css.position Css.fixed
+            , Css.top Css.zero
+            , Css.left Css.zero
+            , Css.width (Css.vw 100)
+            , Css.height (Css.vh 100)
+            , Css.backgroundColor colors.transparent.light
+            , Css.displayFlex
+            , Css.justifyContent Css.center
+            , Css.alignItems Css.center
+            ]
+        , Css.class Modal
+            [ Css.backgroundColor colors.background
+            , Css.padding (Css.rem 2)
+            , Css.borderRadius (Css.rem 0.5)
+            , Css.boxShadow4
+                (Css.rem 0.5)
+                (Css.rem 0.5)
+                (Css.rem 0.5)
+                colors.neutral.light
+            , Css.position Css.relative
+            , Css.color colors.neutral.dark
+            ]
+        , Css.class ModalClose
+            [ Css.borderRadius (Css.pct 50)
+            , Css.boxShadow4
+                (Css.rem 0.25)
+                (Css.rem 0.25)
+                (Css.rem 0.5)
+                colors.neutral.light
+            , Css.position Css.absolute
+            , Css.top (Css.rem -0.5)
+            , Css.right (Css.rem -0.5)
+            , Css.backgroundColor colors.white
+            , Css.width (Css.rem 2)
+            , Css.height (Css.rem 2)
+            , Css.displayFlex
+            , Css.justifyContent Css.center
+            , Css.alignItems Css.center
+            , Css.fontWeight Css.bold
+            , Css.cursor Css.pointer
+            , Css.border (Css.rem 0)
             ]
         ]
