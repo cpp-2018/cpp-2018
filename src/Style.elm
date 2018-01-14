@@ -96,7 +96,7 @@ css =
                 , dark = Css.hex "#4f4f4f"
                 }
             , transparent =
-                { light = Css.hex "#80818455"
+                { light = Css.hex "#80818477"
                 }
             }
 
@@ -512,6 +512,7 @@ css =
             , Css.displayFlex
             , Css.justifyContent Css.center
             , Css.alignItems Css.center
+            , Css.zIndex (Css.int 2)
             ]
         , Css.class Modal
             [ Css.backgroundColor colors.background
