@@ -516,7 +516,7 @@ css =
                 (Css.rem 0.5)
                 (Css.rem 0.5)
                 (Css.rem 0.5)
-                colors.neutral.light
+                colors.neutral.dark
             , Css.position Css.relative
             , Css.color colors.neutral.dark
             ]
@@ -526,7 +526,7 @@ css =
                 (Css.rem 0.25)
                 (Css.rem 0.25)
                 (Css.rem 0.5)
-                colors.neutral.light
+                colors.neutral.dark
             , Css.position Css.absolute
             , Css.top (Css.rem -0.5)
             , Css.right (Css.rem -0.5)
