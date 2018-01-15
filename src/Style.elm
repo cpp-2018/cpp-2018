@@ -496,6 +496,7 @@ css =
             , Css.textTransform Css.uppercase
             , Css.color colors.white
             , Css.fontSize (Css.rem 2)
+            , Css.marginTop (Css.rem 4)
             ]
         , Css.class MailChimp
             [ Css.property "clear" "left"
