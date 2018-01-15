@@ -159,7 +159,7 @@ type alias Speaker =
 speakers : List Speaker
 speakers =
     [ Speaker
-        "Alicia Dansworth"
+        "Alicia Danforth"
         "Clinical Psychologist - Private Practise Institute of Transpersonal Psychology"
         "San Francisco, USA"
     , Speaker
