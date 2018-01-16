@@ -151,6 +151,7 @@ navbarSections =
 
 type alias Speaker =
     { name : String
+    , titles : List String
     }
 
 
@@ -158,12 +159,16 @@ speakers : List Speaker
 speakers =
     [ Speaker
         "Alicia Danforth"
+        [ "PhD" ]
     , Speaker
         "Charles Grob"
+        [ "MD" ]
     , Speaker
         "Rosalind Watts"
+        [ "DClinPsy" ]
     , Speaker
         "Alexander Lebedev"
+        [ "MD PhD" ]
 
     -- , Speaker
     --     "Jordi Riba"
@@ -481,7 +486,7 @@ viewSpeaker speaker =
             , class [ Style.SpeakerImage ]
             ]
         , Html.h1 [ class [ Style.SpeakerName ] ]
-            [ Html.text <| speaker.name
+            [ Html.text <| speaker.name ++ ", " ++ String.join " " speaker.titles
             ]
         ]
 
