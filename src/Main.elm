@@ -151,8 +151,6 @@ navbarSections =
 
 type alias Speaker =
     { name : String
-    , description : String
-    , location : String
     }
 
 
@@ -160,20 +158,12 @@ speakers : List Speaker
 speakers =
     [ Speaker
         "Alicia Danforth"
-        "Clinical Psychologist - Private Practise Institute of Transpersonal Psychology"
-        "San Francisco, USA"
     , Speaker
         "Charles Grob"
-        "Director of Division of Child and Adolescent Psychiatry"
-        "Los Angeles, USA"
     , Speaker
         "Rosalind Watts"
-        "Clinical psychologist at Imperial College London"
-        "London, UK"
     , Speaker
         "Alexander Lebedev"
-        "PostDoc at Department of Clinical Neuroscience, Karolinska Institutet"
-        "Stockholm, Sweden"
 
     -- , Speaker
     --     "Jordi Riba"
@@ -490,9 +480,9 @@ viewSpeaker speaker =
             [ Attrs.src <| getImageUrl speaker.name
             , class [ Style.SpeakerImage ]
             ]
-        , Html.h1 [ class [ Style.SpeakerName ] ] [ Html.text speaker.name ]
-        , Html.div [ class [ Style.SpeakerText ] ] [ Html.text speaker.description ]
-        , Html.div [ class [ Style.SpeakerText ] ] [ Html.text speaker.location ]
+        , Html.h1 [ class [ Style.SpeakerName ] ]
+            [ Html.text <| speaker.name
+            ]
         ]
 
 
