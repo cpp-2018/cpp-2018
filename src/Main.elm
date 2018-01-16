@@ -518,7 +518,7 @@ viewLocation =
     Html.div [ class [ Style.Location ] ]
         [ Html.h1
             [ class [ Style.LocationMoreInfoSoon ] ]
-            [ Html.text "CPP2018 will take place in a central Stockholm location. More information coming soon." ]
+            [ Html.text "CPP2018 will take place in central Stockholm. More information coming soon." ]
         ]
 
 
