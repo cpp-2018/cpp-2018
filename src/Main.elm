@@ -453,10 +453,7 @@ viewAbout =
 viewSpeakersTitle : Html msg
 viewSpeakersTitle =
     Html.div [ class [ Style.SpeakersTitle ] ]
-        [ Html.h2
-            [ class [ Style.SpeakersTitleTop ] ]
-            [ Html.text "Preliminary bookings:" ]
-        , Html.h1
+        [ Html.h1
             [ class [ Style.SpeakersTitleBottom ] ]
             [ Html.text "Speakers" ]
         ]
