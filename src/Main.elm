@@ -639,8 +639,11 @@ viewContact =
                     ]
                 )
             ]
-        , Html.div
-            [ class [ Style.AboutCircle ] ]
+        , Html.a
+            [ class [ Style.AboutCircle ]
+            , Attrs.href "http://www.psykedeliskvetenskap.org/about"
+            , Attrs.target "_blank"
+            ]
             [ Html.decorativeImg
                 [ class [ Style.AboutNPVLogo ]
                 , Attrs.src "/docs/assets/npv_logo.svg"

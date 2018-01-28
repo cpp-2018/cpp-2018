@@ -487,6 +487,7 @@ css =
             , Css.fontStyle Css.italic
             , Css.padding (Css.rem 3)
             , Css.margin2 Css.zero Css.auto
+            , Css.textTransform Css.unset
             , size.smallest
                 [ Css.fontSize (Css.em 0.8)
                 , Css.lineHeight (Css.em 1.2)
