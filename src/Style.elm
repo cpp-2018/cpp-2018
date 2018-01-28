@@ -420,6 +420,7 @@ css =
             [ Css.displayFlex
             , Css.flexGrow (Css.num 1)
             , Css.flexDirection Css.column
+            , Css.flexBasis (Css.rem 2)
             , Css.marginRight (Css.rem 2)
             ]
         , Css.class ContactTitle
@@ -427,6 +428,7 @@ css =
             , Css.margin Css.zero
             , Css.fontSize (Css.rem 1.2)
             , Css.flexBasis (Css.em 8)
+            , Css.flexShrink Css.zero
             , Css.textAlign Css.right
             ]
         , Css.class ContactParagraph
