@@ -569,14 +569,8 @@ viewContact =
             , viewContactText
                 "Contact"
                 (Html.div []
-                    [ Html.div [ class [ Style.ContactContactInfo ] ]
-                        [ Html.div [] [ Html.text "FILIP BROMBERG - Project manager" ]
-                        , Html.div [] [ Html.text "filip@npv.se" ]
-                        ]
-                    , Html.div [ class [ Style.ContactContactInfo ] ]
-                        [ Html.div [] [ Html.text "Sponsor inquiries" ]
-                        , Html.div [] [ Html.text "patreon@npv.se" ]
-                        ]
+                    [ Html.p [] [ Html.text "If you have questions about speakers, tickets, venue, accommodation, transport or other logistical questions, please make sure to read through the information found on this website before sending." ]
+                    , Html.p [] [ Html.text "If you would like to submit your abstract or poster please send it to abstracts@cpp2018.se" ]
                     ]
                 )
             ]
