@@ -648,7 +648,7 @@ viewContact =
                 [ class [ Style.AboutNPVLogo ]
                 , Attrs.src "/docs/assets/npv_logo.svg"
                 ]
-            , Html.p [] [ Html.text "Föreningens syfte är att främja ett vetenskapligt förhållningssätt till psykedeliska substanser och öka möjligheterna för forskare att undersöka verkningsmekanismer, risker och potentiella kliniska tillämpningar" ]
+            , Html.p [] [ Html.text "Nätverket för psykedelisk vetenskap (The Swedish Network for Psychedelic Science) is a nonprofit organization based in Stockholm that works to promote a scientific exploration of psychedelic substances." ]
             ]
         , viewMailChimp
         ]
