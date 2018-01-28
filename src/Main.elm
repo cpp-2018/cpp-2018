@@ -4,7 +4,8 @@ import Accessibility as Html exposing (Html)
 import Css
 import Html as CoreHtml
 import Html.Attributes as Attrs
-import Html.Events as Events
+import Html.Events as Events exposing (defaultOptions)
+import Json.Decode as Decode
 import Ports
 import Regex exposing (Regex, regex)
 import Style exposing (class)
@@ -24,6 +25,7 @@ type alias Model =
     { active : Section
     , menu : Visibility
     , newsletterModal : Visibility
+    , speakerInfoModal : Maybe Speaker
     }
 
 
@@ -32,6 +34,7 @@ init =
     ( { active = About
       , menu = Invisible
       , newsletterModal = Invisible
+      , speakerInfoModal = Nothing
       }
     , allSections
         |> List.reverse
@@ -50,6 +53,8 @@ type Msg
     | CloseMenu
     | ToggleModal
     | CloseModal
+    | ModalClicked
+    | SpeakerClicked Speaker
 
 
 getSectionFromHash : String -> Result String Section
@@ -101,7 +106,22 @@ update msg model =
             )
 
         CloseModal ->
-            ( { model | newsletterModal = Invisible }, Cmd.none )
+            ( { model
+                | newsletterModal = Invisible
+                , speakerInfoModal = Nothing
+              }
+            , Cmd.none
+            )
+
+        SpeakerClicked speaker ->
+            ( { model
+                | speakerInfoModal = Just speaker
+              }
+            , Cmd.none
+            )
+
+        ModalClicked ->
+            ( model, Cmd.none )
 
 
 
@@ -152,6 +172,7 @@ navbarSections =
 type alias Speaker =
     { name : String
     , titles : List String
+    , bio : String
     }
 
 
@@ -160,15 +181,19 @@ speakers =
     [ Speaker
         "Alicia Danforth"
         [ "PhD" ]
+        ", is a licensed clinical psychologist and researcher in California. She has recently finalized a pilot study on MDMA-assisted therapy for the treatment of social anxiety in autistic adults, and is currently lead clinician and supervisor for a clinical trial at UCSF on psilocybin-assisted group therapy for psychological distress in long-term survivors of HIV/AIDS. She began her work in psychedelic research as a study coordinator and co-facilitator on Dr. Charles Grob's Phase 2 pilot study of psilocybin treatment for existential anxiety related to advanced cancer. At the Institute of Transpersonal Psychology, she co-developed and taught the first graduate-level course on psychedelic theory, research, and clinical considerations for therapists and researchers in training with James Fadiman, PhD and David Lukoff, PhD. Alicia is also a nationally certified Trauma-Focused CBT therapist."
     , Speaker
         "Charles Grob"
         [ "MD" ]
+        ", is Director of the Division of Child and Adolescent Psychiatry at Harbor-UCLA Medical Center, and Professor of Psychiatry and Pediatrics at the UCLA School of Medicine. Dr. Grob conducted the first government approved psychobiological research study of MDMA, and was the principal investigator of an international research project in the Brazilian Amazon studying the psychedelic plant brew, ayahuasca. He has also completed and published the first approved research investigation in several decades on the safety and efficacy of psilocybin treatment in terminal cancer patients with anxiety. Together with Alicia Danforth, he recently completed a pilot investigation into the use of an MDMA treatment model for social anxiety in autistic adults. Dr. Grob is the editor of Hallucinogens: A Reader (Tarcher/Putnam, 2002) and co-editor (with Roger Walsh) of Higher Wisdom: Eminent Elders Explore the Continuing Impact of Psychedelics (SUNY Press, 2005). He is also a founding board member of the Heffter Research Institute."
     , Speaker
         "Rosalind Watts"
         [ "DClinPsy" ]
+        ", completed her clinical psychology training in London, and after six years of practicing psychotherapy she joined the Imperial College Psilocybin for Depression Study as a therapist guide. Ros believes that psychedelic treatments can have an important role in changing the way we conceptualise and treat mental health difficulties. Her research includes qualitative analysis of the therapeutic impact of psilocybin and LSD, which has informed her interest in ‘connection to self, others, and world’ as a mechanism of change. Her findings suggest that psilocybin treatment for depression may work via paradigmatically novel means compared to both antidepressant medication and some short-term talking therapies. She is currently working alongside Dr. Robin Carhart-Harris, Professor David Nutt and Dr. David Erritzoe planning the upcoming Imperial psilocybin for depression trial."
     , Speaker
         "Alexander Lebedev"
-        [ "MD PhD" ]
+        [ "MD", "PhD" ]
+        ", is a psychiatrist, working as a postdoctoral researcher at Aging Research Center, Karolinska Institute. He is currently involved in several projects at the Brain Lab (Hjärnlabbet) utilizing methods of multimodal imaging to study plastic brain changes associated with cognitive training. His research interests span neurodynamics underlying higher cognitive functions, creativity, adult development, as well as altered states of consciousness, psychosis and depersonalization phenomena. Alexander is a collaborator of the Imperial Research Group, analyzing brain imaging data from ongoing clinical trials with psychedelics."
 
     -- , Speaker
     --     "Jordi Riba"
@@ -336,23 +361,57 @@ viewMailChimp =
         ]
 
 
+viewModal : Html Msg -> Html Msg
+viewModal content =
+    CoreHtml.div
+        [ class [ Style.ModalOverlay ]
+        , Events.onClick CloseModal
+        ]
+        [ CoreHtml.div
+            [ class [ Style.Modal ]
+            , Events.onWithOptions
+                "click"
+                { defaultOptions | stopPropagation = True }
+                (Decode.succeed ModalClicked)
+            ]
+            [ content
+            , Html.button
+                [ class [ Style.ModalClose ]
+                , Events.onClick CloseModal
+                ]
+                [ Html.text "X" ]
+            ]
+        ]
+
+
 viewNewsletterModal : Visibility -> Html Msg
 viewNewsletterModal visibility =
     case visibility of
         Visible ->
-            Html.div [ class [ Style.ModalOverlay ] ]
-                [ Html.div
-                    [ class [ Style.Modal ] ]
-                    [ viewMailChimp
-                    , Html.button
-                        [ class [ Style.ModalClose ]
-                        , Events.onClick CloseModal
-                        ]
-                        [ Html.text "X" ]
-                    ]
-                ]
+            viewModal viewMailChimp
 
         Invisible ->
+            Html.text ""
+
+
+viewSpeakerInfoModal : Maybe Speaker -> Html Msg
+viewSpeakerInfoModal speaker =
+    case speaker of
+        Just speaker_ ->
+            viewModal <|
+                Html.div
+                    [ class [ Style.SpeakerModal ] ]
+                    [ Html.decorativeImg
+                        [ Attrs.src <| getImageUrl speaker_.name
+                        , class [ Style.SpeakerModalImage ]
+                        ]
+                    , Html.span [ class [ Style.SpeakerModalName ] ]
+                        [ Html.text <| speaker_.name ++ ", " ++ String.join " " speaker_.titles
+                        ]
+                    , Html.text speaker_.bio
+                    ]
+
+        Nothing ->
             Html.text ""
 
 
@@ -364,6 +423,7 @@ view model =
         , Html.main_ [ class [ Style.Sections ] ] <|
             List.map viewSection allSections
         , viewNewsletterModal model.newsletterModal
+        , viewSpeakerInfoModal model.speakerInfoModal
         ]
 
 
@@ -475,9 +535,14 @@ getImageUrl name =
     "/docs/assets/speakers/" ++ normalized ++ ".jpg"
 
 
-viewSpeaker : Speaker -> Html msg
+viewSpeaker : Speaker -> Html Msg
 viewSpeaker speaker =
-    Html.div [ class [ Style.Speaker ] ]
+    CoreHtml.div
+        [ class
+            [ Style.Speaker
+            ]
+        , Events.onClick <| SpeakerClicked speaker
+        ]
         [ Html.decorativeImg
             [ Attrs.src <| getImageUrl speaker.name
             , class [ Style.SpeakerImage ]
@@ -488,13 +553,13 @@ viewSpeaker speaker =
         ]
 
 
-viewSpeakersSpeakers : Html msg
+viewSpeakersSpeakers : Html Msg
 viewSpeakersSpeakers =
     Html.div [ class [ Style.SpeakersSpeakers ] ] <|
         List.map viewSpeaker speakers
 
 
-viewSpeakers : Html msg
+viewSpeakers : Html Msg
 viewSpeakers =
     Html.div [ class [ Style.Speakers ] ]
         [ viewSpeakersTitle

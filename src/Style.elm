@@ -52,6 +52,9 @@ type CssClasses
     | SpeakerName
     | SpeakerText
     | SpeakerImage
+    | SpeakerModal
+    | SpeakerModalName
+    | SpeakerModalImage
     | Location
     | LocationMoreInfoSoon
     | Tickets
@@ -365,6 +368,7 @@ css =
             , Css.marginTop (Css.rem 4)
             , Css.padding2 Css.zero (Css.rem 1)
             , Css.minWidth (Css.rem 16)
+            , Css.cursor Css.pointer
             ]
         , Css.class SpeakerName
             [ Css.textTransform Css.uppercase
@@ -379,6 +383,20 @@ css =
             [ Css.borderRadius (Css.pct 50)
             , Css.width (Css.rem 12)
             , Css.height (Css.rem 12)
+            ]
+        , Css.class SpeakerModal
+            [ Css.maxWidth (Css.rem 48)
+            , Css.fontSize (Css.em 1.3)
+            ]
+        , Css.class SpeakerModalName
+            [ Css.fontWeight Css.bold
+            ]
+        , Css.class SpeakerModalImage
+            [ Css.borderRadius (Css.pct 50)
+            , Css.width (Css.rem 8)
+            , Css.height (Css.rem 8)
+            , Css.marginRight (Css.em 0.5)
+            , Css.float Css.left
             ]
         , Css.class Tickets
             [ Css.displayFlex
