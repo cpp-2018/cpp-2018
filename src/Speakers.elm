@@ -4,11 +4,18 @@ import Accessibility as Html exposing (Html, text)
 import Style exposing (class)
 
 
+---- TYPES ----
+
+
 type alias Speaker =
     { name : String
     , image : String
     , bio : Html Never
     }
+
+
+
+---- HELPERS ----
 
 
 bold : String -> Html Never
@@ -26,6 +33,10 @@ paragraph content =
 getImageUrl : String -> String
 getImageUrl fileName =
     "/docs/assets/speakers/" ++ fileName
+
+
+
+---- SPEAKERS ----
 
 
 speakers : List Speaker
