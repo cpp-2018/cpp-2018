@@ -8,6 +8,7 @@ import Html.Events as Events exposing (defaultOptions)
 import Json.Decode as Decode
 import Ports
 import Regex exposing (Regex, regex)
+import Speakers exposing (Speaker, speakers)
 import Style exposing (class)
 import Svg exposing (Svg, svg)
 import Svg.Attributes
@@ -166,71 +167,6 @@ navbarSections =
     , Speakers
     , Venue
     , Contact
-    ]
-
-
-type alias Speaker =
-    { name : String
-    , titles : List String
-    , bio : String
-    }
-
-
-speakers : List Speaker
-speakers =
-    [ Speaker
-        "Alicia Danforth"
-        [ "PhD" ]
-        ", is a licensed clinical psychologist and researcher in California. She has recently finalized a pilot study on MDMA-assisted therapy for the treatment of social anxiety in autistic adults, and is currently lead clinician and supervisor for a clinical trial at UCSF on psilocybin-assisted group therapy for psychological distress in long-term survivors of HIV/AIDS. She began her work in psychedelic research as a study coordinator and co-facilitator on Dr. Charles Grob's Phase 2 pilot study of psilocybin treatment for existential anxiety related to advanced cancer. At the Institute of Transpersonal Psychology, she co-developed and taught the first graduate-level course on psychedelic theory, research, and clinical considerations for therapists and researchers in training with James Fadiman, PhD and David Lukoff, PhD. Alicia is also a nationally certified Trauma-Focused CBT therapist."
-    , Speaker
-        "Charles Grob"
-        [ "MD" ]
-        ", is Director of the Division of Child and Adolescent Psychiatry at Harbor-UCLA Medical Center, and Professor of Psychiatry and Pediatrics at the UCLA School of Medicine. Dr. Grob conducted the first government approved psychobiological research study of MDMA, and was the principal investigator of an international research project in the Brazilian Amazon studying the psychedelic plant brew, ayahuasca. He has also completed and published the first approved research investigation in several decades on the safety and efficacy of psilocybin treatment in terminal cancer patients with anxiety. Together with Alicia Danforth, he recently completed a pilot investigation into the use of an MDMA treatment model for social anxiety in autistic adults. Dr. Grob is the editor of Hallucinogens: A Reader (Tarcher/Putnam, 2002) and co-editor (with Roger Walsh) of Higher Wisdom: Eminent Elders Explore the Continuing Impact of Psychedelics (SUNY Press, 2005). He is also a founding board member of the Heffter Research Institute."
-    , Speaker
-        "Rosalind Watts"
-        [ "DClinPsy" ]
-        ", completed her clinical psychology training in London, and after six years of practicing psychotherapy she joined the Imperial College Psilocybin for Depression Study as a therapist guide. Ros believes that psychedelic treatments can have an important role in changing the way we conceptualise and treat mental health difficulties. Her research includes qualitative analysis of the therapeutic impact of psilocybin and LSD, which has informed her interest in ‘connection to self, others, and world’ as a mechanism of change. Her findings suggest that psilocybin treatment for depression may work via paradigmatically novel means compared to both antidepressant medication and some short-term talking therapies. She is currently working alongside Dr. Robin Carhart-Harris, Professor David Nutt and Dr. David Erritzoe planning the upcoming Imperial psilocybin for depression trial."
-    , Speaker
-        "Alexander Lebedev"
-        [ "MD", "PhD" ]
-        ", is a psychiatrist, working as a postdoctoral researcher at Aging Research Center, Karolinska Institute. He is currently involved in several projects at the Brain Lab (Hjärnlabbet) utilizing methods of multimodal imaging to study plastic brain changes associated with cognitive training. His research interests span neurodynamics underlying higher cognitive functions, creativity, adult development, as well as altered states of consciousness, psychosis and depersonalization phenomena. Alexander is a collaborator of the Imperial Research Group, analyzing brain imaging data from ongoing clinical trials with psychedelics."
-
-    -- , Speaker
-    --     "Jordi Riba"
-    --     "Head of Reaserch Group Human Neuropsychopharmacology"
-    --     "Barcelona, Spain"
-    -- , Speaker
-    --     "Kim Kuypers"
-    --     "Assistant Professor - Section Psychopharmacology, Neuropsychology & Psychopharmacology, Departments, Faculty of Psychology and Neuroscience"
-    --     "Maastricht, Netherlands"
-    -- , Speaker
-    --     "Franz X Vollenweider"
-    --     "Co-Director Center for Psychiatric Research Director Neuropsychopharmacology and Brain Imaging"
-    --     "Zürich, Switzerland"
-    -- , Speaker
-    --     "Elizabeth Nielson"
-    --     "Psychologist at Center for Optimal Living Center for Optimal Living"
-    --     "Greater New York area, USA"
-    -- , Speaker
-    --     "Adele Robinson"
-    --     "Associate Professor, Psychology"
-    --     "Sudbury, USA"
-    -- , Speaker
-    --     "Anne Wagner"
-    --     "Professor Emerita Modern and Contemporary Art"
-    --     "San Francisco, USA"
-    -- , Speaker
-    --     "Déborah Gonzàlez"
-    --     ""
-    --     "Barcelona, Spain"
-    -- , Speaker
-    --     "Anja Loizaga-Velder"
-    --     ""
-    --     ""
-    -- , Speaker
-    --     "Gabrielle Agin-Liebes"
-    --     ""
-    --     ""
     ]
 
 
@@ -402,13 +338,10 @@ viewSpeakerInfoModal speaker =
                 Html.div
                     [ class [ Style.SpeakerModal ] ]
                     [ Html.decorativeImg
-                        [ Attrs.src <| getImageUrl speaker_.name
+                        [ Attrs.src speaker_.image
                         , class [ Style.SpeakerModalImage ]
                         ]
-                    , Html.span [ class [ Style.SpeakerModalName ] ]
-                        [ Html.text <| speaker_.name ++ ", " ++ String.join " " speaker_.titles
-                        ]
-                    , Html.text speaker_.bio
+                    , Html.map never speaker_.bio
                     ]
 
         Nothing ->
@@ -524,17 +457,6 @@ whitespace =
     regex "\\s+"
 
 
-getImageUrl : String -> String
-getImageUrl name =
-    let
-        normalized =
-            name
-                |> String.toLower
-                |> Regex.replace Regex.All whitespace (\_ -> "-")
-    in
-    "/docs/assets/speakers/" ++ normalized ++ ".jpg"
-
-
 viewSpeaker : Speaker -> Html Msg
 viewSpeaker speaker =
     CoreHtml.div
@@ -544,11 +466,11 @@ viewSpeaker speaker =
         , Events.onClick <| SpeakerClicked speaker
         ]
         [ Html.decorativeImg
-            [ Attrs.src <| getImageUrl speaker.name
+            [ Attrs.src speaker.image
             , class [ Style.SpeakerImage ]
             ]
         , Html.h1 [ class [ Style.SpeakerName ] ]
-            [ Html.text <| speaker.name ++ ", " ++ String.join " " speaker.titles
+            [ Html.text speaker.name
             ]
         ]
 
