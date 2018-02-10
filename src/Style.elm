@@ -55,8 +55,9 @@ type CssClasses
     | SpeakerModal
     | SpeakerModalName
     | SpeakerModalImage
-    | Location
-    | LocationMoreInfoSoon
+    | Venue
+    | VenueLink
+    | VenueMoreInfoSoon
     | Tickets
     | TicketsTitle
     | ContactSection
@@ -506,7 +507,11 @@ css =
         , Css.class DarkBackground
             [ Css.backgroundColor colors.neutral.dark
             ]
-        , Css.class LocationMoreInfoSoon
+        , Css.class VenueLink
+            [ Css.textTransform Css.none
+            , Css.color colors.primary
+            ]
+        , Css.class VenueMoreInfoSoon
             [ Css.textAlign Css.center
             , Css.textTransform Css.uppercase
             , Css.color colors.neutral.dark

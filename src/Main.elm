@@ -66,8 +66,8 @@ getSectionFromHash section =
         "#speakers" ->
             Ok Speakers
 
-        "#location" ->
-            Ok Location
+        "#venue" ->
+            Ok Venue
 
         "#tickets" ->
             Ok Tickets
@@ -145,7 +145,7 @@ toggleVisibility visibility =
 type Section
     = About
     | Speakers
-    | Location
+    | Venue
     | Tickets
     | Contact
 
@@ -154,7 +154,7 @@ allSections : List Section
 allSections =
     [ About
     , Speakers
-    , Location
+    , Venue
     , Tickets
     , Contact
     ]
@@ -164,7 +164,7 @@ navbarSections : List Section
 navbarSections =
     [ About
     , Speakers
-    , Location
+    , Venue
     , Contact
     ]
 
@@ -570,12 +570,25 @@ viewSpeakers =
         ]
 
 
-viewLocation : Html msg
-viewLocation =
-    Html.div [ class [ Style.Location ] ]
+viewVenue : Html msg
+viewVenue =
+    Html.div [ class [ Style.Venue ] ]
         [ Html.h1
-            [ class [ Style.LocationMoreInfoSoon ] ]
-            [ Html.text "CPP2018 will take place in central Stockholm. More information coming soon." ]
+            [ class [ Style.VenueMoreInfoSoon ] ]
+            [ Html.text "The Venue" ]
+        , Html.p []
+            [ Html.text "Colloquium on Psychedelic Psychiatry 2018 will take place at Elite Hotel Marina Tower in Stockholm, a high-end hotel conveniently accessible by short boat or bus ride from central Stockholm. Hotel rooms will be available at a discount price for conference participants. Breakfast and lunch will be included in the ticket price, making the hotel an all-round solution for both formal lectures and informal networking. And yes, the spa is open late."
+            ]
+        , Html.p []
+            [ Html.text "More information about the venue "
+            , Html.a
+                [ Attrs.href "https://www.elite.se/en/hotels/stockholm/hotel-marina-tower/"
+                , Attrs.target "_blank"
+                , class [ Style.VenueLink ]
+                ]
+                [ Html.text "here" ]
+            , Html.text "."
+            ]
         ]
 
 
@@ -671,8 +684,8 @@ viewSection section =
                 Speakers ->
                     ( [ Style.DarkBackground ], [], viewSpeakers )
 
-                Location ->
-                    ( [], [], viewLocation )
+                Venue ->
+                    ( [], [], viewVenue )
 
                 Tickets ->
                     ( [], [], viewTickets )
@@ -704,8 +717,8 @@ getSectionId section =
         Speakers ->
             "speakers"
 
-        Location ->
-            "location"
+        Venue ->
+            "venue"
 
         Tickets ->
             "tickets"
