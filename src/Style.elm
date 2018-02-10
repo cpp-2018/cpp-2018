@@ -387,6 +387,7 @@ css =
             ]
         , Css.class SpeakerModal
             [ Css.maxWidth (Css.rem 48)
+            , Css.overflowY Css.auto
             , Css.fontSize (Css.em 1.3)
             ]
         , Css.class SpeakerModalName
@@ -397,6 +398,7 @@ css =
             , Css.width (Css.rem 8)
             , Css.height (Css.rem 8)
             , Css.marginRight (Css.em 0.5)
+            , Css.marginTop (Css.em 1)
             , Css.float Css.left
             ]
         , Css.class Tickets
@@ -553,6 +555,8 @@ css =
                 colors.neutral.dark
             , Css.position Css.relative
             , Css.color colors.neutral.dark
+            , Css.maxHeight (Css.vh 90)
+            , Css.displayFlex
             ]
         , Css.class ModalClose
             [ Css.borderRadius (Css.pct 50)
