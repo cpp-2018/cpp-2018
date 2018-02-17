@@ -57,6 +57,7 @@ type CssClasses
     | SpeakerModalImage
     | Venue
     | VenueLink
+    | VenueImage
     | VenueMoreInfoSoon
     | Tickets
     | TicketsTitle
@@ -518,6 +519,12 @@ css =
             , Css.textTransform Css.uppercase
             , Css.color colors.neutral.dark
             , Css.fontSize (Css.rem 2)
+            ]
+        , Css.class VenueImage
+            [ Css.maxWidth (Css.pct 100)
+            , Css.width (Css.rem 32)
+            , Css.margin2 Css.zero Css.auto
+            , Css.display Css.block
             ]
         , Css.class MoreInfoSoon
             [ Css.textAlign Css.center
