@@ -42,7 +42,7 @@ getImageUrl fileName =
 speakers : List Speaker
 speakers =
     [ Speaker
-        "Jordi Riba"
+        "Jordi Riba, PhD"
         (getImageUrl "jordi-riba.jpg")
         (paragraph
             [ bold "Jordi Riba, Ph.D.,"
@@ -50,7 +50,7 @@ speakers =
             ]
         )
     , Speaker
-        "Alicia Danforth"
+        "Alicia Danforth, PhD"
         (getImageUrl "alicia-danforth.jpg")
         (paragraph
             [ bold "Alicia Danforth, Ph.D.,"
@@ -58,7 +58,7 @@ speakers =
             ]
         )
     , Speaker
-        "Charles Grob"
+        "Charles Grob, MD"
         (getImageUrl "charles-grob.jpg")
         (paragraph
             [ bold "Charles S. Grob, M.D.,"
@@ -66,7 +66,7 @@ speakers =
             ]
         )
     , Speaker
-        "Rosalind Watts"
+        "Rosalind Watts, DClinPsy"
         (getImageUrl "rosalind-watts.jpg")
         (paragraph
             [ bold "Rosalind Watts, DClinPsy,"
@@ -74,7 +74,7 @@ speakers =
             ]
         )
     , Speaker
-        "Alexander Lebedev"
+        "Alexander Lebedev, MD PhD"
         (getImageUrl "alexander-lebedev.jpg")
         (paragraph
             [ bold "Alexander V. Lebedev"
@@ -82,7 +82,7 @@ speakers =
             ]
         )
     , Speaker
-        "Thomas Kingsley Brown"
+        "Thomas Kingsley Brown, PhD"
         (getImageUrl "thomas-kingsley-brown.jpg")
         (paragraph
             [ bold "Thomas Kingsley Brown"
@@ -90,7 +90,7 @@ speakers =
             ]
         )
     , Speaker
-        "Alex Belser"
+        "Alex Belser, PhD"
         (getImageUrl "alex-belser.jpg")
         (paragraph
             [ bold "Alexander Belser, Ph.D. Candidate, M.Phil.,"
@@ -98,7 +98,7 @@ speakers =
             ]
         )
     , Speaker
-        "Ben Sessa"
+        "Ben Sessa, MD"
         (getImageUrl "ben-sessa.jpg")
         (paragraph
             [ bold "Dr. Ben Sessa"
@@ -106,7 +106,7 @@ speakers =
             ]
         )
     , Speaker
-        "Jeffrey Kamlet"
+        "Jeffrey Kamlet, MD"
         (getImageUrl "jeffrey-kamlet.jpg")
         (Html.div []
             [ paragraph
@@ -119,7 +119,7 @@ speakers =
             ]
         )
     , Speaker
-        "Elizabeth Nielson"
+        "Elizabeth Nielson, PhD"
         (getImageUrl "elizabeth-nielson.jpg")
         (paragraph
             [ bold "Dr. Nielson"
