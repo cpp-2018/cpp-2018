@@ -43,10 +43,8 @@ type CssClasses
     | AboutIntroText
     | AboutText
     | AboutTextTitle
-    | Speakers
-    | SpeakersTitle
-    | SpeakersTitleTop
-    | SpeakersTitleBottom
+    | Title
+    | TitleText
     | SpeakersSpeakers
     | Speaker
     | SpeakerName
@@ -60,7 +58,6 @@ type CssClasses
     | VenueImage
     | VenueMoreInfoSoon
     | Tickets
-    | TicketsTitle
     | ContactSection
     | ContactContent
     | Contact
@@ -340,19 +337,11 @@ css =
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             , Css.marginTop Css.zero
             ]
-        , Css.class Speakers []
-        , Css.class SpeakersTitle
+        , Css.class Title
             [ Css.textAlign Css.center
             , Css.marginTop (Css.rem 1)
             ]
-        , Css.class SpeakersTitleTop
-            [ Css.color colors.white
-            , Css.fontStyle Css.italic
-            , Css.fontSize (Css.rem 1.2)
-            , Css.fontWeight Css.normal
-            , Css.margin Css.zero
-            ]
-        , Css.class SpeakersTitleBottom
+        , Css.class TitleText
             [ Css.color colors.accent
             , Css.fontSize (Css.rem 3.5)
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
@@ -405,16 +394,9 @@ css =
         , Css.class Tickets
             [ Css.displayFlex
             , Css.flexDirection Css.column
-            ]
-        , Css.class TicketsTitle
-            [ Css.color colors.primary
-            , Css.fontSize (Css.rem 2)
-            , Css.fontWeight Css.bold
+            , Css.color colors.white
             , Css.textAlign Css.center
-            , Css.textTransform Css.uppercase
-            , Css.backgroundColor Css.transparent
-            , Css.border (Css.rem 0)
-            , Css.cursor Css.pointer
+            , Css.fontSize (Css.rem 1.2)
             ]
         , Css.class ContactSection
             [ gradientBackground

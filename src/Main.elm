@@ -444,12 +444,12 @@ viewAbout =
         ]
 
 
-viewSpeakersTitle : Html msg
-viewSpeakersTitle =
-    Html.div [ class [ Style.SpeakersTitle ] ]
+viewTitle : String -> Html msg
+viewTitle title =
+    Html.div [ class [ Style.Title ] ]
         [ Html.h1
-            [ class [ Style.SpeakersTitleBottom ] ]
-            [ Html.text "Speakers" ]
+            [ class [ Style.TitleText ] ]
+            [ Html.text title ]
         ]
 
 
@@ -484,8 +484,8 @@ viewSpeakersSpeakers =
 
 viewSpeakers : Html Msg
 viewSpeakers =
-    Html.div [ class [ Style.Speakers ] ]
-        [ viewSpeakersTitle
+    Html.div []
+        [ viewTitle "Speakers"
         , viewSpeakersSpeakers
         , Html.h1
             [ class [ Style.MoreInfoSoon ] ]
@@ -528,12 +528,20 @@ viewTickets : Html Msg
 viewTickets =
     Html.div
         [ class [ Style.Tickets ] ]
-        [ Html.button
-            [ class [ Style.TicketsTitle ]
-            , Events.onClick ToggleModal
+        [ viewTitle "Tickets"
+        , Html.div []
+            [ Html.p
+                []
+                [ Html.text "Tickets will go on sale February 23rd." ]
+            , Html.p
+                []
+                [ Html.text "Click "
+                , CoreHtml.a
+                    [ Events.onClick ToggleModal ]
+                    [ Html.text "here" ]
+                , Html.text " to get an e-mail update when tickets are available"
+                ]
             ]
-            [ Html.text "Tickets will go on sale February 23rd. Click here to get an e-mail update when tickets are available" ]
-        , viewUnderline
         ]
 
 
@@ -605,7 +613,7 @@ viewSection section =
                     ( [], [], viewVenue )
 
                 Tickets ->
-                    ( [], [], viewTickets )
+                    ( [ Style.DarkBackground ], [], viewTickets )
 
                 Contact ->
                     ( [ Style.ContactSection ], [ Style.ContactContent ], viewContact )
