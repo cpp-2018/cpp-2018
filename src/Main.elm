@@ -557,16 +557,6 @@ viewContact =
                 , Attrs.src "/docs/assets/cpp18_logo_white_green.svg"
                 ]
             , viewContactText
-                "*Colloquium"
-                (Html.div [ class [ Style.ContactParagraphs ] ] <|
-                    List.map
-                        viewContactParagraph
-                        [ "An academic seminar usually led by a different lecturer and on a different topic at each meeting or similarly to a tutorial led by students as is the case in Norway."
-                        , "The Parliament of Scotland, called a \"colloquium\" in Latin records \"Any musical piece celebrating birth or distribution of good news, a hymn (antonyms: requiem, coronach)\""
-                        , "The part of a complaint for defamation in which the plaintiff avers that the defamatory remarks related to him or her"
-                        ]
-                )
-            , viewContactText
                 "Contact"
                 (Html.div []
                     [ Html.p [] [ Html.text "If you have questions about speakers, tickets, venue, accommodation, transport or other logistical questions, please make sure to read through the information found on this website before sending." ]
