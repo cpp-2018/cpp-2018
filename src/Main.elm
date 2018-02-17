@@ -527,7 +527,7 @@ viewTickets =
             [ class [ Style.TicketsTitle ]
             , Events.onClick ToggleModal
             ]
-            [ Html.text "Get your tickets now" ]
+            [ Html.text "Tickets will go on sale February 23rd. Click here to get an e-mail update when tickets are available" ]
         , viewUnderline
         ]
 
