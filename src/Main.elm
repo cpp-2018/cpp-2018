@@ -166,6 +166,7 @@ navbarSections =
     [ About
     , Speakers
     , Venue
+    , Tickets
     , Contact
     ]
 
