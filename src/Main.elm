@@ -560,6 +560,14 @@ viewContactParagraph paragraph =
         [ Html.text paragraph ]
 
 
+viewContactEmailAddress emailAddress =
+    Html.a
+        [ Attrs.href <| "mailto:" ++ emailAddress
+        , class [ Style.EmailAddress ]
+        ]
+        [ Html.text emailAddress ]
+
+
 viewContact : Html Msg
 viewContact =
     Html.div
@@ -572,8 +580,10 @@ viewContact =
             , viewContactText
                 "Contact"
                 (Html.div []
-                    [ Html.p [] [ Html.text "If you have questions about speakers, tickets, venue, accommodation, transport or other logistical questions, please make sure to read through the information found on this website before sending." ]
-                    , Html.p [] [ Html.text "If you would like to submit your abstract or poster please send it to abstracts@cpp2018.se" ]
+                    [ Html.p [] [ Html.text "Press enquiries: ", viewContactEmailAddress "press@cpp2018.se" ]
+                    , Html.p [] [ Html.text "General enquiries: ", viewContactEmailAddress "info@cpp2018.se" ]
+                    , Html.p [] [ Html.text "Ticketing enquiries: ", viewContactEmailAddress "tickets@cpp2018.se" ]
+                    , Html.p [] [ Html.text "Abstract and poster submissions are accepted strictly through the ‘Call for Abstracts’ form." ]
                     ]
                 )
             ]

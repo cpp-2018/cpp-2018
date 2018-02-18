@@ -78,6 +78,7 @@ type CssClasses
     | ModalOverlay
     | Modal
     | ModalClose
+    | EmailAddress
 
 
 css : Css.Stylesheet
@@ -566,5 +567,8 @@ css =
             , Css.fontWeight Css.bold
             , Css.cursor Css.pointer
             , Css.border (Css.rem 0)
+            ]
+        , Css.class EmailAddress
+            [ Css.textTransform Css.none
             ]
         ]
