@@ -145,4 +145,12 @@ speakers =
             , text ", is Associate Professor of Psychiatry and Child & Adolescent Psychiatry at New York University School of Medicine and Associate Professor of Oral and Maxillofacial Pathology, Radiology, and Medicine at the NYU College of Dentistry. He directs the Division of Alcoholism and Drug Abuse and the Opioid Overdose Prevention Program at Bellevue Hospital Center in New York City. He is Director of Addiction Psychiatry at NYU Tisch Hospital and Director of the NYU Addiction Psychiatry Fellowship. He is certified in General and Addiction Psychiatry by the American Board of Psychiatry and Neurology (ABPN) and in Addiction Medicine by the American Society of Addiction Medicine (ASAM). Dr. Ross has received a dozen local and national teaching awards related to education of medical students, psychiatry residents, and post-graduate fellows. Dr. Ross is an expert on the therapeutic application of serotonergic hallucinogens to treat psychiatric and addictive spectrum illnesses. He directs the NYU Psychedelic Research Group and is Principal Investigator of the NYU Psilocybin Cancer Project."
             ]
         )
+    , Speaker
+        "Débora González, Ph.D."
+        (getImageUrl "debora-gonzalez.jpg")
+        (paragraph
+            [ bold "Débora González, Ph.D."
+            , text ", is a Clinical Psychologist with a Ph.D. in Pharmacology. Her doctoral work was supported by a fellowship from the Spanish government. She is co-author of several scientific papers and book chapters about ayahuasca, 2C-B, Salvia divinorum and research chemicals. She is currently conducting a longitudinal study on the long-term effects of ayahuasca on well-being and health of Western users with ICEERS Foundation and a pilot study of the treatment for complicated grief, involving holotropic breathwork and ayahuasca as therapeutic tools, with PHI Association."
+            ]
+        )
     ]
