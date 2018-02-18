@@ -126,4 +126,15 @@ speakers =
             , text " is a therapist on the trials of psilocybin-assisted treatment of alcohol use disorder and of MDMA-assisted treatment of PTSD at NYU School of Medicine. Dr. Nielson's research includes qualitative studies of patient experiences in psychedelic-assisted therapy, interview studies of psychedelic therapists, and research on the historical use of LSD in psychotherapist training. Dr. Nielson is a psychologist in private practice at the Psychedelic Education and Continuing Care program at the Center for Optimal Living where she provides harm reduction and integration psychotherapy for people who use or have used psychedelics. Dr. Nielson studied art, psychology, and evidence-based interventions for drug and alcohol use, including harm reduction, motivational interviewing, community reinforcement, and mindfulness-based therapy. She held a post-doctoral fellowship in psychodynamic therapy at Adelphi University and a NIDA funded post-doctoral fellowship in the Behavioral Science Training Program in Drug Abuse Research at NDRI/NYU School of Nursing."
             ]
         )
+    , Speaker
+        "Jeffrey Guss, MD"
+        (getImageUrl "jeffrey-guss.jpg")
+        (Html.div []
+            [ paragraph
+                [ bold "Jeffrey Guss, MD"
+                , text " is a psychiatrist, psychoanalyst, and researcher with a specializations in psychoanalytic therapy and the treatment of substance used disorders. He was a Co-Principal Investigator, study therapist and the Director of Therapist Training for the NYU School of Medicine’s study on \"Psilocybin-Assisted Therapy in the treatment of existential distress related to Cancer Diagnosis and Treatment\", and is a co-author of “Rapid and Sustained Symptom Reduction Following Psilocybin Treatment for Anxiety and Depression in Patients with Life-Threatening Cancer: A Randomized Clinical Trial” published in Journal of Psychopharmacology, December 2016. He is currently a study therapist for NYU School of Medicine’s “RCT of Psilocybin Assisted Treatment of Alcohol Dependence."
+                ]
+            , paragraph [ text "Dr Guss is particularly interested in the integration of psychedelic therapies with contemporary models of psychodynamic therapy as mindfulness based therapy.  He is collaborating with Yale University on a psilocybin assisted therapy for depression that incorporates Acceptance and Commitment Therapy into traditional academic psychedelic therapy approach.  He is an Instructor, Mentor and on the Council of Advisors for the California Institute of Integral Studies’ Center for Psychedelic Therapies and Research and on the Advisory Board for the Center for Optimal Living’s Psychedelic Education and Continuing Care Program. He has published on the topics of gender and sexuality in Studies in Gender and Sexuality and Psychoanalysis, Culture and Society. Dr. Guss maintains a private practice of psychiatry and psychotherapy in New York City." ]
+            ]
+        )
     ]
