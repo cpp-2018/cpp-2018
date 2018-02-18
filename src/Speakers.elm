@@ -146,11 +146,19 @@ speakers =
             ]
         )
     , Speaker
-        "Débora González, Ph.D."
+        "Débora González, PhD"
         (getImageUrl "debora-gonzalez.jpg")
         (paragraph
             [ bold "Débora González, Ph.D."
             , text ", is a Clinical Psychologist with a Ph.D. in Pharmacology. Her doctoral work was supported by a fellowship from the Spanish government. She is co-author of several scientific papers and book chapters about ayahuasca, 2C-B, Salvia divinorum and research chemicals. She is currently conducting a longitudinal study on the long-term effects of ayahuasca on well-being and health of Western users with ICEERS Foundation and a pilot study of the treatment for complicated grief, involving holotropic breathwork and ayahuasca as therapeutic tools, with PHI Association."
+            ]
+        )
+    , Speaker
+        "Anne Wagner, PhD, CPsych"
+        (getImageUrl "anne-wagner.jpg")
+        (paragraph
+            [ bold "Anne C. Wagner, Ph.D., C.Psych."
+            , text ", is a Clinical Psychologist and Canadian Institutes of Health Research funded Postdoctoral Fellow at Ryerson University, working with Dr. Candice Monson. With Candice, Michael Mithoefer and Annie Mithoefer, Anne is investigating the combination of Cognitive Behavioral Conjoint Therapy for PTSD and MDMA. As well as being a trialist, Anne does work in Trauma-Informed Care and with the lived experiences of people living with HIV and in LGBTQ communities. She is a trainer for Cognitive Behavioral Conjoint Therapy for PTSD and a consultant for Cognitive Processing Therapy."
             ]
         )
     ]
