@@ -137,4 +137,12 @@ speakers =
             , paragraph [ text "Dr Guss is particularly interested in the integration of psychedelic therapies with contemporary models of psychodynamic therapy as mindfulness based therapy.  He is collaborating with Yale University on a psilocybin assisted therapy for depression that incorporates Acceptance and Commitment Therapy into traditional academic psychedelic therapy approach.  He is an Instructor, Mentor and on the Council of Advisors for the California Institute of Integral Studies’ Center for Psychedelic Therapies and Research and on the Advisory Board for the Center for Optimal Living’s Psychedelic Education and Continuing Care Program. He has published on the topics of gender and sexuality in Studies in Gender and Sexuality and Psychoanalysis, Culture and Society. Dr. Guss maintains a private practice of psychiatry and psychotherapy in New York City." ]
             ]
         )
+    , Speaker
+        "Stephen Ross, MD"
+        (getImageUrl "stephen-ross.jpg")
+        (paragraph
+            [ bold "Stephen Ross, M.D."
+            , text ", is Associate Professor of Psychiatry and Child & Adolescent Psychiatry at New York University School of Medicine and Associate Professor of Oral and Maxillofacial Pathology, Radiology, and Medicine at the NYU College of Dentistry. He directs the Division of Alcoholism and Drug Abuse and the Opioid Overdose Prevention Program at Bellevue Hospital Center in New York City. He is Director of Addiction Psychiatry at NYU Tisch Hospital and Director of the NYU Addiction Psychiatry Fellowship. He is certified in General and Addiction Psychiatry by the American Board of Psychiatry and Neurology (ABPN) and in Addiction Medicine by the American Society of Addiction Medicine (ASAM). Dr. Ross has received a dozen local and national teaching awards related to education of medical students, psychiatry residents, and post-graduate fellows. Dr. Ross is an expert on the therapeutic application of serotonergic hallucinogens to treat psychiatric and addictive spectrum illnesses. He directs the NYU Psychedelic Research Group and is Principal Investigator of the NYU Psilocybin Cancer Project."
+            ]
+        )
     ]
