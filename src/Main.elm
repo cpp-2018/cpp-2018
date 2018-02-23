@@ -181,14 +181,15 @@ injectCss =
 
 ticketUrl : String
 ticketUrl =
-    "/tickets"
+    "https://www.tickster.com/sv/events/5pwcffrv5eu58mw/2018-10-13/colloquium-on-psychedelic-psychiatry-2018"
 
 
 viewTicketLink : Html Msg
 viewTicketLink =
-    Html.button
+    Html.a
         [ class [ Style.TicketLink ]
-        , Events.onClick ToggleModal
+        , Attrs.href ticketUrl
+        , Attrs.target "_blank"
         ]
         [ Html.text "Get tickets"
         ]
@@ -531,15 +532,24 @@ viewTickets =
         [ viewTitle "Tickets"
         , Html.div []
             [ Html.p
-                []
-                [ Html.text "Tickets will go on sale February 23rd." ]
-            , Html.p
-                []
-                [ Html.text "Click "
-                , CoreHtml.a
-                    [ Events.onClick ToggleModal ]
-                    [ Html.text "here" ]
-                , Html.text " to get an e-mail update when tickets are available"
+                [ class [ Style.TicketsInfo ] ]
+                [ Html.text """
+                TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales.
+
+                General Release ticket: 3600 SEK
+                General Release Student: 2400 SEK
+                Early Bird: 2600 SEK
+                Early Bird student: 1600 SEK
+
+                *Students will be required to provide proof of registration or enrolment letter of their current university.
+
+                All members of ‘Nätverket för Psykedelisk Vetenskap’ are eligible for a 200 SEK discount on all tickets. To receive this discount please follow the instructions given in our latest newsletter.
+
+                NOTE: Tickets can not be refunded. Re-sale can be done through Tickster Resale if the ticket is purchased with a Swedish bank account.""" ]
+            , Html.div []
+                [ Html.a
+                    [ class [ Style.TicketsLink ] ]
+                    [ Html.text "Get tickets now" ]
                 ]
             ]
         ]

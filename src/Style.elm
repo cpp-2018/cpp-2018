@@ -58,6 +58,8 @@ type CssClasses
     | VenueImage
     | VenueMoreInfoSoon
     | Tickets
+    | TicketsLink
+    | TicketsInfo
     | ContactSection
     | ContactContent
     | Contact
@@ -396,8 +398,23 @@ css =
             [ Css.displayFlex
             , Css.flexDirection Css.column
             , Css.color colors.white
-            , Css.textAlign Css.center
+            , Css.textAlign Css.left
             , Css.fontSize (Css.rem 1.2)
+            ]
+        , Css.class TicketsInfo
+            [ Css.whiteSpace Css.preLine
+            ]
+        , Css.class TicketsLink
+            [ Css.color colors.accent
+            , Css.fontSize (Css.rem 2)
+            , Css.fontWeight Css.bold
+            , Css.textAlign Css.center
+            , Css.textTransform Css.uppercase
+            , Css.backgroundColor Css.transparent
+            , Css.border (Css.rem 0)
+            , Css.cursor Css.pointer
+            , Css.display Css.block
+            , Css.margin2 Css.zero Css.auto
             ]
         , Css.class ContactSection
             [ gradientBackground
