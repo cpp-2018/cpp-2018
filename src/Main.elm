@@ -548,7 +548,10 @@ viewTickets =
                 NOTE: Tickets can not be refunded. Re-sale can be done through Tickster Resale if the ticket is purchased with a Swedish bank account.""" ]
             , Html.div []
                 [ Html.a
-                    [ class [ Style.TicketsLink ] ]
+                    [ class [ Style.TicketsLink ]
+                    , Attrs.href ticketUrl
+                    , Attrs.target "_blank"
+                    ]
                     [ Html.text "Get tickets now" ]
                 ]
             ]
