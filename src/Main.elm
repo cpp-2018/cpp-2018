@@ -407,7 +407,7 @@ viewHome =
         [ viewHomeText "Stockholm" "2018"
         , Html.div [ class [ Style.HomeLogoWrapper ] ]
             [ Html.video
-                [ Attrs.src "/docs/assets/background.mp4"
+                [ Attrs.src "/build/assets/background.mp4"
                 , Attrs.autoplay True
                 , Attrs.loop True
                 , Attrs.preload "auto"
@@ -418,7 +418,7 @@ viewHome =
                 []
             , Html.decorativeImg
                 [ class [ Style.HomeLogo ]
-                , Attrs.src "/docs/assets/logomask.svg"
+                , Attrs.src "/build/assets/logomask.svg"
                 ]
             ]
         , viewHomeText "13th to 14th" "of October"
@@ -449,7 +449,7 @@ viewAbout =
     Html.div [ class [ Style.About ] ]
         [ Html.decorativeImg
             [ class [ Style.CPPLogo ]
-            , Attrs.src "/docs/assets/cpp18_logo.svg"
+            , Attrs.src "/build/assets/cpp18_logo.svg"
             ]
         , viewAboutIntroText
         , viewAboutText
@@ -512,7 +512,7 @@ viewVenue =
             [ class [ Style.VenueMoreInfoSoon ] ]
             [ Html.text "The Venue" ]
         , Html.decorativeImg
-            [ Attrs.src "/docs/assets/elite-hotel.jpg"
+            [ Attrs.src "/build/assets/elite-hotel.jpg"
             , class [ Style.VenueImage ]
             ]
         , Html.p []
@@ -619,7 +619,7 @@ viewContact =
         [ Html.div [ class [ Style.ContactLeft ] ]
             [ Html.decorativeImg
                 [ class [ Style.ContactCPPLogo ]
-                , Attrs.src "/docs/assets/cpp18_logo_white_green.svg"
+                , Attrs.src "/build/assets/cpp18_logo_white_green.svg"
                 ]
             , viewContactText
                 "Contact"
@@ -638,7 +638,7 @@ viewContact =
             ]
             [ Html.decorativeImg
                 [ class [ Style.AboutNPVLogo ]
-                , Attrs.src "/docs/assets/npv_logo.svg"
+                , Attrs.src "/build/assets/npv_logo.svg"
                 ]
             , Html.p [] [ Html.text "Nätverket för psykedelisk vetenskap (The Swedish Network for Psychedelic Science) is a nonprofit organization based in Stockholm that works to promote a scientific exploration of psychedelic substances." ]
             ]

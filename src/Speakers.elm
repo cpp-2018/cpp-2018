@@ -32,7 +32,7 @@ paragraph content =
 
 getImageUrl : String -> String
 getImageUrl fileName =
-    "/docs/assets/speakers/" ++ fileName
+    "/build/assets/speakers/" ++ fileName
 
 
 

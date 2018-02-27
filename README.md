@@ -7,8 +7,5 @@ You can find the more information [here](https://github.com/halfzebra/create-elm
 #### How to build
 
  1. `elm app build`
- 2. `rm -rf docs/`
- 3. `mv build/ docs/`
- 4. `mv docs/index.html index.html`
- 5. Replace hash of `main.[hash].js` in `index.html`
- 6. Prepend `/docs` to all absolute paths in `index.html`
+ 2. `mv build/index.html index.html`
+ 3. Prepend `/build` to all absolute paths in `index.html`
