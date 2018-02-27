@@ -510,6 +510,9 @@ css =
         , Css.class DarkBackground
             [ Css.backgroundColor colors.neutral.dark
             ]
+        , Css.class Venue
+            [ Css.fontSize (Css.rem 1.2)
+            ]
         , Css.class VenueLink
             [ Css.textTransform Css.none
             , Css.color colors.primary
