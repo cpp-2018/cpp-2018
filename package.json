@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",
-    "autoprefixer": "^7.2.3",
+    "autoprefixer": "^8.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -22,6 +22,8 @@
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "minimist": "1.2.0",
+    "postcss": "^6.0.19",
+    "postcss-cli": "^5.0.0",
     "postcss-loader": "2.0.9",
     "react-dev-utils": "^4.2.1",
     "react-error-overlay": "^3.0.0",
@@ -33,12 +35,18 @@
     "webpack-dev-server": "^2.9.7"
   },
   "scripts": {
-    "build": "node scripts/build.js",
+    "generate-css": "elm-css src/Stylesheets.elm && postcss --use autoprefixer -o public/index.css public/index.css",
+    "build": "yarn generate-css && node scripts/build.js",
     "start": "node scripts/start.js",
     "package": "elm-package",
     "make": "elm-make",
     "repl": "elm-repl",
     "reactor": "elm-reactor",
     "test": "elm-test"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 4 versions",
+    "IE 8-11"
+  ]
 }

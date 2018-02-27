@@ -177,14 +177,6 @@ navbarSections =
     ]
 
 
-injectCss : Html msg
-injectCss =
-    CoreHtml.node "style"
-        []
-        [ Html.text (Css.compile [ Style.css ] |> .css)
-        ]
-
-
 ticketUrl : String
 ticketUrl =
     "https://secure.tickster.com/Intro.aspx?ERC=5PWCFFRV5EU58MW"
@@ -364,8 +356,7 @@ viewSpeakerInfoModal speaker =
 view : Model -> Html Msg
 view model =
     Html.div []
-        [ injectCss
-        , viewHeader model.active model.menu
+        [ viewHeader model.active model.menu
         , Html.main_ [ class [ Style.Sections ] ] <|
             List.map viewSection allSections
         , viewNewsletterModal model.newsletterModal
