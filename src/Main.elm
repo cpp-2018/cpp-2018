@@ -187,7 +187,7 @@ injectCss =
 
 ticketUrl : String
 ticketUrl =
-    "https://secure.tickster.com/(S(4f0ybgfhpjrght4tgboerp0b))/en-US/5PWCFFRV5EU58MW/Shop/Products.aspx"
+    "https://secure.tickster.com/Intro.aspx?ERC=5PWCFFRV5EU58MW"
 
 
 formUrl : String
