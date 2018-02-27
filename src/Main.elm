@@ -573,6 +573,7 @@ viewContactParagraph paragraph =
         [ Html.text paragraph ]
 
 
+viewContactEmailAddress : String -> Html msg
 viewContactEmailAddress emailAddress =
     Html.a
         [ Attrs.href <| "mailto:" ++ emailAddress
