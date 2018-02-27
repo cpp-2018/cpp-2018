@@ -73,6 +73,9 @@ getSectionFromHash section =
         "#tickets" ->
             Ok Tickets
 
+        "#call-for-abstracts" ->
+            Ok CallForAbstracts
+
         "#contact" ->
             Ok Contact
 
@@ -149,6 +152,7 @@ type Section
     | Venue
     | Tickets
     | Contact
+    | CallForAbstracts
 
 
 allSections : List Section
@@ -157,6 +161,7 @@ allSections =
     , Speakers
     , Venue
     , Tickets
+    , CallForAbstracts
     , Contact
     ]
 
@@ -167,6 +172,7 @@ navbarSections =
     , Speakers
     , Venue
     , Tickets
+    , CallForAbstracts
     , Contact
     ]
 
@@ -182,6 +188,11 @@ injectCss =
 ticketUrl : String
 ticketUrl =
     "https://secure.tickster.com/(S(4f0ybgfhpjrght4tgboerp0b))/en-US/5PWCFFRV5EU58MW/Shop/Products.aspx"
+
+
+formUrl : String
+formUrl =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdGQSaUq69_UCqxKhTZ_GxaNI2_2bcSrpG8oK0iRRJu_LBo5w/viewform"
 
 
 viewTicketLink : Html Msg
@@ -520,6 +531,25 @@ viewVenue =
         ]
 
 
+viewCallForAbstracts : Html msg
+viewCallForAbstracts =
+    Html.div [ class [ Style.Venue ] ]
+        [ Html.h1
+            [ class [ Style.VenueMoreInfoSoon ] ]
+            [ Html.text "Call for Abstracts" ]
+        , Html.p []
+            [ Html.text "If you would like to speak at Colloquium on Psychedelic Psychiatry 2018, please fill out "
+            , Html.a
+                [ Attrs.href formUrl
+                , Attrs.target "_blank"
+                , class [ Style.VenueLink ]
+                ]
+                [ Html.text "this form" ]
+            , Html.text "."
+            ]
+        ]
+
+
 viewUnderline : Html msg
 viewUnderline =
     Html.div [ class [ Style.Underline ] ] []
@@ -639,6 +669,9 @@ viewSection section =
                 Tickets ->
                     ( [ Style.DarkBackground ], [], viewTickets )
 
+                CallForAbstracts ->
+                    ( [], [], viewCallForAbstracts )
+
                 Contact ->
                     ( [ Style.ContactSection ], [ Style.ContactContent ], viewContact )
     in
@@ -672,13 +705,33 @@ getSectionId section =
         Tickets ->
             "tickets"
 
+        CallForAbstracts ->
+            "call-for-abstracts"
+
         Contact ->
             "contact"
 
 
 getSectionName : Section -> String
-getSectionName =
-    toString
+getSectionName section =
+    case section of
+        About ->
+            "About"
+
+        Speakers ->
+            "Speakers"
+
+        Venue ->
+            "Venue"
+
+        Tickets ->
+            "Tickets"
+
+        CallForAbstracts ->
+            "Call for Abstracts"
+
+        Contact ->
+            "Contact"
 
 
 
