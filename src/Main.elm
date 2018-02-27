@@ -181,7 +181,7 @@ injectCss =
 
 ticketUrl : String
 ticketUrl =
-    "https://www.tickster.com/sv/events/5pwcffrv5eu58mw/2018-10-13/colloquium-on-psychedelic-psychiatry-2018"
+    "https://secure.tickster.com/(S(4f0ybgfhpjrght4tgboerp0b))/en-US/5PWCFFRV5EU58MW/Shop/Products.aspx"
 
 
 viewTicketLink : Html Msg
