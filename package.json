@@ -36,7 +36,7 @@
   },
   "scripts": {
     "generate-css": "elm-css src/Stylesheets.elm && postcss --use autoprefixer -o public/index.css public/index.css",
-    "build": "yarn generate-css && node scripts/build.js",
+    "build": "yarn generate-css && node scripts/build.js && mv build/index.html index.html && sed -i 's;=\"/;=\"/build/;g' index.html",
     "start": "node scripts/start.js",
     "package": "elm-package",
     "make": "elm-make",

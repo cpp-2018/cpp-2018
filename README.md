@@ -6,6 +6,4 @@ You can find the more information [here](https://github.com/halfzebra/create-elm
 
 #### How to build
 
- 1. `elm app build`
- 2. `mv build/index.html index.html`
- 3. Prepend `/build` to all absolute paths in `index.html`
+ 1. `yarn build`
