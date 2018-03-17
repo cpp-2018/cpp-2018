@@ -528,13 +528,13 @@ viewCallForAbstracts =
             [ class [ Style.VenueMoreInfoSoon ] ]
             [ Html.text "Call for Abstracts" ]
         , Html.p []
-            [ Html.text "If you would like to speak at Colloquium on Psychedelic Psychiatry 2018, please fill out "
+            [ Html.text "We are now accepting abstracts and posters to be presented during the conference! The deadline to submit an abstract for the conference is April 30th, 2018. To find out more and to submit an abstract, click "
             , Html.a
                 [ Attrs.href formUrl
                 , Attrs.target "_blank"
                 , class [ Style.VenueLink ]
                 ]
-                [ Html.text "this form" ]
+                [ Html.text "here" ]
             , Html.text "."
             ]
         ]
