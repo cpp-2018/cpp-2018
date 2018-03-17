@@ -42,11 +42,11 @@ getImageUrl fileName =
 speakers : List Speaker
 speakers =
     [ Speaker
-        "Jordi Riba, PhD"
-        (getImageUrl "jordi-riba.jpg")
+        "Alex Belser, PhD"
+        (getImageUrl "alex-belser.jpg")
         (paragraph
-            [ bold "Jordi Riba, Ph.D.,"
-            , text " received his doctorate in pharmacology in 2003 at the Autonomous University of Barcelona (UAB), with a thesis on the human pharmacology of ayahuasca. He is associate professor of pharmacology at the UAB and also leads the Human Neuropsychopharmacology Research Group at the Sant Pau Hospital in Barcelona. He has published nearly forty journal articles and book chapters on the subject, and collaborated in the first clinical studies involving ayahuasca administration to patients with depression. Currently, Riba is studying the post-acute psychedelic “after-glow” and the use of ayahuasca in the treatment of various psychiatric conditions. He is also investigating the neuroprotective and neurogenic potential of ayahuasca alkaloids."
+            [ bold "Alexander Belser, Ph.D. Candidate, M.Phil.,"
+            , text " is a Clinical Research Fellow at Yale University.  Alex was a founding member of the Psychedelic Research Group at New York University (NYU) in 2006.  There he conducted a qualitative study exploring how cancer patients experience psilocybin-assisted psychotherapy.  Alex serves as a scientific collaborator for a qualitative study investigating psilocybin-assisted psychotherapy as a treatment for alcohol addiction. He is also interviewing religious leaders who are administered psilocybin.  Alex has published a number of peer-reviewed articles and book chapters, and serves as a peer reviewer for the Journal of Psychopharmacology. Alex graduated from Georgetown University, and pursued graduate studies at Cambridge University, NYU, and Columbia University.  As a clinician, Alex treats patients with trauma in a multi-site trial of MDMA-assisted psychotherapy as a treatment for post-traumatic stress disorder (PTSD), which was recently designated a “breakthrough therapy” by the Food and Drug Administration (FDA).  Alex completed his clinical and research training in psychology at Bellevue Hospital, New York Psychiatric Institute at Columbia University Medical Center, and Mount Sinai Beth Israel Hospital."
             ]
         )
     , Speaker
@@ -58,6 +58,14 @@ speakers =
             ]
         )
     , Speaker
+        "Débora González, PhD"
+        (getImageUrl "debora-gonzalez.jpg")
+        (paragraph
+            [ bold "Débora González, Ph.D."
+            , text ", is a Clinical Psychologist with a Ph.D. in Pharmacology. Her doctoral work was supported by a fellowship from the Spanish government. She is co-author of several scientific papers and book chapters about ayahuasca, 2C-B, Salvia divinorum and research chemicals. She is currently conducting a longitudinal study on the long-term effects of ayahuasca on well-being and health of Western users with ICEERS Foundation and a pilot study of the treatment for complicated grief, involving holotropic breathwork and ayahuasca as therapeutic tools, with PHI Association."
+            ]
+        )
+    , Speaker
         "Charles Grob, MD"
         (getImageUrl "charles-grob.jpg")
         (paragraph
@@ -66,19 +74,14 @@ speakers =
             ]
         )
     , Speaker
-        "Rosalind Watts, DClinPsy"
-        (getImageUrl "rosalind-watts.jpg")
-        (paragraph
-            [ bold "Rosalind Watts, DClinPsy,"
-            , text " completed her clinical psychology training in London, and after six years of practicing psychotherapy she joined the Imperial College Psilocybin for Depression Study as a therapist guide. Ros believes that psychedelic treatments can have an important role in changing the way we conceptualise and treat mental health difficulties. Her research includes qualitative analysis of the therapeutic impact of psilocybin and LSD, which has informed her interest in ‘connection to self, others, and world’ as a mechanism of change. Her findings suggest that psilocybin treatment for depression may work via paradigmatically novel means compared to both antidepressant medication and some short-term talking therapies. She is currently working alongside Dr. Robin Carhart-Harris, Professor David Nutt and Dr. David Erritzoe planning the upcoming Imperial psilocybin for depression trial."
-            ]
-        )
-    , Speaker
-        "Alexander Lebedev, MD PhD"
-        (getImageUrl "alexander-lebedev.jpg")
-        (paragraph
-            [ bold "Alexander V. Lebedev"
-            , text " is a psychiatrist, working as a postdoctoral researcher at Aging Research Center, Karolinska Institute. He is currently involved in several projects at the Brain Lab (Hjärnlabbet) utilizing methods of multimodal imaging to study plastic brain changes associated with cognitive training. His research interests span neurodynamics underlying higher cognitive functions, creativity, adult development, as well as altered states of consciousness, psychosis and depersonalization phenomena. Alexander is a collaborator of the Imperial Research Group, analyzing brain imaging data from ongoing clinical trials with psychedelics."
+        "Jeffrey Guss, MD"
+        (getImageUrl "jeffrey-guss.jpg")
+        (Html.div []
+            [ paragraph
+                [ bold "Jeffrey Guss, MD"
+                , text " is a psychiatrist, psychoanalyst, and researcher with a specializations in psychoanalytic therapy and the treatment of substance used disorders. He was a Co-Principal Investigator, study therapist and the Director of Therapist Training for the NYU School of Medicine’s study on \"Psilocybin-Assisted Therapy in the treatment of existential distress related to Cancer Diagnosis and Treatment\", and is a co-author of “Rapid and Sustained Symptom Reduction Following Psilocybin Treatment for Anxiety and Depression in Patients with Life-Threatening Cancer: A Randomized Clinical Trial” published in Journal of Psychopharmacology, December 2016. He is currently a study therapist for NYU School of Medicine’s “RCT of Psilocybin Assisted Treatment of Alcohol Dependence."
+                ]
+            , paragraph [ text "Dr Guss is particularly interested in the integration of psychedelic therapies with contemporary models of psychodynamic therapy as mindfulness based therapy.  He is collaborating with Yale University on a psilocybin assisted therapy for depression that incorporates Acceptance and Commitment Therapy into traditional academic psychedelic therapy approach.  He is an Instructor, Mentor and on the Council of Advisors for the California Institute of Integral Studies’ Center for Psychedelic Therapies and Research and on the Advisory Board for the Center for Optimal Living’s Psychedelic Education and Continuing Care Program. He has published on the topics of gender and sexuality in Studies in Gender and Sexuality and Psychoanalysis, Culture and Society. Dr. Guss maintains a private practice of psychiatry and psychotherapy in New York City." ]
             ]
         )
     , Speaker
@@ -87,22 +90,6 @@ speakers =
         (paragraph
             [ bold "Thomas Kingsley Brown"
             , text " has been researching ibogaine treatment for substance dependence since 2009, when he began conducting interviews with people at a treatment center in Playas de Tijuana, Mexico and collected data for the purpose of studying quality of life for those people.  In 2010 he began working with MAPS (the Multidisciplinary Association for Psychedelic Studies) on a Mexico-based observational study of the long-term outcomes for people receiving ibogaine-assisted treatment for opioid dependence. That study is complete and the first research article on the study, co-authored with Dr. Kenneth Alper, has been published (American Journal of Drug and Alcohol Abuse, 2017). In 2013 he published a review article on ibogaine treatment in Current Drug Abuse Reviews. Dr. Brown is on staff at the University of California, San Diego as the Coordinator of the McNair Scholars Program, which prepares first-generation, low-income undergraduate students and those from under-represented ethnic groups for doctoral programs in all fields of study. His own academic training is in chemistry (B.S., University of Pittsburgh and M.S., California Institute of Technology), neuroscience, and anthropology (M.A. and PhD, UC San Diego)."
-            ]
-        )
-    , Speaker
-        "Alex Belser, PhD"
-        (getImageUrl "alex-belser.jpg")
-        (paragraph
-            [ bold "Alexander Belser, Ph.D. Candidate, M.Phil.,"
-            , text " is a Clinical Research Fellow at Yale University.  Alex was a founding member of the Psychedelic Research Group at New York University (NYU) in 2006.  There he conducted a qualitative study exploring how cancer patients experience psilocybin-assisted psychotherapy.  Alex serves as a scientific collaborator for a qualitative study investigating psilocybin-assisted psychotherapy as a treatment for alcohol addiction. He is also interviewing religious leaders who are administered psilocybin.  Alex has published a number of peer-reviewed articles and book chapters, and serves as a peer reviewer for the Journal of Psychopharmacology. Alex graduated from Georgetown University, and pursued graduate studies at Cambridge University, NYU, and Columbia University.  As a clinician, Alex treats patients with trauma in a multi-site trial of MDMA-assisted psychotherapy as a treatment for post-traumatic stress disorder (PTSD), which was recently designated a “breakthrough therapy” by the Food and Drug Administration (FDA).  Alex completed his clinical and research training in psychology at Bellevue Hospital, New York Psychiatric Institute at Columbia University Medical Center, and Mount Sinai Beth Israel Hospital."
-            ]
-        )
-    , Speaker
-        "Ben Sessa, MD"
-        (getImageUrl "ben-sessa.jpg")
-        (paragraph
-            [ bold "Dr. Ben Sessa"
-            , text " is a child and adolescent psychiatrist with 20 years clinical experience. Having worked initially with abused and maltreated children he has observed the sad and inevitable trajectory from childhood trauma into mental disorder and, particularly, addictions. His frustration at the lack of clinical efficacy apparent with traditional psychiatric treatments - and especially the rise of ineffective and potentially toxic  polypharmacy - has brought him to the door of psychedelics, and especially MDMA, as psychiatry’s best new potential approach to tackling his stuck and deserving patients. Dr. Sessa is currently running the world’s first clinical study exploring MDMA Therapy as a treatment for adult alcohol addiction. Dr. Sessa has published several text books on Psychedelic medicine, including ‘The Psychedelic Renaissance’ (2012/2017) and the novel, ‘To Fathom Hell and Soar Angelic’. Dr. Sessa is also outspoken on the subject of drug policy reform and the issues whereby government policies are impairing medical research, maintaining stigma and withholding potentially useful medical interventions from worthy patients."
             ]
         )
     , Speaker
@@ -119,46 +106,19 @@ speakers =
             ]
         )
     , Speaker
+        "Alexander Lebedev, MD PhD"
+        (getImageUrl "alexander-lebedev.jpg")
+        (paragraph
+            [ bold "Alexander V. Lebedev"
+            , text " is a psychiatrist, working as a postdoctoral researcher at Aging Research Center, Karolinska Institute. He is currently involved in several projects at the Brain Lab (Hjärnlabbet) utilizing methods of multimodal imaging to study plastic brain changes associated with cognitive training. His research interests span neurodynamics underlying higher cognitive functions, creativity, adult development, as well as altered states of consciousness, psychosis and depersonalization phenomena. Alexander is a collaborator of the Imperial Research Group, analyzing brain imaging data from ongoing clinical trials with psychedelics."
+            ]
+        )
+    , Speaker
         "Elizabeth Nielson, PhD"
         (getImageUrl "elizabeth-nielson.jpg")
         (paragraph
             [ bold "Dr. Nielson"
             , text " is a therapist on the trials of psilocybin-assisted treatment of alcohol use disorder and of MDMA-assisted treatment of PTSD at NYU School of Medicine. Dr. Nielson's research includes qualitative studies of patient experiences in psychedelic-assisted therapy, interview studies of psychedelic therapists, and research on the historical use of LSD in psychotherapist training. Dr. Nielson is a psychologist in private practice at the Psychedelic Education and Continuing Care program at the Center for Optimal Living where she provides harm reduction and integration psychotherapy for people who use or have used psychedelics. Dr. Nielson studied art, psychology, and evidence-based interventions for drug and alcohol use, including harm reduction, motivational interviewing, community reinforcement, and mindfulness-based therapy. She held a post-doctoral fellowship in psychodynamic therapy at Adelphi University and a NIDA funded post-doctoral fellowship in the Behavioral Science Training Program in Drug Abuse Research at NDRI/NYU School of Nursing."
-            ]
-        )
-    , Speaker
-        "Jeffrey Guss, MD"
-        (getImageUrl "jeffrey-guss.jpg")
-        (Html.div []
-            [ paragraph
-                [ bold "Jeffrey Guss, MD"
-                , text " is a psychiatrist, psychoanalyst, and researcher with a specializations in psychoanalytic therapy and the treatment of substance used disorders. He was a Co-Principal Investigator, study therapist and the Director of Therapist Training for the NYU School of Medicine’s study on \"Psilocybin-Assisted Therapy in the treatment of existential distress related to Cancer Diagnosis and Treatment\", and is a co-author of “Rapid and Sustained Symptom Reduction Following Psilocybin Treatment for Anxiety and Depression in Patients with Life-Threatening Cancer: A Randomized Clinical Trial” published in Journal of Psychopharmacology, December 2016. He is currently a study therapist for NYU School of Medicine’s “RCT of Psilocybin Assisted Treatment of Alcohol Dependence."
-                ]
-            , paragraph [ text "Dr Guss is particularly interested in the integration of psychedelic therapies with contemporary models of psychodynamic therapy as mindfulness based therapy.  He is collaborating with Yale University on a psilocybin assisted therapy for depression that incorporates Acceptance and Commitment Therapy into traditional academic psychedelic therapy approach.  He is an Instructor, Mentor and on the Council of Advisors for the California Institute of Integral Studies’ Center for Psychedelic Therapies and Research and on the Advisory Board for the Center for Optimal Living’s Psychedelic Education and Continuing Care Program. He has published on the topics of gender and sexuality in Studies in Gender and Sexuality and Psychoanalysis, Culture and Society. Dr. Guss maintains a private practice of psychiatry and psychotherapy in New York City." ]
-            ]
-        )
-    , Speaker
-        "Stephen Ross, MD"
-        (getImageUrl "stephen-ross.jpg")
-        (paragraph
-            [ bold "Stephen Ross, M.D."
-            , text ", is Associate Professor of Psychiatry and Child & Adolescent Psychiatry at New York University School of Medicine and Associate Professor of Oral and Maxillofacial Pathology, Radiology, and Medicine at the NYU College of Dentistry. He directs the Division of Alcoholism and Drug Abuse and the Opioid Overdose Prevention Program at Bellevue Hospital Center in New York City. He is Director of Addiction Psychiatry at NYU Tisch Hospital and Director of the NYU Addiction Psychiatry Fellowship. He is certified in General and Addiction Psychiatry by the American Board of Psychiatry and Neurology (ABPN) and in Addiction Medicine by the American Society of Addiction Medicine (ASAM). Dr. Ross has received a dozen local and national teaching awards related to education of medical students, psychiatry residents, and post-graduate fellows. Dr. Ross is an expert on the therapeutic application of serotonergic hallucinogens to treat psychiatric and addictive spectrum illnesses. He directs the NYU Psychedelic Research Group and is Principal Investigator of the NYU Psilocybin Cancer Project."
-            ]
-        )
-    , Speaker
-        "Débora González, PhD"
-        (getImageUrl "debora-gonzalez.jpg")
-        (paragraph
-            [ bold "Débora González, Ph.D."
-            , text ", is a Clinical Psychologist with a Ph.D. in Pharmacology. Her doctoral work was supported by a fellowship from the Spanish government. She is co-author of several scientific papers and book chapters about ayahuasca, 2C-B, Salvia divinorum and research chemicals. She is currently conducting a longitudinal study on the long-term effects of ayahuasca on well-being and health of Western users with ICEERS Foundation and a pilot study of the treatment for complicated grief, involving holotropic breathwork and ayahuasca as therapeutic tools, with PHI Association."
-            ]
-        )
-    , Speaker
-        "Anne Wagner, PhD, CPsych"
-        (getImageUrl "anne-wagner.jpg")
-        (paragraph
-            [ bold "Anne C. Wagner, Ph.D., C.Psych."
-            , text ", is a Clinical Psychologist and Canadian Institutes of Health Research funded Postdoctoral Fellow at Ryerson University, working with Dr. Candice Monson. With Candice, Michael Mithoefer and Annie Mithoefer, Anne is investigating the combination of Cognitive Behavioral Conjoint Therapy for PTSD and MDMA. As well as being a trialist, Anne does work in Trauma-Informed Care and with the lived experiences of people living with HIV and in LGBTQ communities. She is a trainer for Cognitive Behavioral Conjoint Therapy for PTSD and a consultant for Cognitive Processing Therapy."
             ]
         )
     , Speaker
@@ -170,11 +130,51 @@ speakers =
             ]
         )
     , Speaker
+        "Jordi Riba, PhD"
+        (getImageUrl "jordi-riba.jpg")
+        (paragraph
+            [ bold "Jordi Riba, Ph.D.,"
+            , text " received his doctorate in pharmacology in 2003 at the Autonomous University of Barcelona (UAB), with a thesis on the human pharmacology of ayahuasca. He is associate professor of pharmacology at the UAB and also leads the Human Neuropsychopharmacology Research Group at the Sant Pau Hospital in Barcelona. He has published nearly forty journal articles and book chapters on the subject, and collaborated in the first clinical studies involving ayahuasca administration to patients with depression. Currently, Riba is studying the post-acute psychedelic “after-glow” and the use of ayahuasca in the treatment of various psychiatric conditions. He is also investigating the neuroprotective and neurogenic potential of ayahuasca alkaloids."
+            ]
+        )
+    , Speaker
+        "Stephen Ross, MD"
+        (getImageUrl "stephen-ross.jpg")
+        (paragraph
+            [ bold "Stephen Ross, M.D."
+            , text ", is Associate Professor of Psychiatry and Child & Adolescent Psychiatry at New York University School of Medicine and Associate Professor of Oral and Maxillofacial Pathology, Radiology, and Medicine at the NYU College of Dentistry. He directs the Division of Alcoholism and Drug Abuse and the Opioid Overdose Prevention Program at Bellevue Hospital Center in New York City. He is Director of Addiction Psychiatry at NYU Tisch Hospital and Director of the NYU Addiction Psychiatry Fellowship. He is certified in General and Addiction Psychiatry by the American Board of Psychiatry and Neurology (ABPN) and in Addiction Medicine by the American Society of Addiction Medicine (ASAM). Dr. Ross has received a dozen local and national teaching awards related to education of medical students, psychiatry residents, and post-graduate fellows. Dr. Ross is an expert on the therapeutic application of serotonergic hallucinogens to treat psychiatric and addictive spectrum illnesses. He directs the NYU Psychedelic Research Group and is Principal Investigator of the NYU Psilocybin Cancer Project."
+            ]
+        )
+    , Speaker
+        "Ben Sessa, MD"
+        (getImageUrl "ben-sessa.jpg")
+        (paragraph
+            [ bold "Dr. Ben Sessa"
+            , text " is a child and adolescent psychiatrist with 20 years clinical experience. Having worked initially with abused and maltreated children he has observed the sad and inevitable trajectory from childhood trauma into mental disorder and, particularly, addictions. His frustration at the lack of clinical efficacy apparent with traditional psychiatric treatments - and especially the rise of ineffective and potentially toxic  polypharmacy - has brought him to the door of psychedelics, and especially MDMA, as psychiatry’s best new potential approach to tackling his stuck and deserving patients. Dr. Sessa is currently running the world’s first clinical study exploring MDMA Therapy as a treatment for adult alcohol addiction. Dr. Sessa has published several text books on Psychedelic medicine, including ‘The Psychedelic Renaissance’ (2012/2017) and the novel, ‘To Fathom Hell and Soar Angelic’. Dr. Sessa is also outspoken on the subject of drug policy reform and the issues whereby government policies are impairing medical research, maintaining stigma and withholding potentially useful medical interventions from worthy patients."
+            ]
+        )
+    , Speaker
         "Fredrik von Kieseritzky, PhD"
         (getImageUrl "fredrik-von-kieseritzky.jpg")
         (paragraph
             [ bold "Fredrik von Kieseritzky, Ph.D."
             , text " , received his doctorate in organic chemistry at the Royal Institute of Technology (KTH) in 2004. Since then, Fredrik has worked as an industrial scientist in the field of medicinal chemistry in large and small pharmaceutical companies. His main research areas are neurodegenerative diseases and pain disorders. He is the co-inventor of investigational drug Lanabecestat, currently in one of the world's most comprehensive Phase III clinical trials against Alzheimer's disease. In Sweden, Fredrik has assisted several physicians in getting standardized herbal cannabis approved against treatment-resistant neuropathic pain for a select few patients. Currently, he is involved in designing and carrying out a larger Phase II/III randomized and placebo-controlled clinical trial on cannabis (n = 100). As principal investigator, Fredrik is the co-inventor on several patent and patent applications and is the corresponding author on several peer-reviewed articles on organic synthesis and drug discovery. Fredrik is scientific advisor for a number of organizations, board member and vice-chairman for the Spinalis Foundation, and CEO of a small CRO, Arubedo AB."
+            ]
+        )
+    , Speaker
+        "Anne Wagner, PhD, CPsych"
+        (getImageUrl "anne-wagner.jpg")
+        (paragraph
+            [ bold "Anne C. Wagner, Ph.D., C.Psych."
+            , text ", is a Clinical Psychologist and Canadian Institutes of Health Research funded Postdoctoral Fellow at Ryerson University, working with Dr. Candice Monson. With Candice, Michael Mithoefer and Annie Mithoefer, Anne is investigating the combination of Cognitive Behavioral Conjoint Therapy for PTSD and MDMA. As well as being a trialist, Anne does work in Trauma-Informed Care and with the lived experiences of people living with HIV and in LGBTQ communities. She is a trainer for Cognitive Behavioral Conjoint Therapy for PTSD and a consultant for Cognitive Processing Therapy."
+            ]
+        )
+    , Speaker
+        "Rosalind Watts, DClinPsy"
+        (getImageUrl "rosalind-watts.jpg")
+        (paragraph
+            [ bold "Rosalind Watts, DClinPsy,"
+            , text " completed her clinical psychology training in London, and after six years of practicing psychotherapy she joined the Imperial College Psilocybin for Depression Study as a therapist guide. Ros believes that psychedelic treatments can have an important role in changing the way we conceptualise and treat mental health difficulties. Her research includes qualitative analysis of the therapeutic impact of psilocybin and LSD, which has informed her interest in ‘connection to self, others, and world’ as a mechanism of change. Her findings suggest that psilocybin treatment for depression may work via paradigmatically novel means compared to both antidepressant medication and some short-term talking therapies. She is currently working alongside Dr. Robin Carhart-Harris, Professor David Nutt and Dr. David Erritzoe planning the upcoming Imperial psilocybin for depression trial."
             ]
         )
     ]
