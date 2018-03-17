@@ -161,4 +161,12 @@ speakers =
             , text ", is a Clinical Psychologist and Canadian Institutes of Health Research funded Postdoctoral Fellow at Ryerson University, working with Dr. Candice Monson. With Candice, Michael Mithoefer and Annie Mithoefer, Anne is investigating the combination of Cognitive Behavioral Conjoint Therapy for PTSD and MDMA. As well as being a trialist, Anne does work in Trauma-Informed Care and with the lived experiences of people living with HIV and in LGBTQ communities. She is a trainer for Cognitive Behavioral Conjoint Therapy for PTSD and a consultant for Cognitive Processing Therapy."
             ]
         )
+    , Speaker
+        "Torsten Passie MD, PhD"
+        (getImageUrl "torsten-passie.jpg")
+        (paragraph
+            [ bold "Torsten Passie M.D., Ph.D."
+            , text ", is Professor of Psychiatry and Psychotherapy at Hannover Medical School (Germany) and currently Visiting Scientist at Goethe University in Frankfurt/Main (Germany). He studied philosophy, sociology (MA) at Leibniz-University, Hannover and medicine at Hannover Medical School. He worked at the Psychiatric University Clinic in Zürich (Switzerland) and with Professor Hanscarl Leuner (Göttingen), the leading European authority on hallucinogenic drugs. From 1998 to 2010 he was a scientist and psychiatrist at Hannover Medical school (Germany) where he researched the addictions and the psychophysiology of altered states of consciousness and their healing potential, including clinical research with hallucinogenic drugs (cannabis, ketamine, nitrous oxide, psilocybin). In 2012-2015 he was Visiting Professor at Harvard Medical School (Boston, USA)."
+            ]
+        )
     ]
