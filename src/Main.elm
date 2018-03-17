@@ -1,7 +1,6 @@
 module Main exposing (main)
 
 import Accessibility as Html exposing (Html)
-import Css
 import Html as CoreHtml
 import Html.Attributes as Attrs
 import Html.Events as Events exposing (defaultOptions)
