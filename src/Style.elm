@@ -81,6 +81,7 @@ type CssClasses
     | Modal
     | ModalClose
     | EmailAddress
+    | SocialMediaIcons
 
 
 css : Css.Stylesheet
@@ -590,5 +591,8 @@ css =
             ]
         , Css.class EmailAddress
             [ Css.textTransform Css.none
+            ]
+        , Css.class SocialMediaIcons
+            [ Css.margin2 (Css.rem 1) Css.auto
             ]
         ]

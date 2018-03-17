@@ -633,7 +633,20 @@ viewContact =
             , Html.p [] [ Html.text "Nätverket för psykedelisk vetenskap (The Swedish Network for Psychedelic Science) is a nonprofit organization based in Stockholm that works to promote a scientific exploration of psychedelic substances." ]
             ]
         , viewMailChimp
+        , Html.div [ class [ Style.SocialMediaIcons ] ]
+            [ viewIconLink "facebook" "https://facebook.com/events/1934770476537921/"
+            , viewIconLink "twitter" "https://twitter.com/cpp2018"
+            ]
         ]
+
+
+viewIconLink : String -> String -> Html msg
+viewIconLink icon href =
+    Html.a
+        [ Attrs.target "_blank"
+        , Attrs.href href
+        ]
+        [ Html.i [ Attrs.class <| "fa fa-2x fa-fw fa-" ++ icon ] [] ]
 
 
 viewSection : Section -> Html Msg
