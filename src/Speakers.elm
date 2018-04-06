@@ -138,6 +138,15 @@ speakers =
             ]
         )
     , Speaker
+        "David Nichols, PhD"
+        (getImageUrl "david-nichols.jpg")
+        (paragraph
+            [ text "Prior to his retirement, "
+            , bold "David Nichols"
+            , text " was the Robert C. and Charlotte P. Anderson Distinguished Chair in Pharmacology and also a Distinguished Professor of Medicinal Chemistry and Molecular Pharmacology at the Purdue College of Pharmacy. He is currently an Adjunct Professor in the Eshelman School of Pharmacy at the University of North Carolina Chapel Hill, NC, where he continues research. During his years of research, Nichols appeared as an author of more than 300 scientific publications. Believing that psychedelic drugs could have positive therapeutic results, Nichols initiated the founding of the Heffter Research Institute in 1993 to support high-quality basic and clinical psychedelic research. Nichols also is known for coining the term ‘entactogen’ to differentiate the effects of MDMA and related chemicals from the phenethylamine hallucinogens. In addition to developing novel psychoactive substances in his lab at Purdue, the Nichols’ lab also synthesized high-purity MDMA, DMT, psilocybin, and other substances for research programs at other institutions. It became apparent to him that even if researchers could obtain the necessary approvals for their studies, there was no source for the pure drugs they required for human studies. Therefore, he made the DMT for Rick Strassman’s groundbreaking DMT study, published in 1994. The MDMA from his laboratory was used for most of the preclinical and all of the clinical studies employing MDMA from about 1986 until 2016, including Phase 2 clinical studies for the use of MDMA for treating post-traumatic stress disorder (PTSD.) Psilocybin made in his laboratory was used for Roland Griffith’s study of the effects of psilocybin in normal subjects, published in 2006, as well as for the Phase 2 clinical study of psilocybin-assisted treatment of distress in patients with a life-threatening diagnosis, published in 2016."
+            ]
+        )
+    , Speaker
         "Elizabeth Nielson, PhD"
         (getImageUrl "elizabeth-nielson.jpg")
         (paragraph
