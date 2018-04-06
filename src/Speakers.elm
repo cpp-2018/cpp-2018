@@ -85,6 +85,14 @@ speakers =
             ]
         )
     , Speaker
+        "Mendel Kaelen, PhD"
+        (getImageUrl "mendel-kaelen.jpg")
+        (paragraph
+            [ bold "Mendel"
+            , text " is a neuroscientist and entrepreneur. He holds a Bsc and Msc in neuroscience from University of Groningen and a PhD in neuroscience from Imperial College London. His research focusses on the therapeutic function of set and setting in psychedelic therapy,  with a particular focus on music. He is founder and CEO of Wavepaths, a venture that unifies immersive arts, psychotherapies and intelligent technologies into a new category of therapeutic tools. His work has been featured in Rolling Stone, TEDx, Nature News, San Francisco Chronicles, Vice Motherboard, a.o. Mendel is a fellow of the European Institute for Technology and Innovation and currently lives in London."
+            ]
+        )
+    , Speaker
         "Thomas Kingsley Brown, PhD"
         (getImageUrl "thomas-kingsley-brown.jpg")
         (paragraph
