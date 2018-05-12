@@ -55,7 +55,13 @@ type CssClasses
     | SpeakerModalImage
     | Venue
     | VenueLink
+    | VenueContent
     | VenueImage
+    | VenueImages
+    | VenueSmallImage
+    | VenueSmallImages
+    | VenueText
+    | VenueFirstParagraph
     | VenueMoreInfoSoon
     | Tickets
     | TicketsLink
@@ -525,11 +531,52 @@ css =
             , Css.color colors.neutral.dark
             , Css.fontSize (Css.rem 2)
             ]
+        , Css.class VenueContent
+            [ Css.displayFlex
+            , size.navLimit [ Css.flexDirection Css.column ]
+            ]
+        , Css.class VenueText
+            [ Css.flexGrow (Css.num 1)
+            , Css.flexShrink Css.zero
+            , Css.flexBasis (Css.rem 0)
+            , Css.children
+                [ Css.Elements.p
+                    [ Css.firstChild
+                        [ Css.marginTop Css.zero
+                        ]
+                    , Css.lastChild
+                        [ Css.marginBottom Css.zero
+                        ]
+                    ]
+                ]
+            , size.navLimit [ Css.margin (Css.rem 1) ]
+            ]
+        , Css.class VenueImages
+            [ Css.flexGrow (Css.num 2)
+            , Css.flexShrink Css.zero
+            , Css.flexBasis (Css.rem 0)
+            , Css.displayFlex
+            , Css.flexDirection Css.column
+            ]
         , Css.class VenueImage
             [ Css.maxWidth (Css.pct 100)
-            , Css.width (Css.rem 32)
-            , Css.margin2 Css.zero Css.auto
+            , Css.margin (Css.rem 1)
             , Css.display Css.block
+            ]
+        , Css.class VenueSmallImage
+            [ Css.maxWidth (Css.pct 100)
+            , Css.flexGrow (Css.num 1)
+            , Css.flexShrink Css.zero
+            , Css.flexBasis (Css.rem 0)
+            , Css.display Css.block
+            , Css.margin4
+                (Css.rem 0)
+                (Css.rem 1)
+                (Css.rem 1)
+                (Css.rem 1)
+            ]
+        , Css.class VenueSmallImages
+            [ Css.displayFlex
             ]
         , Css.class MoreInfoSoon
             [ Css.textAlign Css.center

@@ -501,22 +501,38 @@ viewVenue =
         [ Html.h1
             [ class [ Style.VenueMoreInfoSoon ] ]
             [ Html.text "The Venue" ]
-        , Html.decorativeImg
-            [ Attrs.src "/build/assets/elite-hotel.jpg"
-            , class [ Style.VenueImage ]
-            ]
-        , Html.p []
-            [ Html.text "Colloquium on Psychedelic Psychiatry 2018 will take place at Elite Hotel Marina Tower in Stockholm, a high-end hotel conveniently accessible by short boat or bus ride from central Stockholm. Hotel rooms will be available at a discount price for conference participants. Breakfast and lunch will be included in the ticket price, making the hotel an all-round solution for both formal lectures and informal networking. And yes, the spa is open late."
-            ]
-        , Html.p []
-            [ Html.text "More information about the venue "
-            , Html.a
-                [ Attrs.href "https://www.elite.se/en/hotels/stockholm/hotel-marina-tower/"
-                , Attrs.target "_blank"
-                , class [ Style.VenueLink ]
+        , Html.div [ class [ Style.VenueContent ] ]
+            [ Html.div [ class [ Style.VenueText ] ]
+                [ Html.p []
+                    [ Html.text "Colloquium on Psychedelic Psychiatry 2018 will take place at Elite Hotel Marina Tower in Stockholm, a high-end hotel conveniently accessible by short boat or bus ride from central Stockholm. Hotel rooms will be available at a discount price for conference participants. Breakfast and lunch will be included in the ticket price, making the hotel an all-round solution for both formal lectures and informal networking. And yes, the spa is open late."
+                    ]
+                , Html.p []
+                    [ Html.text "More information about the venue "
+                    , Html.a
+                        [ Attrs.href "https://www.elite.se/en/hotels/stockholm/hotel-marina-tower/"
+                        , Attrs.target "_blank"
+                        , class [ Style.VenueLink ]
+                        ]
+                        [ Html.text "here" ]
+                    , Html.text "."
+                    ]
                 ]
-                [ Html.text "here" ]
-            , Html.text "."
+            , Html.div [ class [ Style.VenueImages ] ]
+                [ Html.div [ class [ Style.VenueSmallImages ] ]
+                    [ Html.decorativeImg
+                        [ Attrs.src "/build/assets/elite-hotel-2.jpg"
+                        , class [ Style.VenueSmallImage ]
+                        ]
+                    , Html.decorativeImg
+                        [ Attrs.src "/build/assets/elite-hotel-3.jpg"
+                        , class [ Style.VenueSmallImage ]
+                        ]
+                    ]
+                , Html.decorativeImg
+                    [ Attrs.src "/build/assets/elite-hotel.jpg"
+                    , class [ Style.VenueImage ]
+                    ]
+                ]
             ]
         ]
 
