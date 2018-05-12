@@ -264,6 +264,7 @@ css =
             , Css.textTransform Css.uppercase
             , Css.border (Css.rem 0)
             , Css.cursor Css.pointer
+            , Css.textAlign Css.center
             ]
         , Css.class Home
             [ Css.displayFlex
