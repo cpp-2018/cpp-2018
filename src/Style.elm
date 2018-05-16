@@ -45,6 +45,8 @@ type CssClasses
     | AboutTextTitle
     | Title
     | TitleText
+    | LightTitle
+    | DarkTitle
     | SpeakersSpeakers
     | Speaker
     | SpeakerName
@@ -62,7 +64,6 @@ type CssClasses
     | VenueSmallImages
     | VenueText
     | VenueFirstParagraph
-    | VenueMoreInfoSoon
     | Tickets
     | TicketsLink
     | TicketsInfo
@@ -351,14 +352,16 @@ css =
         , Css.class Title
             [ Css.textAlign Css.center
             , Css.marginTop (Css.rem 1)
+            , Css.marginBottom (Css.rem 4)
             ]
         , Css.class TitleText
-            [ Css.color colors.accent
-            , Css.fontSize (Css.rem 3.5)
+            [ Css.fontSize (Css.rem 3.5)
             , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
             , Css.fontWeight Css.normal
             , Css.margin Css.zero
             ]
+        , Css.class LightTitle [ Css.color colors.accent ]
+        , Css.class DarkTitle [ Css.color colors.primary ]
         , Css.class SpeakersSpeakers
             [ Css.displayFlex
             , Css.flexWrap Css.wrap
@@ -367,7 +370,7 @@ css =
             [ Css.textAlign Css.center
             , Css.flexBasis (Css.pct 33)
             , Css.flexGrow (Css.num 1)
-            , Css.marginTop (Css.rem 4)
+            , Css.marginBottom (Css.rem 4)
             , Css.padding2 Css.zero (Css.rem 1)
             , Css.minWidth (Css.rem 16)
             , Css.cursor Css.pointer
@@ -408,6 +411,7 @@ css =
             , Css.color colors.white
             , Css.textAlign Css.left
             , Css.fontSize (Css.rem 1.2)
+            , Css.marginTop Css.zero
             ]
         , Css.class TicketsInfo
             [ Css.whiteSpace Css.preLine
@@ -525,12 +529,6 @@ css =
             [ Css.textTransform Css.none
             , Css.color colors.primary
             ]
-        , Css.class VenueMoreInfoSoon
-            [ Css.textAlign Css.center
-            , Css.textTransform Css.uppercase
-            , Css.color colors.neutral.dark
-            , Css.fontSize (Css.rem 2)
-            ]
         , Css.class VenueContent
             [ Css.displayFlex
             , size.navLimit [ Css.flexDirection Css.column ]
@@ -586,7 +584,7 @@ css =
             , Css.textTransform Css.uppercase
             , Css.color colors.white
             , Css.fontSize (Css.rem 2)
-            , Css.marginTop (Css.rem 4)
+            , Css.marginTop (Css.rem 2)
             ]
         , Css.class MailChimp
             [ Css.property "clear" "left"

@@ -446,11 +446,25 @@ viewAbout =
         ]
 
 
-viewTitle : String -> Html msg
-viewTitle title =
+type TitleColor
+    = Light
+    | Dark
+
+
+viewTitle : TitleColor -> String -> Html msg
+viewTitle color title =
+    let
+        colorStyle =
+            case color of
+                Light ->
+                    Style.LightTitle
+
+                Dark ->
+                    Style.DarkTitle
+    in
     Html.div [ class [ Style.Title ] ]
         [ Html.h1
-            [ class [ Style.TitleText ] ]
+            [ class [ Style.TitleText, colorStyle ] ]
             [ Html.text title ]
         ]
 
@@ -487,7 +501,7 @@ viewSpeakersSpeakers =
 viewSpeakers : Html Msg
 viewSpeakers =
     Html.div []
-        [ viewTitle "Speakers"
+        [ viewTitle Light "Speakers"
         , viewSpeakersSpeakers
         , Html.h1
             [ class [ Style.MoreInfoSoon ] ]
@@ -498,9 +512,7 @@ viewSpeakers =
 viewVenue : Html msg
 viewVenue =
     Html.div [ class [ Style.Venue ] ]
-        [ Html.h1
-            [ class [ Style.VenueMoreInfoSoon ] ]
-            [ Html.text "The Venue" ]
+        [ viewTitle Dark "The Venue"
         , Html.div [ class [ Style.VenueContent ] ]
             [ Html.div [ class [ Style.VenueText ] ]
                 [ Html.p []
@@ -540,9 +552,7 @@ viewVenue =
 viewCallForAbstracts : Html msg
 viewCallForAbstracts =
     Html.div [ class [ Style.Venue ] ]
-        [ Html.h1
-            [ class [ Style.VenueMoreInfoSoon ] ]
-            [ Html.text "Call for Abstracts" ]
+        [ viewTitle Dark "Call for Abstracts"
         , Html.p []
             [ Html.text "We are now accepting abstracts and posters to be presented during the conference! The deadline to submit an abstract for the conference is April 30th, 2018. To find out more and to submit an abstract, click "
             , Html.a
@@ -565,12 +575,11 @@ viewTickets : Html Msg
 viewTickets =
     Html.div
         [ class [ Style.Tickets ] ]
-        [ viewTitle "Tickets"
+        [ viewTitle Light "Tickets"
         , Html.div []
             [ Html.p
                 [ class [ Style.TicketsInfo ] ]
-                [ Html.text """
-                TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales.
+                [ Html.text """TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales.
 
                 General Release ticket: 3600 SEK
                 General Release Student: 2400 SEK
