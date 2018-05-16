@@ -554,7 +554,7 @@ viewCallForAbstracts =
     Html.div [ class [ Style.Venue ] ]
         [ viewTitle Dark "Call for Abstracts"
         , Html.p []
-            [ Html.text "We are now accepting abstracts and posters to be presented during the conference! The deadline to submit an abstract for the conference is April 30th, 2018. To find out more and to submit an abstract, click "
+            [ Html.text "We are no longer accepting Abstracts for lecture format. Abstracts may however be submitted for Poster presentation format (please see complete details in the section below) until August 30th. Notice of accepted posters is given in within 14 days after submission. To find out more and to submit an abstract for poster format, click "
             , Html.a
                 [ Attrs.href formUrl
                 , Attrs.target "_blank"
