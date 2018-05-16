@@ -58,6 +58,14 @@ speakers =
             ]
         )
     , Speaker
+        "David Erritzøe, MRPsych PhD"
+        (getImageUrl "david-erritzoe.jpg")
+        (paragraph
+            [ bold "David Erritzøe"
+            , text " currently works as a post-doctoral researcher and Academic Clinical Fellow at the  Centre for Neuropsychopharmacology, Division of Brain Sciences, Imperial College London. For the last 9 years he has been working with Professor David Nutt and Robin Carhart-Harris, conducting the first imaging studies with MDMA, LSD and psilocybin as well as doing clinical research with psilocybin in depressed patients. He first graduated from Copenhagen Medical School in 2001, moving onwards to work under Professor Marc Laruelle at Columbia University in New York City after his medical training. Specializing in molecular brain imaging in schizophrenia and addiction, he then completed his PhD on PET studies of serotonergic neurotransmission, completed at the Neurobiology Research Unit and Center for Integrated Molecular Brain Imaging (CIMBI), University Hospital Rigshospitalet, Copenhagen. David is involved in several lines of psychopharmacological and brain imaging research at Imperial; investigating dopaminergic neurotransmission with measurements of the dopamine D3 receptor in alcohol addiction, studies of opioid neurotransmission in pathological gambling, and functional imaging studies looking at the role of dopamine D3 and mu-opiate receptors in cocaine, alcohol, and heroin addiction. Since he was nominated an Academic Clinical Fellowship in Psychiatry under Imperial College in 2012, he has been working part time in clinical psychiatry in West London, as well as doing research."
+            ]
+        )
+    , Speaker
         "Débora González, PhD"
         (getImageUrl "debora-gonzalez.jpg")
         (paragraph
