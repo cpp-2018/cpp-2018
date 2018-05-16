@@ -567,8 +567,11 @@ css =
             [ Css.maxWidth (Css.pct 100)
             , Css.flexGrow (Css.num 1)
             , Css.flexShrink Css.zero
-            , Css.flexBasis (Css.rem 0)
+            , Css.flexBasis Css.auto
             , Css.display Css.block
+            , Css.width Css.zero
+            , Css.height (Css.pct 100)
+            , Css.property "object-fit" "cover"
             , Css.margin4
                 (Css.rem 0)
                 (Css.rem 1)
