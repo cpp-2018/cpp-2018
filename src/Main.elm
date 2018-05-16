@@ -78,6 +78,9 @@ getSectionFromHash section =
         "#contact" ->
             Ok Contact
 
+        "#accommodation" ->
+            Ok Accommodation
+
         _ ->
             Err "Invalid hash"
 
@@ -149,6 +152,7 @@ type Section
     = About
     | Speakers
     | Venue
+    | Accommodation
     | Tickets
     | Contact
     | CallForAbstracts
@@ -159,6 +163,7 @@ allSections =
     [ About
     , Speakers
     , Venue
+    , Accommodation
     , Tickets
     , CallForAbstracts
     , Contact
@@ -170,6 +175,7 @@ navbarSections =
     [ About
     , Speakers
     , Venue
+    , Accommodation
     , Tickets
     , CallForAbstracts
     , Contact
@@ -571,6 +577,19 @@ viewUnderline =
     Html.div [ class [ Style.Underline ] ] []
 
 
+viewAccomodation : Html Msg
+viewAccomodation =
+    Html.div
+        [ class [ Style.Tickets ] ]
+        [ viewTitle Light "Accommodation"
+        , Html.div []
+            [ Html.p
+                []
+                [ Html.text "Information regarding accommodation coming soon" ]
+            ]
+        ]
+
+
 viewTickets : Html Msg
 viewTickets =
     Html.div
@@ -694,6 +713,9 @@ viewSection section =
                 Venue ->
                     ( [], [], viewVenue )
 
+                Accommodation ->
+                    ( [ Style.DarkBackground ], [], viewAccomodation )
+
                 Tickets ->
                     ( [ Style.DarkBackground ], [], viewTickets )
 
@@ -730,6 +752,9 @@ getSectionId section =
         Venue ->
             "venue"
 
+        Accommodation ->
+            "accommodation"
+
         Tickets ->
             "tickets"
 
@@ -751,6 +776,9 @@ getSectionName section =
 
         Venue ->
             "Venue"
+
+        Accommodation ->
+            "Accommodation"
 
         Tickets ->
             "Tickets"
