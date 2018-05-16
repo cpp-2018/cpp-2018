@@ -555,6 +555,7 @@ css =
             , Css.flexBasis (Css.rem 0)
             , Css.displayFlex
             , Css.flexDirection Css.column
+            , size.navLimit [ Css.flexBasis Css.auto ]
             ]
         , Css.class VenueImage
             [ Css.maxWidth (Css.pct 100)
