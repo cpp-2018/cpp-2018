@@ -70,6 +70,9 @@ getSectionFromHash section =
         "#venue" ->
             Ok Venue
 
+        "#side-events" ->
+            Ok SideEvents
+
         "#tickets" ->
             Ok Tickets
 
@@ -154,6 +157,7 @@ type Section
     | Speakers
     | Venue
     | Accommodation
+    | SideEvents
     | Tickets
     | Contact
     | CallForAbstracts
@@ -165,6 +169,7 @@ allSections =
     , Speakers
     , Venue
     , Accommodation
+    , SideEvents
     , Tickets
     , CallForAbstracts
     , Contact
@@ -177,6 +182,7 @@ navbarSections =
     , Speakers
     , Venue
     , Accommodation
+    , SideEvents
     , Tickets
     , CallForAbstracts
     , Contact
@@ -591,6 +597,18 @@ viewAccomodation =
         ]
 
 
+viewSideEvents : Html Msg
+viewSideEvents =
+    Html.div
+        [ class [ Style.Tickets ] ]
+        [ viewTitle Dark "Side Events"
+        , Html.div [ class [ Style.DarkText ] ]
+            [ paragraph
+                [ Html.text "Aside from the conference, we will host a series of events related to psychedelic psychiatry around Stockholm. These events will be open to the general public, to make the field accessible to a wider audience. More information regarding side events coming soon!" ]
+            ]
+        ]
+
+
 viewTickets : Html Msg
 viewTickets =
     Html.div
@@ -716,6 +734,9 @@ viewSection section =
                 Accommodation ->
                     ( [ Style.DarkBackground ], [], viewAccomodation )
 
+                SideEvents ->
+                    ( [], [], viewSideEvents )
+
                 Tickets ->
                     ( [ Style.DarkBackground ], [], viewTickets )
 
@@ -755,6 +776,9 @@ getSectionId section =
         Accommodation ->
             "accommodation"
 
+        SideEvents ->
+            "side-events"
+
         Tickets ->
             "tickets"
 
@@ -779,6 +803,9 @@ getSectionName section =
 
         Accommodation ->
             "Accommodation"
+
+        SideEvents ->
+            "Side Events"
 
         Tickets ->
             "Tickets"
