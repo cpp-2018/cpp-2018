@@ -42,6 +42,22 @@ getImageUrl fileName =
 speakers : List Speaker
 speakers =
     [ Speaker
+        "Michael Ashton, PhD"
+        (getImageUrl "michael-ashton.jpg")
+        (Html.div []
+            [ paragraph
+                [ bold "Michael Ashton"
+                , text " is an expert in pharmacokinetics (PK), drug metabolism (DM), pharmacodynamics (PD) and quantitative drug analysis in blood plasma. His major research topic has been new drug treatments of “under-researched” infectious diseases. In the past 30 years his special interest has focused the artemisinin antimalarials, for which his research has yielded important insights into their unusual pharmacokinetics and metabolic transformation in the body. These drugs have today become global first-line treatment of falciparum malaria. The 1972 discovery and isolation of artemisinin from the leaves of an indigenous Chinese shrub was awarded the 2015 Nobel Prize. Other therapy areas are African sleeping sickness and TB/HIV co-infection."
+                ]
+            , paragraph
+                [ text "The explorative use of psychedelics as psychotherapy tools requires a better understanding on how their effects are related to drug exposure. He expects his main contribution to be within PK/PD mathematical modelling and simulation to better understand static and time-related relationships between drug concentrations (PK) and elicited effects (PD)."
+                ]
+            , paragraph
+                [ text "He is since 2001 professor of biopharmacy at the University of Gothenburg, heading its Unit for Pharmacokinetics and Drug Metabolism (PKDM). He has working experience from both drug regulation (Medical Products Agency, Uppsala) and drug development (AstraZeneca, Gothenburg)."
+                ]
+            ]
+        )
+    , Speaker
         "Alex Belser, PhD"
         (getImageUrl "alex-belser.jpg")
         (paragraph
