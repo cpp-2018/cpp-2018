@@ -11,6 +11,7 @@ import Speakers exposing (Speaker, speakers)
 import Style exposing (class)
 import Svg exposing (Svg, svg)
 import Svg.Attributes
+import Ui exposing (column, paragraph)
 
 
 ---- MODEL ----
@@ -596,20 +597,19 @@ viewTickets =
         [ class [ Style.Tickets ] ]
         [ viewTitle Light "Tickets"
         , Html.div []
-            [ Html.p
+            [ Html.div
                 [ class [ Style.TicketsInfo ] ]
-                [ Html.text """TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales.
-
-                General Release ticket: 2900 SEK / €290
-                General Release Student: 2300 SEK / €230
-                Early Bird: 2600 SEK
-                Early Bird student: 1600 SEK
-
-                *Students will be required to provide proof of registration or enrolment letter of their current university.
-
-                All members of ‘Nätverket för Psykedelisk Vetenskap’ are eligible for a 200 SEK discount on all tickets. To receive this discount please follow the instructions given in our latest newsletter.
-
-                NOTE: Tickets can not be refunded. Re-sale can be done through Tickster Resale if the ticket is purchased with a Swedish bank account.""" ]
+                [ column
+                    [ "TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales."
+                    , "Regular tickets are €290 until 30/6, €310 until 31/7, €340 until 30/8, and €360 until 31/9. "
+                    , "Student tickets are €230 until 31/7, and €240 until 31/9."
+                    , "*Students will be required to provide proof of registration or enrolment letter of their current university."
+                    ]
+                , column
+                    [ "All members of ‘Nätverket för Psykedelisk Vetenskap’ are eligible for a 200 SEK discount on all tickets. To receive this discount please follow the instructions provided in our internal communication channels."
+                    , "NOTE: Tickets can not be refunded. Re-sale can be done through Tickster Resale if the ticket is purchased with a Swedish bank account."
+                    ]
+                ]
             , Html.div []
                 [ Html.a
                     [ class [ Style.TicketsLink ]

@@ -89,6 +89,7 @@ type CssClasses
     | ModalClose
     | EmailAddress
     | SocialMediaIcons
+    | Column
 
 
 css : Css.Stylesheet
@@ -414,7 +415,8 @@ css =
             , Css.marginTop Css.zero
             ]
         , Css.class TicketsInfo
-            [ Css.whiteSpace Css.preLine
+            [ Css.displayFlex
+            , size.navLimit [ Css.flexDirection Css.column ]
             ]
         , Css.class TicketsLink
             [ Css.color colors.accent
@@ -644,5 +646,10 @@ css =
             ]
         , Css.class SocialMediaIcons
             [ Css.margin2 (Css.rem 1) Css.auto
+            ]
+        , Css.class Column
+            [ Css.flexBasis (Css.rem 0)
+            , Css.flexGrow (Css.num 1)
+            , Css.margin2 Css.zero (Css.rem 1)
             ]
         ]

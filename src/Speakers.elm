@@ -2,6 +2,7 @@ module Speakers exposing (Speaker, speakers)
 
 import Accessibility as Html exposing (Html, text)
 import Style exposing (class)
+import Ui exposing (paragraph)
 
 
 ---- TYPES ----
@@ -23,11 +24,6 @@ bold text =
     Html.span [ class [ Style.SpeakerModalName ] ]
         [ Html.text text
         ]
-
-
-paragraph : List (Html Never) -> Html Never
-paragraph content =
-    Html.p [] content
 
 
 getImageUrl : String -> String
