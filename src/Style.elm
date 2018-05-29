@@ -90,6 +90,7 @@ type CssClasses
     | EmailAddress
     | SocialMediaIcons
     | Column
+    | DarkText
 
 
 css : Css.Stylesheet
@@ -652,4 +653,6 @@ css =
             , Css.flexGrow (Css.num 1)
             , Css.margin2 Css.zero (Css.rem 1)
             ]
+        , Css.class DarkText
+            [ Css.color colors.neutral.dark ]
         ]

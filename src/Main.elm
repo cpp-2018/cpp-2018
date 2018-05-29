@@ -521,7 +521,7 @@ viewVenue =
     Html.div [ class [ Style.Venue ] ]
         [ viewTitle Dark "The Venue"
         , Html.div [ class [ Style.VenueContent ] ]
-            [ Html.div [ class [ Style.VenueText ] ]
+            [ Html.div [ class [ Style.VenueText, Style.DarkText ] ]
                 [ Html.p []
                     [ Html.text "Colloquium on Psychedelic Psychiatry 2018 will take place at Elite Hotel Marina Tower in Stockholm, a high-end hotel conveniently accessible by short boat or bus ride from central Stockholm. Hotel rooms will be available at a discount price for conference participants. Breakfast and lunch will be included in the ticket price, making the hotel an all-round solution for both formal lectures and informal networking. And yes, the spa is open late."
                     ]
