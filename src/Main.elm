@@ -600,8 +600,8 @@ viewTickets =
                 [ class [ Style.TicketsInfo ] ]
                 [ Html.text """TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales.
 
-                General Release ticket: 3600 SEK
-                General Release Student: 2400 SEK
+                General Release ticket: 2900 SEK / €290
+                General Release Student: 2300 SEK / €230
                 Early Bird: 2600 SEK
                 Early Bird student: 1600 SEK
 
