@@ -138,7 +138,7 @@ css =
                     [ "(max-width: 350px)" ]
             , navLimit =
                 Css.Media.withMediaQuery
-                    [ "(max-width: 650px)" ]
+                    [ "(max-width: 1250px)" ]
             }
 
         maxSectionContentWidth =
@@ -417,7 +417,10 @@ css =
             ]
         , Css.class TicketsInfo
             [ Css.displayFlex
-            , size.navLimit [ Css.flexDirection Css.column ]
+            , size.medium [ Css.flexDirection Css.column ]
+            , size.small [ Css.flexDirection Css.column ]
+            , size.smaller [ Css.flexDirection Css.column ]
+            , size.smallest [ Css.flexDirection Css.column ]
             ]
         , Css.class TicketsLink
             [ Css.color colors.accent
@@ -534,7 +537,10 @@ css =
             ]
         , Css.class VenueContent
             [ Css.displayFlex
-            , size.navLimit [ Css.flexDirection Css.column ]
+            , size.medium [ Css.flexDirection Css.column ]
+            , size.small [ Css.flexDirection Css.column ]
+            , size.smaller [ Css.flexDirection Css.column ]
+            , size.smallest [ Css.flexDirection Css.column ]
             ]
         , Css.class VenueText
             [ Css.flexGrow (Css.num 1)
@@ -550,7 +556,10 @@ css =
                         ]
                     ]
                 ]
-            , size.navLimit [ Css.margin (Css.rem 1) ]
+            , size.medium [ Css.margin (Css.rem 1) ]
+            , size.small [ Css.margin (Css.rem 1) ]
+            , size.smaller [ Css.margin (Css.rem 1) ]
+            , size.smallest [ Css.margin (Css.rem 1) ]
             ]
         , Css.class VenueImages
             [ Css.flexGrow (Css.num 2)
@@ -558,7 +567,10 @@ css =
             , Css.flexBasis (Css.rem 0)
             , Css.displayFlex
             , Css.flexDirection Css.column
-            , size.navLimit [ Css.flexBasis Css.auto ]
+            , size.medium [ Css.flexBasis Css.auto ]
+            , size.small [ Css.flexBasis Css.auto ]
+            , size.smaller [ Css.flexBasis Css.auto ]
+            , size.smallest [ Css.flexBasis Css.auto ]
             ]
         , Css.class VenueImage
             [ Css.maxWidth (Css.pct 100)
