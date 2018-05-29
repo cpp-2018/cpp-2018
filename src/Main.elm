@@ -619,8 +619,7 @@ viewTickets =
                 [ class [ Style.TicketsInfo ] ]
                 [ column
                     [ "TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales."
-                    , "Regular tickets are €290 until 30/6, €310 until 31/7, €340 until 30/8, and €360 until 31/9. "
-                    , "Student tickets are €230 until 31/7, and €240 until 31/9."
+                    , "Early Bird Tickets have sold out. Regular tickets will be on sale by June 1st. "
                     , "*Students will be required to provide proof of registration or enrolment letter of their current university."
                     ]
                 , column
