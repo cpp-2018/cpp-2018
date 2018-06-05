@@ -98,6 +98,8 @@ type CssClasses
     | AccommodationImage
     | AccommodationTitle
     | AccommodationText
+    | Partner
+    | PartnerImage
 
 
 css : Css.Stylesheet
@@ -700,4 +702,9 @@ css =
         , Css.class AccommodationText
             [ Css.margin Css.zero
             ]
+        , Css.class Partner
+            [ Css.margin (Css.rem 1)]
+
+        , Css.class PartnerImage
+            [ Css.height (Css.rem 12) ]
         ]

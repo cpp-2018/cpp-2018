@@ -79,6 +79,9 @@ getSectionFromHash section =
         "#call-for-abstracts" ->
             Ok CallForAbstracts
 
+        "#partners" ->
+            Ok Partners
+
         "#contact" ->
             Ok Contact
 
@@ -161,6 +164,7 @@ type Section
     | Tickets
     | Contact
     | CallForAbstracts
+    | Partners
 
 
 allSections : List Section
@@ -172,6 +176,7 @@ allSections =
     , SideEvents
     , Tickets
     , CallForAbstracts
+    , Partners
     , Contact
     ]
 
@@ -185,6 +190,7 @@ navbarSections =
     , SideEvents
     , Tickets
     , CallForAbstracts
+    , Partners
     , Contact
     ]
 
@@ -584,6 +590,43 @@ viewUnderline =
     Html.div [ class [ Style.Underline ] ] []
 
 
+viewPartners : Html Msg
+viewPartners =
+    Html.div
+        [ class [ Style.Tickets ] ]
+        [ viewTitle Dark "Official Partners"
+        , Html.div [ class [ Style.Accommodation ] ]
+            [ viewPartner
+                "Beckley Foundation"
+                "beckley-foundation.png"
+                "http://beckleyfoundation.org/"
+            , viewPartner
+                "Psyty"
+                "psyty.png"
+                "http://psyty.fi/"
+            , viewPartner
+                "OPEN Foundation"
+                "open-foundation.png"
+                "http://openfoundation.nl/"
+            ]
+        ]
+
+
+viewPartner : String -> String -> String -> Html msg
+viewPartner title fileName link =
+    Html.a
+        [ class [ Style.Partner ]
+        , Attrs.href link
+        , Attrs.target "_blank"
+        ]
+        [ Html.decorativeImg
+            [ class [ Style.PartnerImage ]
+            , Attrs.alt title
+            , Attrs.src <| "/build/assets/" ++ fileName
+            ]
+        ]
+
+
 viewAccommodation : Html Msg
 viewAccommodation =
     Html.div
@@ -629,9 +672,7 @@ viewSubtleLink title link =
 viewAccommodationItem : String -> String -> List (Html msg) -> Html msg
 viewAccommodationItem title fileName content =
     Html.div
-        [ class [ Style.AccommodationItem ]
-        , Attrs.src <| "/build/assets/" ++ fileName
-        ]
+        [ class [ Style.AccommodationItem ] ]
         [ Html.decorativeImg
             [ class [ Style.AccommodationImage ]
             , Attrs.src <| "/build/assets/" ++ fileName
@@ -805,6 +846,9 @@ viewSection section =
                 CallForAbstracts ->
                     ( [], [], viewCallForAbstracts )
 
+                Partners ->
+                    ( [], [], viewPartners )
+
                 Contact ->
                     ( [ Style.ContactSection ], [ Style.ContactContent ], viewContact )
     in
@@ -847,6 +891,9 @@ getSectionId section =
         CallForAbstracts ->
             "call-for-abstracts"
 
+        Partners ->
+            "partners"
+
         Contact ->
             "contact"
 
@@ -874,6 +921,9 @@ getSectionName section =
 
         CallForAbstracts ->
             "Call for Abstracts"
+
+        Partners ->
+            "Partners"
 
         Contact ->
             "Contact"
