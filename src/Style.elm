@@ -93,6 +93,11 @@ type CssClasses
     | DarkText
     | Price
     | SubtleLink
+    | Accommodation
+    | AccommodationItem
+    | AccommodationImage
+    | AccommodationTitle
+    | AccommodationText
 
 
 css : Css.Stylesheet
@@ -673,4 +678,26 @@ css =
             [ Css.marginLeft (Css.rem 1) ]
         , Css.class SubtleLink
             [ Css.textTransform Css.unset ]
+        , Css.class Accommodation
+            [ Css.displayFlex
+            , Css.flexWrap Css.wrap
+            , Css.justifyContent Css.center
+            ]
+        , Css.class AccommodationItem
+            [ Css.width (Css.rem 18)
+            , Css.margin (Css.rem 1)
+            ]
+        , Css.class AccommodationImage
+            [ Css.height (Css.rem 12)
+            , Css.width (Css.pct 100)
+            , Css.property "object-fit" "cover"
+            ]
+        , Css.class AccommodationTitle
+            [ Css.textAlign Css.center
+            , Css.margin2 (Css.em 0.5) Css.zero
+            , Css.fontSize (Css.rem 1.3)
+            ]
+        , Css.class AccommodationText
+            [ Css.margin Css.zero
+            ]
         ]

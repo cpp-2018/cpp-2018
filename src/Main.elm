@@ -584,16 +584,64 @@ viewUnderline =
     Html.div [ class [ Style.Underline ] ] []
 
 
-viewAccomodation : Html Msg
-viewAccomodation =
+viewAccommodation : Html Msg
+viewAccommodation =
     Html.div
         [ class [ Style.Tickets ] ]
         [ viewTitle Light "Accommodation"
-        , Html.div []
-            [ Html.p
-                []
-                [ Html.text "Information regarding accommodation coming soon" ]
+        , Html.div [ class [ Style.Accommodation ] ]
+            [ viewAccommodationItem
+                "Elite Hotel Marina Tower"
+                "elite-hotel-4.jpg"
+                [ Html.text "Stay at the conference venue at a discount price! This 4-star hotel offers the most comfortable conference experience possible, including a breakfast buffet and state-of-the-art spa facilities. Central Stockholm is a short boat- or bus ride away. When you buy the ticket for the conference, you receive a link to make the booking. Discount rates from €125 / 1290 SEK per night. Find out more about the hotel "
+                , viewSubtleLink "here" "https://www.elite.se/en/hotels/stockholm/hotel-marina-tower/"
+                , Html.text "."
+                ]
+            , viewAccommodationItem
+                "Castanea Old Town Hostel"
+                "castanea-old-town-hostel.jpg"
+                [ Html.text "For those of our participants travelling on a budget, Castanea Old Town Hostel is an excellent choice. Located in the heart of the city, you will still be less than 20 minutes from the conference venue by public transport. When you buy the ticket for the conference, you receive a code to make the booking. Discount rates from €23 / 240 SEK per night. Find out more about the hostel "
+                , viewSubtleLink "here" "https://castaneahostel.com/en/"
+                , Html.text "."
+                ]
+            , viewAccommodationItem
+                "Couchsurfing"
+                "couchsurfing.jpg"
+                [ Html.text "Stay with a local! We’ll hook you up with a Swede from the psychedelic science community. It’s free, and you get to know someone with a shared interest. To find a host, simply fill out the "
+                , viewSubtleLink "couchsurfing form for guests" "https://drive.google.com/open?id=12_jHXiENu2bSqJ8owIo_qighQq6AH1_WP5BrFA4d42g"
+                , Html.text " and wait for us to get in touch. But - no guarantees. Couchsurfing opportunities are of course dependendent on locals signing up as hosts. To sign up as a host, fill out "
+                , viewSubtleLink "this form" "https://drive.google.com/open?id=1DQCvuuqt7Gb6tSQcMU4cEewLBqqk1nsVQAFuahM_gLQ"
+                , Html.text "."
+                ]
             ]
+        ]
+
+
+viewSubtleLink : String -> String -> Html msg
+viewSubtleLink title link =
+    Html.a
+        [ class [ Style.SubtleLink ]
+        , Attrs.href link
+        ]
+        [ Html.text title ]
+
+
+viewAccommodationItem : String -> String -> List (Html msg) -> Html msg
+viewAccommodationItem title fileName content =
+    Html.div
+        [ class [ Style.AccommodationItem ]
+        , Attrs.src <| "/build/assets/" ++ fileName
+        ]
+        [ Html.decorativeImg
+            [ class [ Style.AccommodationImage ]
+            , Attrs.src <| "/build/assets/" ++ fileName
+            ]
+        , Html.h1
+            [ class [ Style.AccommodationTitle ] ]
+            [ Html.text title ]
+        , Html.p
+            [ class [ Style.AccommodationText ] ]
+            content
         ]
 
 
@@ -746,7 +794,7 @@ viewSection section =
                     ( [], [], viewVenue )
 
                 Accommodation ->
-                    ( [ Style.DarkBackground ], [], viewAccomodation )
+                    ( [ Style.DarkBackground ], [], viewAccommodation )
 
                 SideEvents ->
                     ( [], [], viewSideEvents )
