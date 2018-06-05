@@ -618,13 +618,28 @@ viewTickets =
             [ Html.div
                 [ class [ Style.TicketsInfo ] ]
                 [ column
-                    [ "TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales."
-                    , "Early Bird Tickets have sold out. Regular tickets will be on sale by June 1st. "
-                    , "*Students will be required to provide proof of registration or enrolment letter of their current university."
+                    [ paragraph
+                        [ Html.text
+                            "Early Bird tickets have sold out. However, there are a limited amount of discounted tickets! These tickets are available until July 31st or as long as they last at 3400 SEK (€330)."
+                        ]
+                    , paragraph
+                        [ Html.div [] [ Html.text "General Release:" ]
+                        , Html.div [ class [ Style.Price ] ] [ Html.text "- 3600 SEK / €350" ]
+                        , Html.div [ class [ Style.Price ] ] [ Html.text "- 2400 SEK / €235 (student*)" ]
+                        ]
+                    , paragraph [ Html.text "TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales." ]
                     ]
                 , column
-                    [ "All members of ‘Nätverket för Psykedelisk Vetenskap’ are eligible for a 200 SEK discount on all tickets. To receive this discount please follow the instructions provided in our internal communication channels."
-                    , "NOTE: Tickets can not be refunded. Re-sale can be done through Tickster Resale if the ticket is purchased with a Swedish bank account."
+                    [ paragraph
+                        [ Html.text "All members of ‘Nätverket för Psykedelisk Vetenskap’ are eligible for a 200 SEK discount on all tickets. To receive this discount please "
+                        , Html.a
+                            [ class [ Style.SubtleLink ]
+                            , Attrs.href "http://www.psykedeliskvetenskap.org/medlem"
+                            ]
+                            [ Html.text "sign up here" ]
+                        , Html.text " and you will receive the discount code."
+                        ]
+                    , paragraph [ Html.text "*Students will be required to provide proof of registration or enrolment letter of their current university." ]
                     ]
                 ]
             , Html.div []

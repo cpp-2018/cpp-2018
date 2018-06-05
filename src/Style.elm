@@ -91,6 +91,8 @@ type CssClasses
     | SocialMediaIcons
     | Column
     | DarkText
+    | Price
+    | SubtleLink
 
 
 css : Css.Stylesheet
@@ -667,4 +669,8 @@ css =
             ]
         , Css.class DarkText
             [ Css.color colors.neutral.dark ]
+        , Css.class Price
+            [ Css.marginLeft (Css.rem 1) ]
+        , Css.class SubtleLink
+            [ Css.textTransform Css.unset ]
         ]

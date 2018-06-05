@@ -9,7 +9,6 @@ paragraph content =
     Html.p [] content
 
 
-column : List String -> Html msg
-column paragraphs =
-    Html.div [ class [ Style.Column ] ] <|
-        List.map (paragraph << List.singleton << Html.text) paragraphs
+column : List (Html msg) -> Html msg
+column content =
+    Html.div [ class [ Style.Column ] ] content
