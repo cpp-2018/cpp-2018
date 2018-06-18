@@ -25,7 +25,6 @@ type Visibility
 type alias Model =
     { active : Section
     , menu : Visibility
-    , newsletterModal : Visibility
     , speakerInfoModal : Maybe Speaker
     }
 
@@ -34,7 +33,6 @@ init : ( Model, Cmd Msg )
 init =
     ( { active = About
       , menu = Invisible
-      , newsletterModal = Invisible
       , speakerInfoModal = Nothing
       }
     , allSections
@@ -52,7 +50,6 @@ type Msg
     = HashChanged String
     | ToggleMenu
     | CloseMenu
-    | ToggleModal
     | CloseModal
     | ModalClicked
     | SpeakerClicked Speaker
@@ -111,17 +108,9 @@ update msg model =
         CloseMenu ->
             ( { model | menu = Invisible }, Cmd.none )
 
-        ToggleModal ->
-            ( { model
-                | newsletterModal = toggleVisibility model.newsletterModal
-              }
-            , Cmd.none
-            )
-
         CloseModal ->
             ( { model
-                | newsletterModal = Invisible
-                , speakerInfoModal = Nothing
+                | speakerInfoModal = Nothing
               }
             , Cmd.none
             )
@@ -343,16 +332,6 @@ viewModal content =
         ]
 
 
-viewNewsletterModal : Visibility -> Html Msg
-viewNewsletterModal visibility =
-    case visibility of
-        Visible ->
-            viewModal viewMailChimp
-
-        Invisible ->
-            Html.text ""
-
-
 viewSpeakerInfoModal : Maybe Speaker -> Html Msg
 viewSpeakerInfoModal speaker =
     case speaker of
@@ -377,7 +356,6 @@ view model =
         [ viewHeader model.active model.menu
         , Html.main_ [ class [ Style.Sections ] ] <|
             List.map viewSection allSections
-        , viewNewsletterModal model.newsletterModal
         , viewSpeakerInfoModal model.speakerInfoModal
         ]
 
