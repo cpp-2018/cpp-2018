@@ -167,6 +167,14 @@ speakers =
             ]
         )
     , Speaker
+        "Martin Korsbak Madsen, MD"
+        (getImageUrl "martin-korsbak-madsen.jpg")
+        (paragraph
+            [ bold "Martin Korsbak Madsen"
+            , text " is a medical doctor, currently working on his PhD at the Neurobiology Research Unit, Rigshospitalet, Copenhagen, Denmark. The research includes the use of PET imaging to better understand the role of the serotonin 2A receptor in the effects of psilocybin on the human brain, and the use of MR imaging to better understand effects of psilocybin on brain blood flow and function. Future work includes a planned trial for investigating effects of psilocybin on cluster headache and related effects on brain networks. The work is conducted under the supervision of Professor Gitte Moos Knudsen, president-elect of the European College of Neuropharmacology, one of the world’s leading experts in the field imaging of the human serotonin system."
+            ]
+        )
+    , Speaker
         "David Nichols, PhD"
         (getImageUrl "david-nichols.jpg")
         (paragraph
