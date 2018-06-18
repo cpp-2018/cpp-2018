@@ -100,6 +100,7 @@ type CssClasses
     | AccommodationText
     | Partner
     | PartnerImage
+    | CompetitionModal
 
 
 css : Css.Stylesheet
@@ -703,8 +704,14 @@ css =
             [ Css.margin Css.zero
             ]
         , Css.class Partner
-            [ Css.margin (Css.rem 1)]
-
+            [ Css.margin (Css.rem 1) ]
         , Css.class PartnerImage
             [ Css.height (Css.rem 12) ]
+        , Css.class CompetitionModal
+            [ Css.displayFlex
+            , Css.flexDirection Css.column
+            , Css.justifyContent Css.center
+            , Css.alignItems Css.center
+            , Css.maxWidth (Css.rem 36)
+            ]
         ]

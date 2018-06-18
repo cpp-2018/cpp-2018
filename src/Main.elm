@@ -24,6 +24,7 @@ type Visibility
 
 type ModalContent
     = SpeakerInfo Speaker
+    | Competition
 
 
 type alias Model =
@@ -33,11 +34,20 @@ type alias Model =
     }
 
 
-init : ( Model, Cmd Msg )
-init =
+type alias Flags =
+    { showCompetitionModal : Bool
+    }
+
+
+init : Flags -> ( Model, Cmd Msg )
+init flags =
     ( { active = About
       , menu = Invisible
-      , modal = Nothing
+      , modal =
+            if flags.showCompetitionModal then
+                Just Competition
+            else
+                Nothing
       }
     , allSections
         |> List.reverse
@@ -309,6 +319,16 @@ viewMailChimp =
         ]
 
 
+viewCompetition : Html Msg
+viewCompetition =
+    Html.div
+        [ class [ Style.CompetitionModal ] ]
+        [ Html.h1 [] [ Html.text "Stay in style at the conference!" ]
+        , paragraph [ Html.text "Get your ticket before July 31st in order to be in the draw for a deluxe room at Elite Hotel Marina Tower during the conference! Summer discount tickets are available. The winner will be announced and contacted on August 1st." ]
+        , viewTicketLink
+        ]
+
+
 viewModal : Maybe ModalContent -> Html Msg
 viewModal content =
     case content of
@@ -326,6 +346,8 @@ viewModal content =
                     , Html.map never speaker.bio
                     ]
 
+        Just Competition ->
+            viewModalContent viewCompetition
 
 
 viewModalContent : Html Msg -> Html Msg
@@ -912,9 +934,9 @@ getSectionName section =
 ---- PROGRAM ----
 
 
-main : Program Never Model Msg
+main : Program Flags Model Msg
 main =
-    Html.program
+    Html.programWithFlags
         { view = view
         , init = init
         , update = update
