@@ -22,10 +22,14 @@ type Visibility
     | Invisible
 
 
+type ModalContent
+    = SpeakerInfo Speaker
+
+
 type alias Model =
     { active : Section
     , menu : Visibility
-    , speakerInfoModal : Maybe Speaker
+    , modal : Maybe ModalContent
     }
 
 
@@ -33,7 +37,7 @@ init : ( Model, Cmd Msg )
 init =
     ( { active = About
       , menu = Invisible
-      , speakerInfoModal = Nothing
+      , modal = Nothing
       }
     , allSections
         |> List.reverse
@@ -109,16 +113,12 @@ update msg model =
             ( { model | menu = Invisible }, Cmd.none )
 
         CloseModal ->
-            ( { model
-                | speakerInfoModal = Nothing
-              }
+            ( { model | modal = Nothing }
             , Cmd.none
             )
 
         SpeakerClicked speaker ->
-            ( { model
-                | speakerInfoModal = Just speaker
-              }
+            ( { model | modal = Just (SpeakerInfo speaker) }
             , Cmd.none
             )
 
@@ -309,8 +309,27 @@ viewMailChimp =
         ]
 
 
-viewModal : Html Msg -> Html Msg
+viewModal : Maybe ModalContent -> Html Msg
 viewModal content =
+    case content of
+        Nothing ->
+            Html.text ""
+
+        Just (SpeakerInfo speaker) ->
+            viewModalContent <|
+                Html.div
+                    [ class [ Style.SpeakerModal ] ]
+                    [ Html.decorativeImg
+                        [ Attrs.src speaker.image
+                        , class [ Style.SpeakerModalImage ]
+                        ]
+                    , Html.map never speaker.bio
+                    ]
+
+
+
+viewModalContent : Html Msg -> Html Msg
+viewModalContent content =
     CoreHtml.div
         [ class [ Style.ModalOverlay ]
         , Events.onClick CloseModal
@@ -332,31 +351,13 @@ viewModal content =
         ]
 
 
-viewSpeakerInfoModal : Maybe Speaker -> Html Msg
-viewSpeakerInfoModal speaker =
-    case speaker of
-        Just speaker_ ->
-            viewModal <|
-                Html.div
-                    [ class [ Style.SpeakerModal ] ]
-                    [ Html.decorativeImg
-                        [ Attrs.src speaker_.image
-                        , class [ Style.SpeakerModalImage ]
-                        ]
-                    , Html.map never speaker_.bio
-                    ]
-
-        Nothing ->
-            Html.text ""
-
-
 view : Model -> Html Msg
 view model =
     Html.div []
         [ viewHeader model.active model.menu
         , Html.main_ [ class [ Style.Sections ] ] <|
             List.map viewSection allSections
-        , viewSpeakerInfoModal model.speakerInfoModal
+        , viewModal model.modal
         ]
 
 
