@@ -53,13 +53,11 @@ speakers =
     , Speaker
         "Alex Belser, PhD"
         (getImageUrl "alex-belser.jpg")
-        (Html.div []
+        (paragraph
             [ paragraph
-                [ bold "Alexander Belser, Ph.D., M.Phil.,"
-                , text " is a Clinical Research Fellow at Yale University.  Alex was a founding member of the Psychedelic Research Group at New York University (NYU) in 2006.  There he conducted a qualitative study exploring how cancer patients experience psilocybin-assisted psychotherapy.  Alex serves as a scientific collaborator for a qualitative study investigating psilocybin-assisted psychotherapy as a treatment for alcohol addiction. He is also interviewing religious leaders who are administered psilocybin.  He has published a number of peer-reviewed articles and book chapters, and serves as a peer reviewer for the Journal of Psychopharmacology."
+                [ bold "Alexander Belser, Ph.D."
+                , text ", is a Clinical Research Fellow at Yale University. Alex was a founding member of the Psychedelic Research Group at New York University (NYU) in 2006. There he conducted a qualitative study exploring how cancer patients experience psilocybin-assisted psychotherapy. Currently Alex serves as a scientific collaborator in investigating psilocybin-assisted psychotherapy as a treatment for alcohol addiction. He has published several peer-reviewed articles and book chapters, and serves as a reviewer for the Journal of Psychopharmacology. As a clinician he is also part of the psychotherapy team treating patients in the phase 3 trials of MDMA-assisted psychotherapy for PTSD."
                 ]
-            , paragraph
-                [ text "Alex graduated from Georgetown University, and pursued graduate studies at Cambridge University, NYU, and Columbia University.  As a clinician, he treats patients with trauma in a multi-site trial of MDMA-assisted psychotherapy as a treatment for post-traumatic stress disorder (PTSD), which was recently designated a “breakthrough therapy” by the Food and Drug Administration (FDA).  Alex completed his clinical and research training in psychology at Bellevue Hospital, New York Psychiatric Institute at Columbia University Medical Center, and Mount Sinai Beth Israel Hospital." ]
             ]
         )
     , Speaker
