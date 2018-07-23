@@ -147,8 +147,16 @@ speakers =
         "Thomas Kingsley Brown, PhD"
         (getImageUrl "thomas-kingsley-brown.jpg")
         (paragraph
-            [ bold "Thomas Kingsley Brown"
-            , text " has been researching ibogaine treatment for substance dependence since 2009, when he began conducting interviews with people at a treatment center in Playas de Tijuana, Mexico and collected data for the purpose of studying quality of life for those people.  In 2010 he began working with MAPS (the Multidisciplinary Association for Psychedelic Studies) on a Mexico-based observational study of the long-term outcomes for people receiving ibogaine-assisted treatment for opioid dependence. That study is complete and the first research article on the study, co-authored with Dr. Kenneth Alper, has been published (American Journal of Drug and Alcohol Abuse, 2017). In 2013 he published a review article on ibogaine treatment in Current Drug Abuse Reviews. Dr. Brown is on staff at the University of California, San Diego as the Coordinator of the McNair Scholars Program, which prepares first-generation, low-income undergraduate students and those from under-represented ethnic groups for doctoral programs in all fields of study. His own academic training is in chemistry (B.S., University of Pittsburgh and M.S., California Institute of Technology), neuroscience, and anthropology (M.A. and PhD, UC San Diego)."
+            [ paragraph
+                [ bold "Thomas Kingsley Brown"
+                , text " has been researching Ibogaine treatment for substance dependence since 2009, when he began conducting interviews with people at a treatment center in Playas de Tijuana, Mexico, collecting data for the purpose of studying quality of life for those people."
+                ]
+            , paragraph
+                [ text "In 2010 he began working with MAPS (the Multidisciplinary Association for Psychedelic Studies) in a Mexico-based observational study of the long-term outcomes for people receiving Ibogaine-assisted treatment for opioid dependence. That study is complete and the first scientific article on the study, co-authored with Dr. Kenneth Alper, has been published (American Journal of Drug and Alcohol Abuse, 2017). In 2013 he published a review article on Ibogaine treatment in Current Drug Abuse Reviews."
+                ]
+            , paragraph
+                [ text "Dr. Brown is the coordinator of the McNair Scholars Program at University of California, San Diego. The program prepares students who are first-generation academics in their families, students with a low-income background and those from less represented ethnic groups for doctoral programs in all fields of study. His own academic training is in chemistry (B.S., University of Pittsburgh and M.S., California Institute of Technology), neuroscience, and anthropology (M.A. and PhD, UC San Diego)."
+                ]
             ]
         )
     , Speaker
