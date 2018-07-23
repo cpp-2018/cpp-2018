@@ -243,8 +243,13 @@ speakers =
         "Ben Sessa, MD"
         (getImageUrl "ben-sessa.jpg")
         (paragraph
-            [ bold "Dr. Ben Sessa"
-            , text " is a child and adolescent psychiatrist with 20 years clinical experience. Having worked initially with abused and maltreated children he has observed the sad and inevitable trajectory from childhood trauma into mental disorder and, particularly, addictions. His frustration at the lack of clinical efficacy apparent with traditional psychiatric treatments - and especially the rise of ineffective and potentially toxic  polypharmacy - has brought him to the door of psychedelics, and especially MDMA, as psychiatry’s best new potential approach to tackling his stuck and deserving patients. Dr. Sessa is currently running the world’s first clinical study exploring MDMA Therapy as a treatment for adult alcohol addiction. Dr. Sessa has published several text books on Psychedelic medicine, including ‘The Psychedelic Renaissance’ (2012/2017) and the novel, ‘To Fathom Hell and Soar Angelic’. Dr. Sessa is also outspoken on the subject of drug policy reform and the issues whereby government policies are impairing medical research, maintaining stigma and withholding potentially useful medical interventions from worthy patients."
+            [ paragraph
+                [ bold "Dr. Ben Sessa"
+                , text " is a pediatric psychiatrist with 20 years of clinical experience. In his work with abused and maltreated children he has observed the sad and common trajectory from childhood trauma into addiction and other mental disorders. His frustration at the lack of clinical usefulness with existing treatments in psychiatric care, and the increase of potentially toxic and often counterproductive polypharmacology, brought him to the door of psychedelics."
+                ]
+            , paragraph
+                [ text "Dr. Sessa is currently running the world’s first clinical study testing MDMA-assisted psychotherapy as a treatment for alcohol addiction. Dr Sessa has published several books concerning Psychedelic medicine, including ‘The Psychedelic Renaissance’ (2012/2017) and the novel, ‘To Fathom Hell and Soar Angelic’."
+                ]
             ]
         )
     , Speaker
