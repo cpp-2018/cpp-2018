@@ -609,6 +609,10 @@ viewPartners =
                 "OPEN Foundation"
                 "open-foundation.png"
                 "http://openfoundation.nl/"
+            , viewPartner
+                "Heffter Research Institute"
+                "heffter_logo.png"
+                "https://heffter.org/"
             ]
         ]
 
