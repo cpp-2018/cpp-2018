@@ -176,8 +176,12 @@ speakers =
         "Alexander Lebedev, MD PhD"
         (getImageUrl "alexander-lebedev.jpg")
         (paragraph
-            [ bold "Alexander V. Lebedev"
-            , text " is a psychiatrist, working as a postdoctoral researcher at Aging Research Center, Karolinska Institute. He is currently involved in several projects at the Brain Lab (Hjärnlabbet) utilizing methods of multimodal imaging to study plastic brain changes associated with cognitive training. His research interests span neurodynamics underlying higher cognitive functions, creativity, adult development, as well as altered states of consciousness, psychosis and depersonalization phenomena. Alexander is a collaborator of the Imperial Research Group, analyzing brain imaging data from ongoing clinical trials with psychedelics."
+            [ paragraph
+                [ bold "Alexander V. Lebedev, MD PhD"
+                , text ", is a psychiatrist, currently working as a postdoctoral researcher at the Department of Clinical Neuroscience and Aging Research Center (Karolinska Institute & Stockholm University)."
+                ]
+            , paragraph
+                [ text "His major research interests lie in the development of biologically-informed diagnostic models for psychosis-spectrum disorders, integrated understanding of normal and pathological belief formation, and studying links between psychopathology and creativity." ]
             ]
         )
     , Speaker
