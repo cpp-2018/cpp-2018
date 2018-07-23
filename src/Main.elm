@@ -596,7 +596,7 @@ viewPartners =
     Html.div
         [ class [ Style.Tickets ] ]
         [ viewTitle Dark "Official Partners"
-        , Html.div [ class [ Style.Accommodation ] ]
+        , Html.div [ class [ Style.Partners ] ]
             [ viewPartner
                 "Beckley Foundation"
                 "beckley-foundation.png"

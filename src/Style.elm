@@ -100,6 +100,7 @@ type CssClasses
     | AccommodationText
     | Partner
     | PartnerImage
+    | Partners
     | CompetitionModal
 
 
@@ -707,7 +708,15 @@ css =
         , Css.class Partner
             [ Css.margin (Css.rem 1) ]
         , Css.class PartnerImage
-            [ Css.height (Css.rem 12) ]
+            [ Css.maxHeight (Css.rem 12)
+            , Css.maxWidth (Css.rem 18)
+            ]
+        , Css.class Partners
+            [ Css.displayFlex
+            , Css.flexWrap Css.wrap
+            , Css.justifyContent Css.center
+            , Css.alignItems Css.center
+            ]
         , Css.class CompetitionModal
             [ Css.displayFlex
             , Css.flexDirection Css.column
