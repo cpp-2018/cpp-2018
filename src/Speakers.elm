@@ -208,14 +208,6 @@ speakers =
             ]
         )
     , Speaker
-        "Jordi Riba, PhD"
-        (getImageUrl "jordi-riba.jpg")
-        (paragraph
-            [ bold "Jordi Riba, Ph.D.,"
-            , text " received his doctorate in pharmacology in 2003 at the Autonomous University of Barcelona (UAB), with a thesis on the human pharmacology of ayahuasca. He is associate professor of pharmacology at the UAB and also leads the Human Neuropsychopharmacology Research Group at the Sant Pau Hospital in Barcelona. He has published nearly forty journal articles and book chapters on the subject, and collaborated in the first clinical studies involving ayahuasca administration to patients with depression. Currently, Riba is studying the post-acute psychedelic “after-glow” and the use of ayahuasca in the treatment of various psychiatric conditions. He is also investigating the neuroprotective and neurogenic potential of ayahuasca alkaloids."
-            ]
-        )
-    , Speaker
         "Stephen Ross, MD"
         (getImageUrl "stephen-ross.jpg")
         (paragraph
