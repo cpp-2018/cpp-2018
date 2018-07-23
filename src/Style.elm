@@ -540,10 +540,11 @@ css =
             ]
         , Css.class Venue
             [ Css.fontSize (Css.rem 1.2)
+            , Css.color colors.white
             ]
         , Css.class VenueLink
             [ Css.textTransform Css.none
-            , Css.color colors.primary
+            , Css.color colors.accent
             ]
         , Css.class VenueContent
             [ Css.displayFlex

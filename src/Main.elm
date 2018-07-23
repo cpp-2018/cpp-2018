@@ -87,11 +87,11 @@ getSectionFromHash section =
         "#tickets" ->
             Ok Tickets
 
-        "#call-for-abstracts" ->
-            Ok CallForAbstracts
-
         "#partners" ->
             Ok Partners
+
+        "#call-for-abstracts" ->
+            Ok CallForAbstracts
 
         "#contact" ->
             Ok Contact
@@ -162,8 +162,8 @@ type Section
     | SideEvents
     | Tickets
     | Contact
-    | CallForAbstracts
     | Partners
+    | CallForAbstracts
 
 
 allSections : List Section
@@ -174,8 +174,8 @@ allSections =
     , Accommodation
     , SideEvents
     , Tickets
-    , CallForAbstracts
     , Partners
+    , CallForAbstracts
     , Contact
     ]
 
@@ -188,8 +188,8 @@ navbarSections =
     , Accommodation
     , SideEvents
     , Tickets
-    , CallForAbstracts
     , Partners
+    , CallForAbstracts
     , Contact
     ]
 
@@ -572,7 +572,7 @@ viewVenue =
 viewCallForAbstracts : Html msg
 viewCallForAbstracts =
     Html.div [ class [ Style.Venue ] ]
-        [ viewTitle Dark "Call for Abstracts"
+        [ viewTitle Light "Call for Abstracts"
         , Html.p []
             [ Html.text "We are no longer accepting Abstracts for lecture format. Abstracts may however be submitted for Poster presentation format (please see complete details in the section below) until August 30th. Notice of accepted posters is given in within 14 days after submission. To find out more and to submit an abstract for poster format, click "
             , Html.a
@@ -848,11 +848,11 @@ viewSection section =
                 Tickets ->
                     ( [ Style.DarkBackground ], [], viewTickets )
 
-                CallForAbstracts ->
-                    ( [], [], viewCallForAbstracts )
-
                 Partners ->
                     ( [], [], viewPartners )
+
+                CallForAbstracts ->
+                    ( [ Style.DarkBackground ], [], viewCallForAbstracts )
 
                 Contact ->
                     ( [ Style.ContactSection ], [ Style.ContactContent ], viewContact )
@@ -893,11 +893,11 @@ getSectionId section =
         Tickets ->
             "tickets"
 
-        CallForAbstracts ->
-            "call-for-abstracts"
-
         Partners ->
             "partners"
+
+        CallForAbstracts ->
+            "call-for-abstracts"
 
         Contact ->
             "contact"
@@ -924,11 +924,11 @@ getSectionName section =
         Tickets ->
             "Tickets"
 
-        CallForAbstracts ->
-            "Call for Abstracts"
-
         Partners ->
             "Partners"
+
+        CallForAbstracts ->
+            "Call for Abstracts"
 
         Contact ->
             "Contact"
