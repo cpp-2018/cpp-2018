@@ -613,6 +613,10 @@ viewPartners =
                 "Heffter Research Institute"
                 "heffter_logo.png"
                 "https://heffter.org/"
+            , viewPartner
+                "Viriditas Foundation"
+                "viriditas_logo.png"
+                "https://viriditasfoundation.se/"
             ]
         ]
 
