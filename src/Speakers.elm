@@ -257,8 +257,16 @@ speakers =
         "Rosalind Watts, DClinPsy"
         (getImageUrl "rosalind-watts.jpg")
         (paragraph
-            [ bold "Rosalind Watts, DClinPsy,"
-            , text " completed her clinical psychology training in London, and after six years of practicing psychotherapy she joined the Imperial College Psilocybin for Depression Study as a therapist guide. Ros believes that psychedelic treatments can have an important role in changing the way we conceptualise and treat mental health difficulties. Her research includes qualitative analysis of the therapeutic impact of psilocybin and LSD, which has informed her interest in ‘connection to self, others, and world’ as a mechanism of change. Her findings suggest that psilocybin treatment for depression may work via paradigmatically novel means compared to both antidepressant medication and some short-term talking therapies. She is currently working alongside Dr. Robin Carhart-Harris, Professor David Nutt and Dr. David Erritzoe planning the upcoming Imperial psilocybin for depression trial."
+            [ paragraph
+                [ bold "Rosalind Watts, DClinPsy"
+                , text ", completed her clinical psychology training in London, and after six years of practicing psychotherapy she joined the Imperial College Psilocybin for Depression Study as a therapist guide. Rosalind believes that psychedelic treatments can have an important role in changing the way we conceptualise and treat mental health difficulties."
+                ]
+            , paragraph
+                [ text "Her research includes qualitative analysis of the therapeutic impact of psilocybin and LSD, which has informed her interest in ‘connection to self, others, and world’ as a mechanism of change. Her findings suggest that psilocybin treatment for depression may work via paradigmatically novel means compared to both antidepressant medication and some short-term talking therapies."
+                ]
+            , paragraph
+                [ text "Rosalind is currently working alongside Dr. Robin Carhart-Harris, Professor David Nutt and Dr. David Erritzoe planning the upcoming Imperial depression trial comparing psilocybin with leading SSRIs."
+                ]
             ]
         )
     ]
