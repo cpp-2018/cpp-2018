@@ -123,8 +123,8 @@ speakers =
         "Boris Heifets, MD PhD"
         (getImageUrl "boris-heifets.jpg")
         (paragraph
-            [ bold "Boris Heifets, M.D."
-            , text ", Ph.D., has had a lifelong interest in how consciousness-altering drugs affect fundamental neural processes. He received his M.D. and Ph.D. in neuroscience from the Albert Einstein College of Medicine in New York, and came to Stanford University for residency training in anesthesiology. Since 2013, he has subspecialized in neuro-anesthesiology and joined the Stanford School of Medicine faculty. His laboratory research, under the guidance of Dr. Robert Malenka, an internationally recognized expert in the synaptic basis of learning, memory and addiction, focuses on the neural circuits underlying MDMA's pro-social effects in mice."
+            [ bold "Boris Heifets, M.D., Ph.D."
+            , text ", has had a lifelong interest in how consciousness-altering drugs affect fundamental neural processes. He received his M.D. and Ph.D. in neuroscience from the Albert Einstein College of Medicine in New York, and came to Stanford University for residency training in anesthesiology. Since 2013, he has subspecialized in neuro-anesthesiology and joined the Stanford School of Medicine faculty. His laboratory research focus on the neural circuits underlying MDMA's pro-social effects in mice, under the guidance of Dr. Robert Malenka who is an internationally recognized expert in the synaptic basis of learning, memory and addiction."
             ]
         )
     , Speaker
