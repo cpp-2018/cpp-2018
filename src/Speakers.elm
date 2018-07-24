@@ -233,7 +233,7 @@ speakers =
         (getImageUrl "torsten-passie.jpg")
         (paragraph
             [ bold "Torsten Passie M.D., Ph.D."
-            , text ", is Professor of Psychiatry and Psychotherapy at Hannover Medical School (Germany) and currently Visiting Scientist at Goethe University in Frankfurt/Main (Germany). He studied philosophy, sociology (MA) at Leibniz-University, Hannover and medicine at Hannover Medical School. He worked at the Psychiatric University Clinic in Zürich (Switzerland) and with Professor Hanscarl Leuner (Göttingen), the leading European authority on hallucinogenic drugs. From 1998 to 2010 he was a scientist and psychiatrist at Hannover Medical school (Germany) where he researched the addictions and the psychophysiology of altered states of consciousness and their healing potential, including clinical research with hallucinogenic drugs (cannabis, ketamine, nitrous oxide, psilocybin). In 2012-2015 he was Visiting Professor at Harvard Medical School (Boston, USA)."
+            , text ", is Professor of Psychiatry and Psychotherapy at Hannover Medical School and currently Visiting Scientist at Goethe University in Frankfurt. He also did a M.A. in philosophy and sociology at Leibniz-University in Hannover before turning to medicine. He worked at the Psychiatric University Clinic in Zürich with Professor Hanscarl Leuner, a prominent European voice on hallucinogenic drugs. From 1998 to 2010 he did research on the addictions and the psychophysiology of altered states of consciousness and their healing potential, including clinical research with hallucinogenic drugs. In 2012-2015 he was a Visiting Professor at Harvard Medical School (Boston, USA)."
             ]
         )
     , Speaker
