@@ -269,8 +269,8 @@ speakers =
         "Anne Wagner, PhD, CPsych"
         (getImageUrl "anne-wagner.jpg")
         (paragraph
-            [ bold "Anne C. Wagner, Ph.D., C.Psych."
-            , text ", is a Clinical Psychologist and Canadian Institutes of Health Research funded Postdoctoral Fellow at Ryerson University, working with Dr. Candice Monson. With Candice, Michael Mithoefer and Annie Mithoefer, Anne is investigating the combination of Cognitive Behavioral Conjoint Therapy for PTSD and MDMA. As well as being a trialist, Anne does work in Trauma-Informed Care and with the lived experiences of people living with HIV and in LGBTQ communities. She is a trainer for Cognitive Behavioral Conjoint Therapy for PTSD and a consultant for Cognitive Processing Therapy."
+            [ bold "Anne"
+            , text " is a clinical psychologist. She is funded by Canadian Institutes of Health Research and is a Postdoctoral Fellow at Ryerson University, working with Dr. Candice Monson. With Candice, Michael Mithoefer and Annie Mithoefer, Anne is investigating the combination of Cognitive Behavioral Therapy and MDMA for PTSD. As well as being part of the psychotherapy team in the trial Anne does work in Trauma-Informed Care and with the lived experiences of people living with HIV and in LGBTQ communities. She is a trainer for Cognitive Behavioral Conjoint Therapy for PTSD and a consultant for Cognitive Processing Therapy."
             ]
         )
     , Speaker
