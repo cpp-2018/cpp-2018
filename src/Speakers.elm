@@ -187,8 +187,13 @@ speakers =
         "Kim Kuypers, PhD"
         (getImageUrl "kim-kuypers.jpg")
         (paragraph
-            [ bold "Kim Kuypers, Ph.D."
-            , text " has been studying the effects of MDMA on cognition for over 14 years. The research grant she obtained in 2011 helped her to set up her own research line in which she chose to shift her focus from negative drug effects to positive effects of drugs and underlying neurobiology. After finishing her master in neuropsychology at Maastricht University in 2002, Kim Kuypers started studying the effects of MDMA on cognitive, psychomotor and driving skills. In 2007 she obtained her PhD and continued this research line, focusing on the neurobiological mechanisms underlying MDMA-induced memory impairment using mechanistic pharmaco-studies and functional imaging techniques. In 2011, she received a grant from the Netherlands Organisation for Scientific Research. This helped her to set up her own research line in which she chose to shift her focus from negative drug effects (e.g. memory impairment) to positive effects (e.g. empathy, mood enhancement, creativity) of drugs (e.g. MDMA, cocaine, Ayahuasca). Since then she has been exploring this field. Her motivation for this shift in research focus was that by using the unique properties of these drugs a better understanding on the neurobiological mechanisms underlying these positive effects could be gained. This knowledge enables us to enhance social abilities and problem solving skills in daily life and in pathological populations in the future."
+            [ paragraph
+                [ bold "Kim Kuypers, Ph.D."
+                , text " has been studying the effects of MDMA on cognition for over 14 years. The research grant she obtained in 2011 helped her to set up her own research line in which she chose to shift her focus from negative drug effects to positive effects of drugs and underlying neurobiology."
+                ]
+            , paragraph
+                [ text "After finishing her master in neuropsychology at Maastricht University in 2002, Kim Kuypers started studying the effects of MDMA on cognitive, psychomotor and driving skills. In 2007 she obtained her PhD and continued this research line, focusing on the neurobiological mechanisms underlying MDMA-induced memory impairment using mechanistic pharmaco-studies and functional imaging techniques. In 2011, she received a grant from the Netherlands Organisation for Scientific Research. This helped her to set up her own research line on positive effects (empathy, mood enhancement, creativity) of drugs (MDMA, cocaine, Ayahuasca). Since then she has been exploring this field."
+                ]
             ]
         )
     , Speaker
