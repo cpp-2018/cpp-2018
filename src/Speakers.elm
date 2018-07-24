@@ -244,8 +244,8 @@ speakers =
         "Tomas Palenicek, MD PhD"
         (getImageUrl "tomas-palenicek.jpg")
         (paragraph
-            [ bold "Tomas Palenicek, M.D., Ph.D."
-            , text ", has spent the last 15 years researching MDMA, LSD, mescaline, 2C-B, ketamine and cannabis. Tomas was trained in psychiatry and clinical electrophysiology, running human trials with ketamine as a model psychosis and in the treatment of depression. He is principal investigator of the first project in the Czech Republic intended to study the acute effects of cannabis in healthy volunteers. Furthermore, he is also principal investigator of the first human clinical trial in the Czech Republic studying the effects of psilocybin on brain dynamics and perception. Currently his research interests are oriented towards the area of EEG functional connectivity. He continues his clinical practice as a psychiatrist in local outpatient clinic."
+            [ bold "Tomas Palenicek, MD PhD"
+            , text ", has spent the last 15 years researching MDMA, LSD, mescaline, 2C-B, ketamine and cannabis. Tomas was trained in psychiatry and clinical electrophysiology. His research includes human trials with ketamine in the treatment of depression. He is principal investigator of the first project in the Czech Republic intended to study the acute effects of cannabis in healthy volunteers. Furthermore, he is also principal investigator of the first human clinical trial in the Czech Republic studying the effects of psilocybin on brain dynamics and perception. Currently his research interests are oriented towards the area of EEG functional connectivity. He continues his clinical practice as a psychiatrist in a local outpatient clinic."
             ]
         )
     , Speaker
