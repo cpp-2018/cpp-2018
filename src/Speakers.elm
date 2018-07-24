@@ -163,11 +163,14 @@ speakers =
         (Html.div []
             [ paragraph
                 [ bold "Jeffrey Kamlet, M.D, FASAM, BABAM"
-                , text " is recognized as the world expert on cardiac safety in ibogaine treatment. He is a fellow of the American Society of Addiction Medicine, and has twice served as President of the Florida Society of Addiction Medicine. Currently, Dr. Kamlet serves as GITA’s Chief Medical Advisor, as well as Editor in Chief on GITA’s Clinical Guidelines for Ibogaine-Assisted Detoxification."
+                , text " is recognized as the world expert on cardiac safety in Ibogaine treatment. He is a fellow of the American Society of Addiction Medicine, and has twice served as President of the Florida Society of Addiction Medicine. Currently, Dr. Kamlet serves as GITA’s Chief Medical Advisor, as well as Editor in Chief on GITA’s Clinical Guidelines for Ibogaine-Assisted Detoxification. In 1995, Dr. Kamlet was involved in early clinical trials, conducted under the direction of Deborah Mash, Ph.D., to assess Ibogaine’s utility in the rapid-detoxification from opiate dependence and the reduction of post-acute withdrawal symptoms."
                 ]
-            , paragraph [ text "In 1995, Dr. Kamlet was involved in early clinical trials, conducted under the direction of Deborah Mash, Ph.D., to assess ibogaine’s utility in the rapid-detoxification from opiate dependence and the reduction of post-acute withdrawal symptoms. Over the past 20 years he has witnessed over 1800 ibogaine treatments without a single adverse event, and continues to believes it to be one of the most important discoveries in the history of addiction medicine." ]
-            , paragraph [ text "Dr. Kamlet holds a degree in Medicine and Surgery from the State University of New York. He received further training in neurology and psychiatry, and then a Cardiology Fellowship at the Mount Sinai Medical Center in Miami Beach Florida." ]
-            , paragraph [ text "He has worked as an Associate Director and Medical Director for several emergency departments in Southern Florida, and sat on the board of the Florida American Heart Association, where he helped to update ACLS protocols. He has served as a principal investigator on over 20 major pharmaceutical trials, and has achieved accolades in the fields of hormonal replacement therapy, anti-aging medicine and neutriceuticals." ]
+            , paragraph
+                [ text "Over the past 20 years he has witnessed over 1800 Ibogaine treatments without a single adverse event, and continues to believe it to be one of the most important discoveries in the history of addiction medicine. Dr. Kamlet holds a degree in Medicine and Surgery from the State University of New York. He received further training in neurology and psychiatry, and then a Cardiology Fellowship at the Mount Sinai Medical Center in Miami Beach Florida."
+                ]
+            , paragraph
+                [ text "He has worked as an Associate Director and Medical Director for several emergency departments in Southern Florida, and sat on the board of the Florida American Heart Association, where he helped to update ACLS protocols. He has served as a principal investigator on over 20 major pharmaceutical trials, and has achieved accolades in the fields of hormonal replacement therapy, anti-aging medicine and neutriceuticals."
+                ]
             ]
         )
     , Speaker
