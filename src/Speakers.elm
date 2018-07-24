@@ -89,7 +89,7 @@ speakers =
         (getImageUrl "debora-gonzalez.jpg")
         (paragraph
             [ bold "Débora González, Ph.D."
-            , text ", is a Clinical Psychologist with a Ph.D. in Pharmacology. Her doctoral work was supported by a fellowship from the Spanish government. She is co-author of several scientific papers and book chapters about ayahuasca, 2C-B, Salvia divinorum and research chemicals. She is currently conducting a longitudinal study on the long-term effects of ayahuasca on well-being and health of Western users with ICEERS Foundation and a pilot study of the treatment for complicated grief, involving holotropic breathwork and ayahuasca as therapeutic tools, with PHI Association."
+            , text ", is a clinical psychologist with a Ph.D. in pharmacology. Her doctoral work was supported by a fellowship from the Spanish government. She is co-author of several scientific papers and book chapters about ayahuasca, 2C-B, Salvia divinorum and research chemicals. She is currently conducting a longitudinal study on the long-term effects of ayahuasca on well-being and health of Western users with the ICEERS Foundation and a pilot study of the treatment for complicated grief, involving holotropic breathwork and ayahuasca as therapeutic tools together with PHI Association."
             ]
         )
     , Speaker
