@@ -261,8 +261,16 @@ speakers =
         "Fredrik von Kieseritzky, PhD"
         (getImageUrl "fredrik-von-kieseritzky.jpg")
         (paragraph
-            [ bold "Fredrik von Kieseritzky, Ph.D."
-            , text " , received his doctorate in organic chemistry at the Royal Institute of Technology (KTH) in 2004. Since then, Fredrik has worked as an industrial scientist in the field of medicinal chemistry in large and small pharmaceutical companies. His main research areas are neurodegenerative diseases and pain disorders. He is the co-inventor of investigational drug Lanabecestat, currently in one of the world's most comprehensive Phase III clinical trials against Alzheimer's disease. In Sweden, Fredrik has assisted several physicians in getting standardized herbal cannabis approved against treatment-resistant neuropathic pain for a select few patients. Currently, he is involved in designing and carrying out a larger Phase II/III randomized and placebo-controlled clinical trial on cannabis (n = 100). As principal investigator, Fredrik is the co-inventor on several patent and patent applications and is the corresponding author on several peer-reviewed articles on organic synthesis and drug discovery. Fredrik is scientific advisor for a number of organizations, board member and vice-chairman for the Spinalis Foundation, and CEO of a small CRO, Arubedo AB."
+            [ paragraph
+                [ bold "Fredrik von Kieseritzky, Ph.D."
+                , text ", received his doctorate in organic chemistry at the Royal Institute of Technology (KTH) in Stockholm in 2004. Since then Fredrik has worked as an industrial scientist in the field of medicinal chemistry in large and small pharmaceutical companies. His main research areas are neurodegenerative diseases and pain disorders."
+                ]
+            , paragraph
+                [ text "He is the co-inventor of the drug Lanabecestat, currently in one of the world's most comprehensive Phase III clinical trials against Alzheimer's disease. Fredrik has assisted several physicians in getting standardized herbal cannabis treatment approved for neuropathic pain for a few treatment resistant patients here in Sweden. Currently, he is involved in designing and carrying out a larger Phase II/III randomized and placebo-controlled clinical trial on cannabis (n = 100)."
+                ]
+            , paragraph
+                [ text "As principal investigator, Fredrik is the co-inventor on several patent and is the corresponding author on several peer-reviewed articles on organic synthesis and drug discovery. Fredrik is a scientific advisor for NPV (the host of this conference) and several other organizations, board member and vice-chairman for the Spinalis Foundation, and CEO of a small CRO, Arubedo AB."
+                ]
             ]
         )
     , Speaker
