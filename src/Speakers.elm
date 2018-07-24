@@ -51,6 +51,14 @@ speakers =
             ]
         )
     , Speaker
+        "Maria Bălăet, MSc"
+        (getImageUrl "maria-balaet.jpg")
+        (paragraph
+            [ bold "Maria Bălăet"
+            , text " holds a BSc from the University of Birmingham, and graduates now in September 2018 with an Master of Research in experimental neuroscience from Imperial College London. Following initial involvement in clinical immunology practice in Bucharest, she undertook a series of independent research projects on the neuropharmacological modulation of memory in in vivo models of addiction and post-traumatic stress disorder. These endeavours prompted an interest in psychedelic drugs, leading to work on independently researching ideas into how they interfere with memory processing. Her hypotheses were presented at Beyond Psychedelics in 2016, and Drug Science in 2017.  She also founded and chaired the Psychedelics Research Society while at the University of Birmingham."
+            ]
+        )
+    , Speaker
         "Alex Belser, PhD"
         (getImageUrl "alex-belser.jpg")
         (paragraph
