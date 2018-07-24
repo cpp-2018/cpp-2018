@@ -131,8 +131,16 @@ speakers =
         "Matthew W. Johnson, PhD"
         (getImageUrl "matthew-w-johnson.jpg")
         (paragraph
-            [ bold "Matthew W. Johnson, Ph.D."
-            , text ", is Associate Professor of Psychiatry at Johns Hopkins University School of Medicine. Dr. Johnson is an experimental psychologist and an expert on psychoactive drugs, and in the psychology of addiction and risk behavior. For 19 years he has conducted academic research in psychopharmacology and addictions, and for >12 years he has conducted human research with psychedelics. Outside of his research on psychedelics, Dr. Johnson conducts behavioral economic research on decision making, addiction, and sexual risk behavior. Dr. Johnson has conducted studies with nearly all classes of psychoactive drugs. He has published 91 articles and chapters, with 32 focused primarily on psychedelics. Dr. Johnson was lead author on safety guidelines for human psychedelic research which were published in 2008, and which have facilitated the safe initiation of psychedelic research at an increasing number of universities. He is principal investigator of multiple psychedelic research studies at Johns Hopkins, and has been investigating psilocybin as a medication for tobacco smoking cessation since 2007. Dr. Johnson initiated the Johns Hopkins psilocybin cancer protocol with Dr. Roland Griffiths in 2005, and has recently co-authored results from this trial, showing psilocybin to cause large and sustained reductions in cancer-related symptoms of anxiety and depression. Dr. Johnson has served as a session guide for over 100 psychedelic sessions."
+            [ paragraph
+                [ bold "Matthew W. Johnson, Ph.D."
+                , text ", is Associate Professor of Psychiatry at Johns Hopkins University School of Medicine. Dr. Johnson is a research psychologist and an expert on psychoactive drugs and the psychology of addiction and risk behavior. For 19 years he has conducted academic research in psychopharmacology and addictions, and for >12 years he has conducted human research with psychedelics."
+                ]
+            , paragraph
+                [ text "Outside of his research on psychedelics, Dr. Johnson conducts behavioral economic research on decision making, addiction and sexual risk behavior. He has published over 90 scientific articles and chapters, with 32 of them focused primarily on psychedelics. Dr. Johnson was lead author on safety guidelines for human psychedelic research which were published in 2008, and which have facilitated the safe initiation of psychedelic research at an increasing number of universities."
+                ]
+            , paragraph
+                [ text "He is principal investigator of multiple psychedelic research studies at Johns Hopkins, and has been working on psilocybin as a medication for tobacco smoking cessation since 2007. Dr. Johnson initiated the Johns Hopkins psilocybin cancer protocol with Dr. Roland Griffiths in 2005, and has recently co-authored results from this trial showing psilocybin to cause large and sustained reductions in cancer-related symptoms of anxiety and depression. Dr. Johnson has served as a session guide for over 100 psychedelic sessions."
+                ]
             ]
         )
     , Speaker
