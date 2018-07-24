@@ -38,6 +38,14 @@ getImageUrl fileName =
 speakers : List Speaker
 speakers =
     [ Speaker
+        "Marc B. Aixalà, MSc"
+        (getImageUrl "marc-aixala.jpg")
+        (paragraph
+            [ bold "Marc Aixalà"
+            , text " is an engineer and Licensed Psychologist and Psychotherapist with post degree studies in Integrative Psychotherapy, Masters in Strategic Therapy, and is trained in the therapeutic use of Non Ordinary States of Consciousness, and in MDMA assisted-psychotherapy for PTSD. He coordinates support services at ICEERS where he provides integration psychotherapy sessions for people in challenging situations after experiences with non-ordinary states of consciousness since 2013. Marc works as a psychotherapist in Barcelona, a Holotropic Breathwork facilitator, and a member of the staff for Grof Transpersonal Training. He has facilitated Holotropic Breathwork workshops and trainings in Barcelona, Switzerland, Unites States, Romania, Israel and Slovenia and is conducting research into its therapeutic applications. He has also been a Team Leader and Trainer at the Kosmicare psychedelic harm reduction service at the Boom Festival, and a trainer for psilocybin guides at the Imperial College London."
+            ]
+        )
+    , Speaker
         "Michael Ashton, PhD"
         (getImageUrl "michael-ashton.jpg")
         (Html.div []
