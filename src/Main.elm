@@ -694,10 +694,6 @@ viewTickets =
                 [ class [ Style.TicketsInfo ] ]
                 [ column
                     [ paragraph
-                        [ Html.text
-                            "Early Bird tickets have sold out. However, there are a limited amount of discounted tickets! These tickets are available until July 31st or as long as they last at 3400 SEK (€330)."
-                        ]
-                    , paragraph
                         [ Html.div [] [ Html.text "General Release:" ]
                         , Html.div [ class [ Style.Price ] ] [ Html.text "- 3600 SEK / €350" ]
                         , Html.div [ class [ Style.Price ] ] [ Html.text "- 2400 SEK / €235 (student*)" ]
