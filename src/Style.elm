@@ -101,7 +101,6 @@ type CssClasses
     | Partner
     | PartnerImage
     | Partners
-    | CompetitionModal
 
 
 css : Css.Stylesheet
@@ -716,12 +715,5 @@ css =
             , Css.flexWrap Css.wrap
             , Css.justifyContent Css.center
             , Css.alignItems Css.center
-            ]
-        , Css.class CompetitionModal
-            [ Css.displayFlex
-            , Css.flexDirection Css.column
-            , Css.justifyContent Css.center
-            , Css.alignItems Css.center
-            , Css.maxWidth (Css.rem 36)
             ]
         ]
