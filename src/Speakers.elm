@@ -241,6 +241,14 @@ speakers =
             ]
         )
     , Speaker
+        "Benjamin Mudge, PhD"
+        (getImageUrl "benjamin-mudge.jpg")
+        (paragraph
+            [ bold "Benjamin Mudge"
+            , text "'s education in Psychiatry has been through personal experience: having lived with treatment-resistant Bipolar Disorder, and worked at Neuroscience research laboratories and GlaxoSmithKline's headquarters. He developed a novel theory about the underlying Neurobiological mechanism of Bipolar mood swings, that was developed by his mother and published on the cover of Nature in 2006. He gave up on pharmaceutical drugs after 17 prescriptions each had more side effects than benefits, tried various herbal medicines (without success) and then eventually found a solution when he discovered ayahuasca. He has been researching the psychotherapeutic and entheogenic uses of ayahuasca for 10 years, healing himself along the way. Having done systematic self-experimentation with different ayahuasca brews, he discovered that particular ayahuasca brewing techniques and particular ceremony settings are all he requires to stabilize his own brain chemistry. Consequently, a Psychiatry department offered a scholarship to do both qualitative and quantitative research into the therapeutic potential of ayahuasca for other people with Bipolar Disorder. His controversial theories have gradually become acknowledged by experts in the field as groundbreaking science."
+            ]
+        )
+    , Speaker
         "David Nichols, PhD"
         (getImageUrl "david-nichols.jpg")
         (paragraph
