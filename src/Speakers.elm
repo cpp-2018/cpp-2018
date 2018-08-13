@@ -281,6 +281,14 @@ speakers =
             ]
         )
     , Speaker
+        "Katrin Preller, PhD"
+        (getImageUrl "katrin-preller.jpg")
+        (paragraph
+            [ bold "Katrin Preller, Ph.D."
+            , text ", received her M.Sc. (Neuropsychology) from University of Konstanz, Germany. For her PhD she went to University of Zurich, Switzerland, where she run several studies investigating the neurobiological and social-cognitive long-term effects of cocaine, MDMA, and heroin use. After completing her PhD, she joined the Neuropsychopharmacology and Brain Imaging lab at the Psychiatric University Hospital Zurich and Heffter Research Center Zürich, investigating the effects of psilocybin and LSD on self-perception, social cognition, and multimodal processing using different brain imaging techniques. After working as a postdoc at the Wellcome Trust Centre for Neuroimaging, UCL, London, UK, and Yale University, New Haven, CT, USA, she now continues her research on the neurobiological effects of psychedelics at University of Zurich and Yale University."
+            ]
+        )
+    , Speaker
         "Stephen Ross, MD"
         (getImageUrl "stephen-ross.jpg")
         (paragraph
