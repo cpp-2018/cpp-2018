@@ -281,6 +281,15 @@ speakers =
             ]
         )
     , Speaker
+        "Rodrigo Pérez-Esparza, MD"
+        (getImageUrl "rodrigo-perez-esparza.jpg")
+        (paragraph
+            [ bold "Rodrigo Pérez-Esparza"
+            , text
+                " is currently the Head of the Addictions Research Laboratory at the National Institute of Neurology in Mexico City, Mexico. He has been formed as a medical doctor, specialist in Psychiatry, subspecialist in Neuropsychiatry, and has a Master's degree in Medical Sciences. During his career, he has primarily worked with ketamine and other psychedelics for the treatment of depression, and is also interested in the biomarkers of addiction."
+            ]
+        )
+    , Speaker
         "Katrin Preller, PhD"
         (getImageUrl "katrin-preller.jpg")
         (paragraph
