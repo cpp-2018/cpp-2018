@@ -327,6 +327,14 @@ speakers =
             ]
         )
     , Speaker
+        "Eric Vermetten, MD PhD"
+        (getImageUrl "eric-vermetten.jpg")
+        (paragraph
+            [ bold "Prof dr Vermetten, MD, PhD (1961)"
+            , text ", was first trained as a physiotherapist and is now a clinical psychiatrist working with veterans and other uniformed officers as Strategic Advisor of Research at the Military Mental Health Service with the Dutch Ministry of Defense, Arq Psychotrauma Research Group and at UMC Utrecht. He holds an endowed chair in Psychiatry at the Department Psychiatry at  Leiden UMC. He also has an Adjunct Professorship at the Department Psychiatry of New York UMC. He is trained in the Netherlands as well as in the USA in psychiatry and neuroscience. He has clinical as well as a research positions with a focus on medical/biological as well as psychiatric aspects of complex psychotrauma in military as well as civilian populations. He has published over 200 papers, over 30 book chapters and edited several books on this topic. His research is in the field of stress, trauma, complex PTSD and neuroscience. He is interested in the history of war and has special focus on combining biological-based interventions in psychotraumatology with novel technology and novel drug developments. He is PI of a new research initiative on a roadmap for medication-assisted psychotherapy in Netherlands and Europe, including use of a variety of psychedelics. Prof Vermetten is an ad hoc reviewer for numerous journals and granting agencies. He has lectured on the topic of PTSD, resilience, military and veterans issues as well as novel approaches to therapy across the globe."
+            ]
+        )
+    , Speaker
         "Fredrik von Kieseritzky, PhD"
         (getImageUrl "fredrik-von-kieseritzky.jpg")
         (paragraph
