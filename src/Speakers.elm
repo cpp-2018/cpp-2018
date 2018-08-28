@@ -241,7 +241,7 @@ speakers =
             ]
         )
     , Speaker
-        "Benjamin Mudge, PhD"
+        "Benjamin Mudge, PhD(c)"
         (getImageUrl "benjamin-mudge.jpg")
         (paragraph
             [ bold "Benjamin Mudge"
