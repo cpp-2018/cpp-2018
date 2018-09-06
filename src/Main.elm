@@ -80,9 +80,6 @@ getSectionFromHash section =
         "#partners" ->
             Ok Partners
 
-        "#call-for-abstracts" ->
-            Ok CallForAbstracts
-
         "#contact" ->
             Ok Contact
 
@@ -153,7 +150,6 @@ type Section
     | Tickets
     | Contact
     | Partners
-    | CallForAbstracts
 
 
 allSections : List Section
@@ -165,7 +161,6 @@ allSections =
     , SideEvents
     , Tickets
     , Partners
-    , CallForAbstracts
     , Contact
     ]
 
@@ -179,7 +174,6 @@ navbarSections =
     , SideEvents
     , Tickets
     , Partners
-    , CallForAbstracts
     , Contact
     ]
 
@@ -546,23 +540,6 @@ viewVenue =
         ]
 
 
-viewCallForAbstracts : Html msg
-viewCallForAbstracts =
-    Html.div [ class [ Style.Venue ] ]
-        [ viewTitle Light "Call for Abstracts"
-        , Html.p []
-            [ Html.text "We are no longer accepting Abstracts for lecture format. Abstracts may however be submitted for Poster presentation format (please see complete details in the section below) until August 30th. Notice of accepted posters is given in within 14 days after submission. To find out more and to submit an abstract for poster format, click "
-            , Html.a
-                [ Attrs.href formUrl
-                , Attrs.target "_blank"
-                , class [ Style.VenueLink ]
-                ]
-                [ Html.text "here" ]
-            , Html.text "."
-            ]
-        ]
-
-
 viewUnderline : Html msg
 viewUnderline =
     Html.div [ class [ Style.Underline ] ] []
@@ -764,7 +741,6 @@ viewContact =
                     [ Html.p [] [ Html.text "Press enquiries: ", viewContactEmailAddress "press@cpp2018.se" ]
                     , Html.p [] [ Html.text "General enquiries: ", viewContactEmailAddress "info@cpp2018.se" ]
                     , Html.p [] [ Html.text "Ticketing enquiries: ", viewContactEmailAddress "tickets@cpp2018.se" ]
-                    , Html.p [] [ Html.text "Abstract and poster submissions are accepted strictly through the ‘Call for Abstracts’ form." ]
                     ]
                 )
             ]
@@ -828,9 +804,6 @@ viewSection section =
                 Partners ->
                     ( [], [], viewPartners )
 
-                CallForAbstracts ->
-                    ( [ Style.DarkBackground ], [], viewCallForAbstracts )
-
                 Contact ->
                     ( [ Style.ContactSection ], [ Style.ContactContent ], viewContact )
     in
@@ -873,9 +846,6 @@ getSectionId section =
         Partners ->
             "partners"
 
-        CallForAbstracts ->
-            "call-for-abstracts"
-
         Contact ->
             "contact"
 
@@ -903,9 +873,6 @@ getSectionName section =
 
         Partners ->
             "Partners"
-
-        CallForAbstracts ->
-            "Call for Abstracts"
 
         Contact ->
             "Contact"
