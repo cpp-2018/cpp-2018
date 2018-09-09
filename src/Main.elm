@@ -776,6 +776,40 @@ viewSideEvents =
                         [ Html.text "Course fee: General Admission 700 SEK/70 EUR, CPP participant 400 SEK/40 EUR." ]
                     ]
                 ]
+            , viewSideEvent
+                "Official After Party"
+                "Noden"
+                "Oct 14th 21.00 - late"
+                "Official_afterparty.jpg"
+                [ paragraph
+                    [ Html.h2
+                        [ class [ Style.SideEventModalTitle ] ]
+                        [ Html.text "CPP2018 Official After Party" ]
+                    ]
+                , paragraph
+                    [ bold "Official Side Event, public. 300 tickets. "
+                    , Html.a
+                        [ Attrs.href "https://www.facebook.com/events/536527963454680"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ bold "Facebook event" ]
+                    ]
+                , paragraph
+                    [ Html.text "Time/Place: Noden, Oct 14th, 21.00 - 05.00"
+                    , paragraph
+                        [ Html.text "The Swedish Network for Psychedelic Science proudly presents, the official after party of Colloquium on Psychedelic Psychiatry 2018! To find out more about the conference, check out "
+                        , Html.a
+                            [ Attrs.href "http://cpp2018.se"
+                            , class [ Style.SideEventModalLink ]
+                            ]
+                            [ bold "http://cpp2018.se" ]
+                        , Html.text "."
+                        ]
+                    ]
+                , paragraph [ Html.text "After an intense weekend of lectures and presentations, we gather one last time at Noden to say goodbye and shake it all out. Live performances, dj's and art installations to be announced. Stay tuned!" ]
+                , paragraph [ Html.text "Ticket price: General Admission 200 SEK / 20 EUR, CPP ticket holder 100 SEK / 10 EUR" ]
+                , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
+                ]
             ]
         ]
 
