@@ -700,6 +700,29 @@ viewSideEvents =
                 , paragraph [ Html.text "Ticket price: 100 SEK / 10 EUR. Half of all proceeds after expenses will be donated to MAPS, advancing the scientific study of psychedelics to treat mental health disorders." ]
                 , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
                 ]
+            , viewSideEvent
+                "Music Session with Mendel Kaelen"
+                "Noden"
+                "Oct 11th 18.00 - 21.00"
+                "Music_session.jpg"
+                [ paragraph
+                    [ Html.h2
+                        [ class [ Style.SideEventModalTitle ] ]
+                        [ Html.text "Music Session with Mendel Kaelen" ]
+                    ]
+                , paragraph
+                    [ bold "Official Side Event, public. 100 tickets. "
+                    , Html.a
+                        [ Attrs.href "https://www.facebook.com/events/269583826985900"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ bold "Facebook event" ]
+                    ]
+                , paragraph [ Html.text "Time/Place: Noden, October 11th 18.00 - 21.00" ]
+                , paragraph [ Html.text "Mendel Kaelen is a neuroscientist and entrepreneur. His research focus is on the therapeutic function of set and setting in psychedelic therapy, with a particular focus on music. He is founder and CEO of Wavepaths, a venture that brings together immersive arts, psychotherapies and AI technologies into a new category of therapeutic tools. This evening we’ll have the opportunity of immersing ourselves in the the science of set and setting, guided by Mendel himself." ]
+                , paragraph [ Html.text "Tickets are limited and expected to sell out fast. General Admission 250 SEK / 25 EUR, CPP ticket holder 150 SEK / 15 EUR" ]
+                , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
+                ]
             ]
         ]
 
