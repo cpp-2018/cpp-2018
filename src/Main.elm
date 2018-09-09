@@ -723,6 +723,59 @@ viewSideEvents =
                 , paragraph [ Html.text "Tickets are limited and expected to sell out fast. General Admission 250 SEK / 25 EUR, CPP ticket holder 150 SEK / 15 EUR" ]
                 , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
                 ]
+            , viewSideEvent
+                "Integration Masterclass for Clinicians"
+                "Noden"
+                "Oct 12th 13.00 - 17.00"
+                "Integration_masterclass.jpg"
+                [ paragraph
+                    [ Html.h2
+                        [ class [ Style.SideEventModalTitle ] ]
+                        [ Html.text "Integration Masterclass for Clinicians" ]
+                    ]
+                , paragraph
+                    [ bold "Official Side Event, practising healthcare practitioners only. 40 tickets. "
+                    , Html.a
+                        [ Attrs.href "https://www.facebook.com/events/2051722494846227"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ bold "Facebook event" ]
+                    ]
+                , paragraph
+                    [ Html.text "Time/Place: Noden, Oct 12th 13.00 - 17.00"
+                    , paragraph [ Html.text "Integration has become a main subject of discussion in the field of psychedelic science. While its importance is widely acknowledged, there are different interpretations of what integration is, its objectives and the scope of it. Different integration resources have appeared during the last years, as well as a wide variety of people offering integration services." ]
+                    , paragraph
+                        [ Html.text "This masterclass offers an in-depth view of what integration is, and how one can support clients in this process. We will present data from the ICEERS Integration and Support service, and we will have practical exercises to convey the most important foundations of integration work. The contents of this class include:"
+                        , Html.ul []
+                            [ Html.li [] [ Html.text "Definitions of integration" ]
+                            , Html.li [] [ Html.text "Classic integration approaches" ]
+                            , Html.li [] [ Html.text "Emergency integration interventions" ]
+                            , Html.li [] [ Html.text "Psychotherapeutic needs in integration sessions" ]
+                            , Html.li [] [ Html.text "Integration vs. Psychotherapy" ]
+                            , Html.li [] [ Html.text "Case Studies of real integration sessions" ]
+                            , Html.li [] [ Html.text "Experiential dynamics around integration" ]
+                            ]
+                        ]
+                    , paragraph
+                        [ Html.h3 [] [ Html.text "About the facilitator" ]
+                        , Html.text "Marc Aixalà is a licensed psychologist and psychotherapist with post degree studies in Integrative Psychotherapy, Masters in Strategic Therapy, and is trained in the therapeutic use of Non Ordinary States of Consciousness, and in MDMA assisted-psychotherapy for PTSD. He coordinates support services at ICEERS where he provides integration psychotherapy sessions for people in challenging situations after experiences with non-ordinary states of consciousness since 2013. Marc works as a psychotherapist in Barcelona, a Holotropic Breathwork facilitator, and is a member of the staff for Grof Transpersonal Training. He has facilitated Holotropic Breathwork workshops and trainings in Barcelona, Switzerland, Unites States, Romania, Israel and Slovenia and is conducting research into its therapeutic applications. He has also been a Team Leader and Trainer at the Kosmicare psychedelic harm reduction service at the Boom Festival, and a trainer for psilocybin guides at the Imperial College London."
+                        ]
+                    , paragraph
+                        [ Html.h3 [] [ Html.text "Application procedure" ]
+                        , Html.text "The deadline for applications is September 30th. Priority will be given to those with 1) relevant education and 2) clinical work experience. After submission, each applicant will be contacted. Applicants with relevant education and work experience will be immediately offered to participate , others will be placed on a reserve list. Following the application deadline, applicants on the reserve list will be contacted again regarding participation."
+                        ]
+                    , paragraph
+                        [ Html.text "Apply "
+                        , Html.a
+                            [ Attrs.href "https://goo.gl/forms/vVlLvIIwx8Uk9rc62"
+                            , class [ Style.SideEventModalLink ]
+                            ]
+                            [ bold "here" ]
+                        ]
+                    , paragraph
+                        [ Html.text "Course fee: General Admission 700 SEK/70 EUR, CPP participant 400 SEK/40 EUR." ]
+                    ]
+                ]
             ]
         ]
 
