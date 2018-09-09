@@ -53,7 +53,7 @@ type CssClasses
     | SpeakerText
     | SpeakerImage
     | SpeakerModal
-    | SpeakerModalName
+    | Bold
     | SpeakerModalImage
     | Venue
     | VenueLink
@@ -98,6 +98,13 @@ type CssClasses
     | AccommodationImage
     | AccommodationTitle
     | AccommodationText
+    | SideEvent
+    | SideEventItem
+    | SideEventImage
+    | SideEventTitle
+    | SideEventText
+    | SideEventModalTitle
+    | SideEventModalLink
     | Partner
     | PartnerImage
     | Partners
@@ -406,7 +413,7 @@ css =
             , Css.overflowY Css.auto
             , Css.fontSize (Css.em 1.3)
             ]
-        , Css.class SpeakerModalName
+        , Css.class Bold
             [ Css.fontWeight Css.bold
             ]
         , Css.class SpeakerModalImage
@@ -703,6 +710,43 @@ css =
             ]
         , Css.class AccommodationText
             [ Css.margin Css.zero
+            ]
+        , Css.class SideEvent
+            [ Css.displayFlex
+            , Css.flexWrap Css.wrap
+            , Css.justifyContent Css.center
+            ]
+        , Css.class SideEventItem
+            [ Css.width (Css.rem 18)
+            , Css.margin (Css.rem 1)
+            , Css.cursor Css.pointer
+            ]
+        , Css.class SideEventImage
+            [ Css.height (Css.rem 12)
+            , Css.width (Css.pct 100)
+            , Css.property "object-fit" "cover"
+            ]
+        , Css.class SideEventTitle
+            [ Css.textAlign Css.center
+            , Css.margin2 (Css.em 0.5) Css.zero
+            , Css.fontSize (Css.rem 1.3)
+            ]
+        , Css.class SideEventModalTitle
+            [ Css.textAlign Css.center
+            , Css.margin2 (Css.em 0.5) Css.zero
+            , Css.fontSize (Css.rem 2)
+            ]
+        , Css.class SideEventModalLink
+            [ Css.color colors.primary
+            , Css.textDecoration Css.none
+            , Css.textTransform Css.unset
+            , Css.cursor Css.pointer
+            ]
+        , Css.class SideEventText
+            [ Css.margin Css.zero
+            , Css.textAlign Css.center
+            , Css.margin2 (Css.em 0.5) Css.zero
+            , Css.fontSize (Css.rem 1.3)
             ]
         , Css.class Partner
             [ Css.margin (Css.rem 1) ]

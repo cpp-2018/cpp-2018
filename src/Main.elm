@@ -11,7 +11,7 @@ import Speakers exposing (Speaker, speakers)
 import Style exposing (class)
 import Svg exposing (Svg, svg)
 import Svg.Attributes
-import Ui exposing (column, paragraph)
+import Ui exposing (bold, column, paragraph)
 
 
 ---- MODEL ----
@@ -24,6 +24,7 @@ type Visibility
 
 type ModalContent
     = SpeakerInfo Speaker
+    | SideEventInfo (List (Html Never))
 
 
 type alias Model =
@@ -57,6 +58,7 @@ type Msg
     | CloseModal
     | ModalClicked
     | SpeakerClicked Speaker
+    | SideEventClicked (List (Html Never))
 
 
 getSectionFromHash : String -> Result String Section
@@ -116,6 +118,11 @@ update msg model =
 
         SpeakerClicked speaker ->
             ( { model | modal = Just (SpeakerInfo speaker) }
+            , Cmd.none
+            )
+
+        SideEventClicked info ->
+            ( { model | modal = Just (SideEventInfo info) }
             , Cmd.none
             )
 
@@ -319,6 +326,13 @@ viewModal content =
                         ]
                     , Html.map never speaker.bio
                     ]
+
+        Just (SideEventInfo info) ->
+            viewModalContent <|
+                Html.map never <|
+                    Html.div
+                        [ class [ Style.SpeakerModal ] ]
+                        info
 
 
 viewModalContent : Html Msg -> Html Msg
@@ -655,9 +669,60 @@ viewSideEvents =
         [ class [ Style.Tickets ] ]
         [ viewTitle Dark "Side Events"
         , Html.div [ class [ Style.DarkText ] ]
-            [ paragraph
-                [ Html.text "Aside from the conference, we will host a series of events related to psychedelic psychiatry around Stockholm. These events will be open to the general public, to make the field accessible to a wider audience. More information regarding side events coming soon!" ]
+            [ viewSideEvent
+                "‘From Shock to Awe’ Premiere Screening"
+                "Cinemateket"
+                "Oct 9th 18.00 - 21.00"
+                "Shock_to_awe.jpg"
+                [ paragraph
+                    [ Html.h2
+                        [ class [ Style.SideEventModalTitle ] ]
+                        [ Html.text "‘From Shock to Awe’ Premiere Screening" ]
+                    ]
+                , paragraph
+                    [ bold "Official Side Event, public. 364 tickets. "
+                    , Html.a
+                        [ Attrs.href "https://www.facebook.com/events/230803534254732"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ bold "Facebook event" ]
+                    ]
+                , paragraph [ Html.text "Time/Place: Cinemateket, Oct 9th 18.00 - 21.00" ]
+                , paragraph [ Html.text "From Shock to Awe asks, ‘how do we heal our deepest wounds?’ An intimate and raw look at the transformational journey of two combat veterans suffering from severe trauma as they abandon pharmaceuticals to seek relief through the mind-expanding world of psychedelics. Recent scientific research coupled with a psychedelic renaissance reveals that these substances can be used to heal PTSD (Post-Traumatic Stress Disorder) for individuals and their families. Beyond the personal stories, From Shock to Awe also raises fundamental questions about war, the pharmaceutical industry, and the US legal system." ]
+                , paragraph
+                    [ Html.text "Watch the trailer: "
+                    , Html.a
+                        [ Attrs.href "https://www.fromshocktoawe.com/"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ Html.text "https://www.fromshocktoawe.com/" ]
+                    ]
+                , paragraph [ Html.text "Ticket price: 100 SEK / 10 EUR. Half of all proceeds after expenses will be donated to MAPS, advancing the scientific study of psychedelics to treat mental health disorders." ]
+                , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
+                ]
             ]
+        ]
+
+
+viewSideEvent : String -> String -> String -> String -> List (Html Never) -> Html Msg
+viewSideEvent title location time fileName info =
+    CoreHtml.div
+        [ class [ Style.SideEventItem ]
+        , Events.onClick <| SideEventClicked info
+        ]
+        [ Html.decorativeImg
+            [ class [ Style.SideEventImage ]
+            , Attrs.src <| "/build/assets/side-events/" ++ fileName
+            ]
+        , Html.h1
+            [ class [ Style.SideEventTitle ] ]
+            [ Html.text title ]
+        , Html.p
+            [ class [ Style.SideEventText ] ]
+            [ Html.text location ]
+        , Html.p
+            [ class [ Style.SideEventText ] ]
+            [ Html.text time ]
         ]
 
 

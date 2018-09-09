@@ -2,7 +2,7 @@ module Speakers exposing (Speaker, speakers)
 
 import Accessibility as Html exposing (Html, text)
 import Style exposing (class)
-import Ui exposing (paragraph)
+import Ui exposing (bold, paragraph)
 
 
 ---- TYPES ----
@@ -17,13 +17,6 @@ type alias Speaker =
 
 
 ---- HELPERS ----
-
-
-bold : String -> Html Never
-bold text =
-    Html.span [ class [ Style.SpeakerModalName ] ]
-        [ Html.text text
-        ]
 
 
 getImageUrl : String -> String
