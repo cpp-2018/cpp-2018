@@ -668,7 +668,7 @@ viewSideEvents =
     Html.div
         [ class [ Style.Tickets ] ]
         [ viewTitle Dark "Side Events"
-        , Html.div [ class [ Style.DarkText ] ]
+        , Html.div [ class [ Style.DarkText, Style.SideEvents ] ]
             [ viewSideEvent
                 "‘From Shock to Awe’ Premiere Screening"
                 "Cinemateket"

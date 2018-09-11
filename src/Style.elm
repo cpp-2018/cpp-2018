@@ -98,7 +98,7 @@ type CssClasses
     | AccommodationImage
     | AccommodationTitle
     | AccommodationText
-    | SideEvent
+    | SideEvents
     | SideEventItem
     | SideEventImage
     | SideEventTitle
@@ -711,15 +711,16 @@ css =
         , Css.class AccommodationText
             [ Css.margin Css.zero
             ]
-        , Css.class SideEvent
+        , Css.class SideEvents
             [ Css.displayFlex
             , Css.flexWrap Css.wrap
             , Css.justifyContent Css.center
             ]
         , Css.class SideEventItem
             [ Css.width (Css.rem 18)
-            , Css.margin (Css.rem 1)
+            , Css.padding (Css.rem 1)
             , Css.cursor Css.pointer
+            , Css.hover [ Css.backgroundColor colors.transparent.light ]
             ]
         , Css.class SideEventImage
             [ Css.height (Css.rem 12)
