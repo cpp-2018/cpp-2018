@@ -868,6 +868,9 @@ viewSideEvent title location time fileName info =
         , Html.p
             [ class [ Style.SideEventText ] ]
             [ Html.text time ]
+        , Html.p
+            [ class [ Style.SideEventMoreInfo ] ]
+            [ Html.text "More info" ]
         ]
 
 

@@ -100,6 +100,7 @@ type CssClasses
     | AccommodationText
     | SideEvents
     | SideEventItem
+    | SideEventMoreInfo
     | SideEventImage
     | SideEventTitle
     | SideEventText
@@ -721,6 +722,16 @@ css =
             , Css.padding (Css.rem 1)
             , Css.cursor Css.pointer
             , Css.hover [ Css.backgroundColor colors.transparent.light ]
+            , Css.displayFlex
+            , Css.flexDirection Css.column
+            ]
+        , Css.class SideEventMoreInfo
+            [ Css.flexGrow (Css.num 1)
+            , Css.displayFlex
+            , Css.justifyContent Css.center
+            , Css.alignItems Css.flexEnd
+            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
+            , Css.color colors.primary
             ]
         , Css.class SideEventImage
             [ Css.height (Css.rem 12)
