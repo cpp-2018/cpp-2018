@@ -810,6 +810,20 @@ viewSideEvents =
                 , paragraph [ Html.text "Ticket price: General Admission 200 SEK / 20 EUR, CPP ticket holder 100 SEK / 10 EUR" ]
                 , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
                 ]
+            , viewSideEvent
+                "Post-Conference Researcher’s Retreat"
+                "Ekskäret"
+                "Oct 15th-17th"
+                "Post_Retreat.jpeg"
+                [ paragraph
+                    [ Html.h2
+                        [ class [ Style.SideEventModalTitle ] ]
+                        [ Html.text "Post-Conference Researcher’s Retreat" ]
+                    ]
+                , paragraph [ bold "Official Side Event, public. X tickets. No facebook event" ]
+                , paragraph [ Html.text "Time/Place: Ekskäret, Stockholm archipelago. Oct 15th-17th" ]
+                , paragraph [ Html.text "Efter konferensen kommer några av talarna och besökarna att åka ut i Skärgården till den idylliska ön Ekskäret. Det blir ett perfekt tillfälle att koppla av i två dagar, men också för att nätverka och planera framtida projekt med lokala och internationella kollegor och andra." ]
+                ]
             ]
         ]
 
