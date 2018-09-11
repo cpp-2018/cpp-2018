@@ -824,6 +824,27 @@ viewSideEvents =
                 , paragraph [ Html.text "Time/Place: Ekskäret, Stockholm archipelago. Oct 15th-17th" ]
                 , paragraph [ Html.text "Efter konferensen kommer några av talarna och besökarna att åka ut i Skärgården till den idylliska ön Ekskäret. Det blir ett perfekt tillfälle att koppla av i två dagar, men också för att nätverka och planera framtida projekt med lokala och internationella kollegor och andra." ]
                 ]
+            , viewSideEvent
+                "Psychedelic Psychiatry - the Future of Mental Health?"
+                "Norrsken House"
+                "Oct 17th 18.00 - 20.00"
+                "Psychedelic_Psychiatry.jpg"
+                [ paragraph
+                    [ Html.h2
+                        [ class [ Style.SideEventModalTitle ] ]
+                        [ Html.text "Psychedelic Psychiatry - The Future of Mental Health?" ]
+                    ]
+                , paragraph
+                    [ bold "Official Side event, public. Co-organized by Norrsken. 150 tickets (sold by Norrsken). "
+                    , Html.a
+                        [ Attrs.href "https://www.facebook.com/events/1932857756800622"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ bold "Facebook event" ]
+                    ]
+                , paragraph [ Html.text "Time/Place: Norrsken House, Oct 17th 18.00 - 20.00 " ]
+                , paragraph [ Html.text "Som avslutning till dessa veckor av heta vetenskapliga diskussioner och en och annan fest samlas vi en sista gång för att diskutera den substansassisterade psykoterapins intåg i den moderna världen och dess vara eller inte vara. Är psykedelisk psykoterapi effekivt? Är det nödvändigt? Och är det möjligt i Sverige?" ]
+                ]
             ]
         ]
 
