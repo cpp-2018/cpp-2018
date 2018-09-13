@@ -679,14 +679,6 @@ viewSideEvents =
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "‘From Shock to Awe’ Premiere Screening" ]
                     ]
-                , paragraph
-                    [ bold "Official Side Event, public. 364 tickets. "
-                    , Html.a
-                        [ Attrs.href "https://www.facebook.com/events/230803534254732"
-                        , class [ Style.SideEventModalLink ]
-                        ]
-                        [ bold "Facebook event" ]
-                    ]
                 , paragraph [ Html.text "Time/Place: Cinemateket, Oct 9th 18.00 - 21.00" ]
                 , paragraph [ Html.text "From Shock to Awe asks, ‘how do we heal our deepest wounds?’ An intimate and raw look at the transformational journey of two combat veterans suffering from severe trauma as they abandon pharmaceuticals to seek relief through the mind-expanding world of psychedelics. Recent scientific research coupled with a psychedelic renaissance reveals that these substances can be used to heal PTSD (Post-Traumatic Stress Disorder) for individuals and their families. Beyond the personal stories, From Shock to Awe also raises fundamental questions about war, the pharmaceutical industry, and the US legal system." ]
                 , paragraph
@@ -710,14 +702,6 @@ viewSideEvents =
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Music Session with Mendel Kaelen" ]
                     ]
-                , paragraph
-                    [ bold "Official Side Event, public. 100 tickets. "
-                    , Html.a
-                        [ Attrs.href "https://www.facebook.com/events/269583826985900"
-                        , class [ Style.SideEventModalLink ]
-                        ]
-                        [ bold "Facebook event" ]
-                    ]
                 , paragraph [ Html.text "Time/Place: Noden, October 11th 18.00 - 21.00" ]
                 , paragraph [ Html.text "Mendel Kaelen is a neuroscientist and entrepreneur. His research focus is on the therapeutic function of set and setting in psychedelic therapy, with a particular focus on music. He is founder and CEO of Wavepaths, a venture that brings together immersive arts, psychotherapies and AI technologies into a new category of therapeutic tools. This evening we’ll have the opportunity of immersing ourselves in the the science of set and setting, guided by Mendel himself." ]
                 , paragraph [ Html.text "Tickets are limited and expected to sell out fast. General Admission 250 SEK / 25 EUR, CPP ticket holder 150 SEK / 15 EUR" ]
@@ -732,14 +716,6 @@ viewSideEvents =
                     [ Html.h2
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Integration Masterclass for Clinicians" ]
-                    ]
-                , paragraph
-                    [ bold "Official Side Event, practising healthcare practitioners only. 40 tickets. "
-                    , Html.a
-                        [ Attrs.href "https://www.facebook.com/events/2051722494846227"
-                        , class [ Style.SideEventModalLink ]
-                        ]
-                        [ bold "Facebook event" ]
                     ]
                 , paragraph
                     [ Html.text "Time/Place: Noden, Oct 12th 13.00 - 17.00"
@@ -787,14 +763,6 @@ viewSideEvents =
                         [ Html.text "CPP2018 Official After Party" ]
                     ]
                 , paragraph
-                    [ bold "Official Side Event, public. 300 tickets. "
-                    , Html.a
-                        [ Attrs.href "https://www.facebook.com/events/536527963454680"
-                        , class [ Style.SideEventModalLink ]
-                        ]
-                        [ bold "Facebook event" ]
-                    ]
-                , paragraph
                     [ Html.text "Time/Place: Noden, Oct 14th, 21.00 - 05.00"
                     , paragraph
                         [ Html.text "The Swedish Network for Psychedelic Science proudly presents, the official after party of Colloquium on Psychedelic Psychiatry 2018! To find out more about the conference, check out "
@@ -820,7 +788,6 @@ viewSideEvents =
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Post-Conference Researcher’s Retreat" ]
                     ]
-                , paragraph [ bold "Official Side Event, public. X tickets. No facebook event" ]
                 , paragraph [ Html.text "Time/Place: Ekskäret, Stockholm archipelago. Oct 15th-17th" ]
                 , paragraph [ Html.text "Efter konferensen kommer några av talarna och besökarna att åka ut i Skärgården till den idylliska ön Ekskäret. Det blir ett perfekt tillfälle att koppla av i två dagar, men också för att nätverka och planera framtida projekt med lokala och internationella kollegor och andra." ]
                 ]
@@ -833,14 +800,6 @@ viewSideEvents =
                     [ Html.h2
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Psychedelic Psychiatry - The Future of Mental Health?" ]
-                    ]
-                , paragraph
-                    [ bold "Official Side event, public. Co-organized by Norrsken. 150 tickets (sold by Norrsken). "
-                    , Html.a
-                        [ Attrs.href "https://www.facebook.com/events/1932857756800622"
-                        , class [ Style.SideEventModalLink ]
-                        ]
-                        [ bold "Facebook event" ]
                     ]
                 , paragraph [ Html.text "Time/Place: Norrsken House, Oct 17th 18.00 - 20.00 " ]
                 , paragraph [ Html.text "Som avslutning till dessa veckor av heta vetenskapliga diskussioner och en och annan fest samlas vi en sista gång för att diskutera den substansassisterade psykoterapins intåg i den moderna världen och dess vara eller inte vara. Är psykedelisk psykoterapi effekivt? Är det nödvändigt? Och är det möjligt i Sverige?" ]
