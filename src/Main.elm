@@ -663,6 +663,17 @@ viewAccommodationItem title fileName content =
         ]
 
 
+viewGetTickets : String -> Html msg
+viewGetTickets link =
+    paragraph
+        [ Html.a
+            [ Attrs.href link
+            , class [ Style.SideEventModalLink ]
+            ]
+            [ Html.text "GET TICKETS" ]
+        ]
+
+
 viewSideEvents : Html Msg
 viewSideEvents =
     Html.div
@@ -690,7 +701,9 @@ viewSideEvents =
                         [ Html.text "https://www.fromshocktoawe.com/" ]
                     ]
                 , paragraph [ Html.text "Ticket price: 100 SEK / 10 EUR. Half of all proceeds after expenses will be donated to MAPS, advancing the scientific study of psychedelics to treat mental health disorders." ]
-                , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
+                , paragraph [ Html.text "Time: Oct 9th 18.00 - 21.00" ]
+                , paragraph [ Html.text "Location: Cinemateket, Borgvägen 1-5, Stockholm" ]
+                , viewGetTickets "http://buytickets.at/ntverketfrpsykedeliskvetenskap/195517"
                 ]
             , viewSideEvent
                 "Music Session with Mendel Kaelen"
@@ -702,10 +715,11 @@ viewSideEvents =
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Music Session with Mendel Kaelen" ]
                     ]
-                , paragraph [ Html.text "Time/Place: Noden, October 11th 18.00 - 21.00" ]
                 , paragraph [ Html.text "Mendel Kaelen is a neuroscientist and entrepreneur. His research focus is on the therapeutic function of set and setting in psychedelic therapy, with a particular focus on music. He is founder and CEO of Wavepaths, a venture that brings together immersive arts, psychotherapies and AI technologies into a new category of therapeutic tools. This evening we’ll have the opportunity of immersing ourselves in the the science of set and setting, guided by Mendel himself." ]
                 , paragraph [ Html.text "Tickets are limited and expected to sell out fast. General Admission 250 SEK / 25 EUR, CPP ticket holder 150 SEK / 15 EUR" ]
-                , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
+                , paragraph [ Html.text "Time: Oct 11th 18.00 - 21.00" ]
+                , paragraph [ Html.text "Location: Noden, Sickla Industriväg 6A, Nacka" ]
+                , viewGetTickets "http://buytickets.at/ntverketfrpsykedeliskvetenskap/195524"
                 ]
             , viewSideEvent
                 "Integration Masterclass for Clinicians"
@@ -717,40 +731,38 @@ viewSideEvents =
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Integration Masterclass for Clinicians" ]
                     ]
+                , paragraph [ Html.text "Integration has become a main subject of discussion in the field of psychedelic science. While its importance is widely acknowledged, there are different interpretations of what integration is, its objectives and the scope of it. Different integration resources have appeared during the last years, as well as a wide variety of people offering integration services." ]
                 , paragraph
-                    [ Html.text "Time/Place: Noden, Oct 12th 13.00 - 17.00"
-                    , paragraph [ Html.text "Integration has become a main subject of discussion in the field of psychedelic science. While its importance is widely acknowledged, there are different interpretations of what integration is, its objectives and the scope of it. Different integration resources have appeared during the last years, as well as a wide variety of people offering integration services." ]
-                    , paragraph
-                        [ Html.text "This masterclass offers an in-depth view of what integration is, and how one can support clients in this process. We will present data from the ICEERS Integration and Support service, and we will have practical exercises to convey the most important foundations of integration work. The contents of this class include:"
-                        , Html.ul []
-                            [ Html.li [] [ Html.text "Definitions of integration" ]
-                            , Html.li [] [ Html.text "Classic integration approaches" ]
-                            , Html.li [] [ Html.text "Emergency integration interventions" ]
-                            , Html.li [] [ Html.text "Psychotherapeutic needs in integration sessions" ]
-                            , Html.li [] [ Html.text "Integration vs. Psychotherapy" ]
-                            , Html.li [] [ Html.text "Case Studies of real integration sessions" ]
-                            , Html.li [] [ Html.text "Experiential dynamics around integration" ]
-                            ]
+                    [ Html.text "This masterclass offers an in-depth view of what integration is, and how one can support clients in this process. We will present data from the ICEERS Integration and Support service, and we will have practical exercises to convey the most important foundations of integration work. The contents of this class include:"
+                    , Html.ul []
+                        [ Html.li [] [ Html.text "Definitions of integration" ]
+                        , Html.li [] [ Html.text "Classic integration approaches" ]
+                        , Html.li [] [ Html.text "Emergency integration interventions" ]
+                        , Html.li [] [ Html.text "Psychotherapeutic needs in integration sessions" ]
+                        , Html.li [] [ Html.text "Integration vs. Psychotherapy" ]
+                        , Html.li [] [ Html.text "Case Studies of real integration sessions" ]
+                        , Html.li [] [ Html.text "Experiential dynamics around integration" ]
                         ]
-                    , paragraph
-                        [ Html.h3 [] [ Html.text "About the facilitator" ]
-                        , Html.text "Marc Aixalà is a licensed psychologist and psychotherapist with post degree studies in Integrative Psychotherapy, Masters in Strategic Therapy, and is trained in the therapeutic use of Non Ordinary States of Consciousness, and in MDMA assisted-psychotherapy for PTSD. He coordinates support services at ICEERS where he provides integration psychotherapy sessions for people in challenging situations after experiences with non-ordinary states of consciousness since 2013. Marc works as a psychotherapist in Barcelona, a Holotropic Breathwork facilitator, and is a member of the staff for Grof Transpersonal Training. He has facilitated Holotropic Breathwork workshops and trainings in Barcelona, Switzerland, Unites States, Romania, Israel and Slovenia and is conducting research into its therapeutic applications. He has also been a Team Leader and Trainer at the Kosmicare psychedelic harm reduction service at the Boom Festival, and a trainer for psilocybin guides at the Imperial College London."
-                        ]
-                    , paragraph
-                        [ Html.h3 [] [ Html.text "Application procedure" ]
-                        , Html.text "The deadline for applications is September 30th. Priority will be given to those with 1) relevant education and 2) clinical work experience. After submission, each applicant will be contacted. Applicants with relevant education and work experience will be immediately offered to participate , others will be placed on a reserve list. Following the application deadline, applicants on the reserve list will be contacted again regarding participation."
-                        ]
-                    , paragraph
-                        [ Html.text "Apply "
-                        , Html.a
-                            [ Attrs.href "https://goo.gl/forms/vVlLvIIwx8Uk9rc62"
-                            , class [ Style.SideEventModalLink ]
-                            ]
-                            [ bold "here" ]
-                        ]
-                    , paragraph
-                        [ Html.text "Course fee: General Admission 700 SEK/70 EUR, CPP participant 400 SEK/40 EUR." ]
                     ]
+                , paragraph
+                    [ Html.h3 [] [ Html.text "About the facilitator" ]
+                    , Html.text "Marc Aixalà is a licensed psychologist and psychotherapist with post degree studies in Integrative Psychotherapy, Masters in Strategic Therapy, and is trained in the therapeutic use of Non Ordinary States of Consciousness, and in MDMA assisted-psychotherapy for PTSD. He coordinates support services at ICEERS where he provides integration psychotherapy sessions for people in challenging situations after experiences with non-ordinary states of consciousness since 2013. Marc works as a psychotherapist in Barcelona, a Holotropic Breathwork facilitator, and is a member of the staff for Grof Transpersonal Training. He has facilitated Holotropic Breathwork workshops and trainings in Barcelona, Switzerland, Unites States, Romania, Israel and Slovenia and is conducting research into its therapeutic applications. He has also been a Team Leader and Trainer at the Kosmicare psychedelic harm reduction service at the Boom Festival, and a trainer for psilocybin guides at the Imperial College London."
+                    ]
+                , paragraph
+                    [ Html.h3 [] [ Html.text "Application procedure" ]
+                    , Html.text "The deadline for applications is September 30th. Priority will be given to those with 1) relevant education and 2) clinical work experience. After submission, each applicant will be contacted. Applicants with relevant education and work experience will be immediately offered to participate , others will be placed on a reserve list. Following the application deadline, applicants on the reserve list will be contacted again regarding participation."
+                    ]
+                , paragraph
+                    [ Html.text "Apply "
+                    , Html.a
+                        [ Attrs.href "https://goo.gl/forms/vVlLvIIwx8Uk9rc62"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ bold "here" ]
+                    ]
+                , paragraph [ Html.text "Time: Oct 12th 13.00 - 17.00" ]
+                , paragraph [ Html.text "Location: Noden, Sickla Industriväg 6A, Nacka" ]
+                , paragraph [ Html.text "Course fee: General Admission 700 SEK/70 EUR, CPP participant 400 SEK/40 EUR." ]
                 ]
             , viewSideEvent
                 "Official After Party"
@@ -760,23 +772,43 @@ viewSideEvents =
                 [ paragraph
                     [ Html.h2
                         [ class [ Style.SideEventModalTitle ] ]
-                        [ Html.text "CPP2018 Official After Party" ]
+                        [ Html.text "CPP2018 Afterparty: Stimulus" ]
                     ]
+                , paragraph [ Html.text "Welcome to Stimulus, the official afterparty of Colloquium on Psychedelic Psychiatry 2018! After an intense weekend of lectures and presentations, we gather conference attendees and others at Noden to round off the weekend in style." ]
+                , paragraph [ Html.text "A stimulus incites activity and energy. As we gather some of Stockholm’s finest live performers, dj's and art installations, this Stimulus will guarantee a response." ]
                 , paragraph
-                    [ Html.text "Time/Place: Noden, Oct 14th, 21.00 - 05.00"
-                    , paragraph
-                        [ Html.text "The Swedish Network for Psychedelic Science proudly presents, the official after party of Colloquium on Psychedelic Psychiatry 2018! To find out more about the conference, check out "
-                        , Html.a
-                            [ Attrs.href "http://cpp2018.se"
-                            , class [ Style.SideEventModalLink ]
-                            ]
-                            [ bold "http://cpp2018.se" ]
-                        , Html.text "."
+                    [ Html.text "Live performances by:"
+                    , Html.ul []
+                        [ Html.li [] [ Html.text "Soroush & Mehrdad" ]
+                        , Html.li [] [ Html.text "Acid Hamam (Tom Tom Disco) & Arsalan" ]
                         ]
                     ]
-                , paragraph [ Html.text "After an intense weekend of lectures and presentations, we gather one last time at Noden to say goodbye and shake it all out. Live performances, dj's and art installations to be announced. Stay tuned!" ]
-                , paragraph [ Html.text "Ticket price: General Admission 200 SEK / 20 EUR, CPP ticket holder 100 SEK / 10 EUR" ]
-                , paragraph [ Html.text "Tickets to all side events will be released September 13th, 20.00 CEST." ]
+                , paragraph
+                    [ Html.text "DJs"
+                    , Html.ul []
+                        [ Html.li [] [ Html.text "Ottelin" ]
+                        , Html.li [] [ Html.text "Drakenberg" ]
+                        , Html.li [] [ Html.text "Ty Tugwell" ]
+                        ]
+                    ]
+                , paragraph
+                    [ Html.text "Art installations by:"
+                    , Html.ul []
+                        [ Html.li [] [ Html.text "Elin Nilsson" ]
+                        , Html.li [] [ Html.text "Andreas Dahl" ]
+                        , Html.li [] [ Html.text "Fin T Öhlund" ]
+                        ]
+                    ]
+                , paragraph
+                    [ Html.text "Advance Ticket Prices:"
+                    , Html.ul []
+                        [ Html.li [] [ Html.text "General Admission 150 SEK / 15 EUR" ]
+                        , Html.li [] [ Html.text "CPP Participant 100 SEK / 10 EUR" ]
+                        ]
+                    ]
+                , paragraph [ Html.text "Time: Oct 14th, 21.00 - 05.00" ]
+                , paragraph [ Html.text "Location: Noden, Sickla Industriväg 6A, Nacka" ]
+                , viewGetTickets "http://buytickets.at/ntverketfrpsykedeliskvetenskap/195529"
                 ]
             , viewSideEvent
                 "Post-Conference Researcher’s Retreat"
@@ -788,8 +820,16 @@ viewSideEvents =
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Post-Conference Researcher’s Retreat" ]
                     ]
-                , paragraph [ Html.text "Time/Place: Ekskäret, Stockholm archipelago. Oct 15th-17th" ]
-                , paragraph [ Html.text "Efter konferensen kommer några av talarna och besökarna att åka ut i Skärgården till den idylliska ön Ekskäret. Det blir ett perfekt tillfälle att koppla av i två dagar, men också för att nätverka och planera framtida projekt med lokala och internationella kollegor och andra." ]
+                , paragraph [ Html.text "Following the conference, a few of our international speakers will join us for a 2-night retreat at Ekskäret, a beautiful island in the Swedish archipelago. The retreat is an opportunity to relax after the hectic weekend, but also for informal networking and hopefully planning future research projects in Sweden and abroad. The retreat will begin in the morning of October 15th and conclude on October 17th." ]
+                , paragraph [ Html.text "We currently have a few spots open for researchers and PhD candidates affiliated with Swedish universities. To apply, you need to either hold a PhD in a discipline relevant to psychiatry, or be a PhD candidate. Participation in the retreat is free." ]
+                , paragraph
+                    [ Html.text "All applicants will be contacted individually. Apply "
+                    , Html.a
+                        [ Attrs.href "https://goo.gl/forms/GqGuJakjScnMfAco2"
+                        , class [ Style.SideEventModalLink ]
+                        ]
+                        [ bold "here" ]
+                    ]
                 ]
             , viewSideEvent
                 "Psychedelic Psychiatry - the Future of Mental Health?"
@@ -801,8 +841,12 @@ viewSideEvents =
                         [ class [ Style.SideEventModalTitle ] ]
                         [ Html.text "Psychedelic Psychiatry - The Future of Mental Health?" ]
                     ]
-                , paragraph [ Html.text "Time/Place: Norrsken House, Oct 17th 18.00 - 20.00 " ]
-                , paragraph [ Html.text "Som avslutning till dessa veckor av heta vetenskapliga diskussioner och en och annan fest samlas vi en sista gång för att diskutera den substansassisterade psykoterapins intåg i den moderna världen och dess vara eller inte vara. Är psykedelisk psykoterapi effekivt? Är det nödvändigt? Och är det möjligt i Sverige?" ]
+                , paragraph [ Html.text "After a hectic weekend of scientific presentations, we return to the normal world, facing the same challenges as we were a week earlier. The possibility of psychedelic-assisted psychotherapies may seem within reach, but ongoing international research is still at an early stage. Here in Sweden, not much seems to be happening at all. Is psychedelic psychiatry just a temporary trend, championed by Burning Man neo-hippies? Or could it be the beginning of a paradigm shift in how we treat mental health?" ]
+                , paragraph [ Html.text "We take this unique opportunity to bring together international psychedelic researchers with renowned Swedish academics, to answer a few fundamental questions. Is psychedelic psychiatry effective? Is it needed? And is it possible in Sweden?" ]
+                , paragraph [ Html.text "We will be joined by Alex Belser, PhD, Alicia Danforth, PhD, and Mats Humble, MD PhD. We look forward to discussing this important topic with you!" ]
+                , paragraph [ Html.text "Time: Oct 17th 18.00 - 20.00" ]
+                , paragraph [ Html.text "Location: Norrsken House, Birger Jarlsgatan 57c, Stockholm" ]
+                , viewGetTickets "https://psychedelic-psychiatry.confetti.events/"
                 ]
             ]
         ]
