@@ -106,6 +106,8 @@ type CssClasses
     | SideEventText
     | SideEventModalTitle
     | SideEventModalLink
+    | SideEventGetTickets
+    | SideEventGetTicketsWrapper
     | Partner
     | PartnerImage
     | Partners
@@ -753,6 +755,15 @@ css =
             , Css.textDecoration Css.none
             , Css.textTransform Css.unset
             , Css.cursor Css.pointer
+            ]
+        , Css.class SideEventGetTickets
+            [ Css.color colors.primary
+            , Css.textDecoration Css.none
+            , Css.cursor Css.pointer
+            , Css.fontFamilies [ "DIN Bold", "sans-serif" ]
+            ]
+        , Css.class SideEventGetTicketsWrapper
+            [ Css.textAlign Css.center
             ]
         , Css.class SideEventText
             [ Css.margin Css.zero

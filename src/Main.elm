@@ -665,12 +665,14 @@ viewAccommodationItem title fileName content =
 
 viewGetTickets : String -> Html msg
 viewGetTickets link =
-    paragraph
+    Html.p [
+             class [ Style.SideEventGetTicketsWrapper ]
+        ] 
         [ Html.a
             [ Attrs.href link
-            , class [ Style.SideEventModalLink ]
+            , class [ Style.SideEventGetTickets ]
             ]
-            [ Html.text "GET TICKETS" ]
+            [ Html.text "Get Tickets" ]
         ]
 
 
