@@ -780,7 +780,7 @@ viewSideEvents =
                 "Official After Party"
                 "Noden"
                 "Oct 14th 21.00 - late"
-                "Official_afterparty.jpg"
+                "Techno_temple.jpg"
                 [ paragraph
                     [ Html.h2
                         [ class [ Style.SideEventModalTitle ] ]
