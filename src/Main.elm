@@ -893,6 +893,7 @@ viewTickets =
                         , Html.div [ class [ Style.Price ] ] [ Html.text "- 3600 SEK / €350" ]
                         , Html.div [ class [ Style.Price ] ] [ Html.text "- 2400 SEK / €235 (student*)" ]
                         ]
+                    , paragraph [ Html.text "General Release tickets are available until 31st of September, after which prices will increase to 4000 SEK / €350." ]
                     , paragraph [ Html.text "TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales." ]
                     ]
                 , column
