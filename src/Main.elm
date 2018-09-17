@@ -521,7 +521,7 @@ viewPracticalities =
         , Html.div [ class [ Style.PracticalitiesContent ] ]
             [ Html.div [ class [ Style.PracticalitiesText, Style.DarkText ] ]
                 [ Html.p []
-                    [ Html.text "Colloquium on Psychedelic Psychiatry 2018 will take place at Elite Hotel Marina Tower in Stockholm, a high-end hotel conveniently accessible by short boat or bus ride from central Stockholm. Hotel rooms will be available at a discount price for conference participants. Breakfast and lunch will be included in the ticket price, making the hotel an all-round solution for both formal lectures and informal networking. And yes, the spa is open late."
+                    [ Html.text "Colloquium on Psychedelic Psychiatry 2018 will take place at Elite Hotel Marina Tower in Stockholm, a high-end hotel conveniently accessible by short boat or bus ride from central Stockholm. Breakfast and lunch will be included in the ticket price, making the hotel an all-round solution for both formal lectures and informal networking. The conference program will run from 9am to 6pm daily, with additional activities in the evenings. And yes, the spa is open late."
                     ]
                 , Html.p []
                     [ Html.text "More information about the venue "
