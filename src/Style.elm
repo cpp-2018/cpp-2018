@@ -55,15 +55,15 @@ type CssClasses
     | SpeakerModal
     | Bold
     | SpeakerModalImage
-    | Venue
-    | VenueLink
-    | VenueContent
-    | VenueImage
-    | VenueImages
-    | VenueSmallImage
-    | VenueSmallImages
-    | VenueText
-    | VenueFirstParagraph
+    | Practicalities
+    | PracticalitiesLink
+    | PracticalitiesContent
+    | PracticalitiesImage
+    | PracticalitiesImages
+    | PracticalitiesSmallImage
+    | PracticalitiesSmallImages
+    | PracticalitiesText
+    | PracticalitiesFirstParagraph
     | Tickets
     | TicketsLink
     | TicketsInfo
@@ -548,22 +548,22 @@ css =
         , Css.class DarkBackground
             [ Css.backgroundColor colors.neutral.dark
             ]
-        , Css.class Venue
+        , Css.class Practicalities
             [ Css.fontSize (Css.rem 1.2)
             , Css.color colors.white
             ]
-        , Css.class VenueLink
+        , Css.class PracticalitiesLink
             [ Css.textTransform Css.none
             , Css.color colors.accent
             ]
-        , Css.class VenueContent
+        , Css.class PracticalitiesContent
             [ Css.displayFlex
             , size.medium [ Css.flexDirection Css.column ]
             , size.small [ Css.flexDirection Css.column ]
             , size.smaller [ Css.flexDirection Css.column ]
             , size.smallest [ Css.flexDirection Css.column ]
             ]
-        , Css.class VenueText
+        , Css.class PracticalitiesText
             [ Css.flexGrow (Css.num 1)
             , Css.flexShrink Css.zero
             , Css.flexBasis (Css.rem 0)
@@ -582,7 +582,7 @@ css =
             , size.smaller [ Css.margin (Css.rem 1) ]
             , size.smallest [ Css.margin (Css.rem 1) ]
             ]
-        , Css.class VenueImages
+        , Css.class PracticalitiesImages
             [ Css.flexGrow (Css.num 2)
             , Css.flexShrink Css.zero
             , Css.flexBasis (Css.rem 0)
@@ -593,12 +593,12 @@ css =
             , size.smaller [ Css.flexBasis Css.auto ]
             , size.smallest [ Css.flexBasis Css.auto ]
             ]
-        , Css.class VenueImage
+        , Css.class PracticalitiesImage
             [ Css.maxWidth (Css.pct 100)
             , Css.margin (Css.rem 1)
             , Css.display Css.block
             ]
-        , Css.class VenueSmallImage
+        , Css.class PracticalitiesSmallImage
             [ Css.maxWidth (Css.pct 100)
             , Css.flexGrow (Css.num 1)
             , Css.flexShrink Css.zero
@@ -613,7 +613,7 @@ css =
                 (Css.rem 1)
                 (Css.rem 1)
             ]
-        , Css.class VenueSmallImages
+        , Css.class PracticalitiesSmallImages
             [ Css.displayFlex
             ]
         , Css.class MoreInfoSoon

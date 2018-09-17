@@ -70,8 +70,8 @@ getSectionFromHash section =
         "#speakers" ->
             Ok Speakers
 
-        "#venue" ->
-            Ok Venue
+        "#practicalities" ->
+            Ok Practicalities
 
         "#side-events" ->
             Ok SideEvents
@@ -151,7 +151,7 @@ toggleVisibility visibility =
 type Section
     = About
     | Speakers
-    | Venue
+    | Practicalities
     | Accommodation
     | SideEvents
     | Tickets
@@ -163,7 +163,7 @@ allSections : List Section
 allSections =
     [ About
     , Speakers
-    , Venue
+    , Practicalities
     , Accommodation
     , SideEvents
     , Tickets
@@ -176,7 +176,7 @@ navbarSections : List Section
 navbarSections =
     [ About
     , Speakers
-    , Venue
+    , Practicalities
     , Accommodation
     , SideEvents
     , Tickets
@@ -514,12 +514,12 @@ viewSpeakers =
         ]
 
 
-viewVenue : Html msg
-viewVenue =
-    Html.div [ class [ Style.Venue ] ]
-        [ viewTitle Dark "The Venue"
-        , Html.div [ class [ Style.VenueContent ] ]
-            [ Html.div [ class [ Style.VenueText, Style.DarkText ] ]
+viewPracticalities : Html msg
+viewPracticalities =
+    Html.div [ class [ Style.Practicalities ] ]
+        [ viewTitle Dark "Practicalities"
+        , Html.div [ class [ Style.PracticalitiesContent ] ]
+            [ Html.div [ class [ Style.PracticalitiesText, Style.DarkText ] ]
                 [ Html.p []
                     [ Html.text "Colloquium on Psychedelic Psychiatry 2018 will take place at Elite Hotel Marina Tower in Stockholm, a high-end hotel conveniently accessible by short boat or bus ride from central Stockholm. Hotel rooms will be available at a discount price for conference participants. Breakfast and lunch will be included in the ticket price, making the hotel an all-round solution for both formal lectures and informal networking. And yes, the spa is open late."
                     ]
@@ -528,26 +528,26 @@ viewVenue =
                     , Html.a
                         [ Attrs.href "https://www.elite.se/en/hotels/stockholm/hotel-marina-tower/"
                         , Attrs.target "_blank"
-                        , class [ Style.VenueLink ]
+                        , class [ Style.PracticalitiesLink ]
                         ]
                         [ Html.text "here" ]
                     , Html.text "."
                     ]
                 ]
-            , Html.div [ class [ Style.VenueImages ] ]
-                [ Html.div [ class [ Style.VenueSmallImages ] ]
+            , Html.div [ class [ Style.PracticalitiesImages ] ]
+                [ Html.div [ class [ Style.PracticalitiesSmallImages ] ]
                     [ Html.decorativeImg
                         [ Attrs.src "/build/assets/elite-hotel-2.jpg"
-                        , class [ Style.VenueSmallImage ]
+                        , class [ Style.PracticalitiesSmallImage ]
                         ]
                     , Html.decorativeImg
                         [ Attrs.src "/build/assets/elite-hotel-3.jpg"
-                        , class [ Style.VenueSmallImage ]
+                        , class [ Style.PracticalitiesSmallImage ]
                         ]
                     ]
                 , Html.decorativeImg
                     [ Attrs.src "/build/assets/elite-hotel.jpg"
-                    , class [ Style.VenueImage ]
+                    , class [ Style.PracticalitiesImage ]
                     ]
                 ]
             ]
@@ -665,9 +665,9 @@ viewAccommodationItem title fileName content =
 
 viewGetTickets : String -> Html msg
 viewGetTickets link =
-    Html.p [
-             class [ Style.SideEventGetTicketsWrapper ]
-        ] 
+    Html.p
+        [ class [ Style.SideEventGetTicketsWrapper ]
+        ]
         [ Html.a
             [ Attrs.href link
             , class [ Style.SideEventGetTickets ]
@@ -1007,8 +1007,8 @@ viewSection section =
                 Speakers ->
                     ( [ Style.DarkBackground ], [], viewSpeakers )
 
-                Venue ->
-                    ( [], [], viewVenue )
+                Practicalities ->
+                    ( [], [], viewPracticalities )
 
                 Accommodation ->
                     ( [ Style.DarkBackground ], [], viewAccommodation )
@@ -1049,8 +1049,8 @@ getSectionId section =
         Speakers ->
             "speakers"
 
-        Venue ->
-            "venue"
+        Practicalities ->
+            "practicalities"
 
         Accommodation ->
             "accommodation"
@@ -1077,8 +1077,8 @@ getSectionName section =
         Speakers ->
             "Speakers"
 
-        Venue ->
-            "Venue"
+        Practicalities ->
+            "Practicalities"
 
         Accommodation ->
             "Accommodation"
