@@ -70,6 +70,22 @@ speakers =
             ]
         )
     , Speaker
+        "James Brooks Close, MSc MACP"
+        (getImageUrl "james-brooks-close.jpg")
+        (paragraph
+            [ paragraph
+                [ bold "James"
+                , text " specialises in the conservative management of complex, chronic-pain conditions. He graduated as a physiotherapist from Cardiff University in 2008, later progressing to complete an MSc in Advanced Neuromusculoskeletal Physiotherapy at King’s College London. James’ academic interests principally lie at the interface between physical and mental health. His research has sought ways to better integrate psychotherapeutic techniques such as Acceptance & Commitment Therapy into physical-healthcare. His work in collaboration with the Psychedelic Research Group at Imperial College London examines the psychological mechanisms behind psychedelic-assisted therapy. James currently lives in London where he has worked in a range of institutions including Guy’s & St. Thomas’ Hospitals, Chelsea Football Club and The Royal Military Academy Sandhurst."
+                ]
+            , paragraph
+                [ bold "Abstract: Psychedelics promote psychological flexibility - Results of a web-based survey using the Acceptance in Action Questionnaire II (AAQ-II)"
+                ]
+            , paragraph
+                [ text "There is a growing base of research supporting the therapeutic efficacy of classic psychedelics in treating patients with anxiety and depression, however, little is known about the psychological mechanisms underpinning these effects. This survey aimed to measure changes in psychological flexibility following a self-reported psychedelic experience using the Acceptance in Action Questionnaire II (AAQ-II). 162 respondents completed the web-based survey (www.psychedelicsurvery.com) which also included measures of depressive symptomology (QIDS) and trait-anxiety (STAI-T). Significant improvements in AAQ-II scores (p < 0.05) were observed at two weeks, and four weeks following the experience. Improvements peaked at two weeks, and correlated with reductions in QUID (p>0.05), and STAI-T (p>0.05) scores. Results of this study suggest psychological flexibility may be enhanced by the psychedelic experience, integrating Acceptance and Commitment Therapy into protocols for psychedelic therapy may help to optimise their therapeutic efficacy."
+                ]
+            ]
+        )
+    , Speaker
         "Alicia Danforth, PhD"
         (getImageUrl "alicia-danforth.jpg")
         (paragraph
