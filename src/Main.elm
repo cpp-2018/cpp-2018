@@ -631,7 +631,7 @@ viewAccommodation =
                 , viewSubtleLink "couchsurfing form for guests" "https://drive.google.com/open?id=12_jHXiENu2bSqJ8owIo_qighQq6AH1_WP5BrFA4d42g"
                 , Html.text " and wait for us to get in touch. But - no guarantees. Couchsurfing opportunities are of course dependendent on locals signing up as hosts. To sign up as a host, fill out "
                 , viewSubtleLink "this form" "https://drive.google.com/open?id=1DQCvuuqt7Gb6tSQcMU4cEewLBqqk1nsVQAFuahM_gLQ"
-                , Html.text "."
+                , Html.text ". The deadline for applications is September 30th."
                 ]
             ]
         ]
