@@ -363,8 +363,8 @@ speakers =
         "Anne Wagner, PhD, CPsych"
         (getImageUrl "anne-wagner.jpg")
         (paragraph
-            [ bold "Anne"
-            , text " is a clinical psychologist. She is funded by Canadian Institutes of Health Research and is a Postdoctoral Fellow at Ryerson University, working with Dr. Candice Monson. With Candice, Michael Mithoefer and Annie Mithoefer, Anne is investigating the combination of Cognitive Behavioral Therapy and MDMA for PTSD. As well as being part of the psychotherapy team in the trial Anne does work in Trauma-Informed Care and with the lived experiences of people living with HIV and in LGBTQ communities. She is a trainer for Cognitive Behavioral Conjoint Therapy for PTSD and a consultant for Cognitive Processing Therapy."
+            [ bold "Dr. Anne Wagner"
+            , text "is a clinical psychologist and researcher who is committed to helping understand and improve trauma recovery. She is the founder of Remedy, a mental health innovation community, and an associate member of the Yeates School of Graduate Studies at Ryerson University. She completed a Canadian Institutes of Health Research Postdoctoral Fellowship at Ryerson University. She is the Chair of the Traumatic Stress Section of the Canadian Psychological Association, and sits on the Quality Committee of Casey House (Toronto’s HIV/AIDS Hospital). Anne has a particular focus on innovating mental health interventions, for example by working with a community-led approach (e.g., with HIV/AIDS service organizations and community health centres), using different treatment formats (e.g., with couples), and facilitators of treatment (e.g., MDMA). Anne, alongside Dr. Michael Mithoefer, Annie Mithoefer, BSN, and Dr. Candice Monson, is one of the investigators of the MAPS funded pilot study of Cognitive Behavioral Conjoint Therapy for PTSD + MDMA. Anne is the lead investigator for the upcoming MAPS funded pilot study of Cognitive Processing Therapy for PTSD + MDMA."
             ]
         )
     , Speaker
