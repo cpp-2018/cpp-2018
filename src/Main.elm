@@ -888,13 +888,9 @@ viewTickets =
             [ Html.div
                 [ class [ Style.TicketsInfo ] ]
                 [ column
-                    [ paragraph
-                        [ Html.div [] [ Html.text "General Release:" ]
-                        , Html.div [ class [ Style.Price ] ] [ Html.text "- 3600 SEK / €350" ]
-                        , Html.div [ class [ Style.Price ] ] [ Html.text "- 2400 SEK / €235 (student*)" ]
-                        ]
-                    , paragraph [ Html.text "General Release tickets are available until 31st of September, after which prices will increase to 4000 SEK / €350." ]
-                    , paragraph [ Html.text "TICKETS INCLUDE: Conference pass and food (breakfast, lunch and afternoon refreshments). Please state any food preferences or allergies in the form provided with ticket sales." ]
+                    [ paragraph [ Html.text "General Release (available until Sept 30th): €350 / 3600 SEK (€235/2400 SEK with student ID). Lunch and refreshments included for all participants." ]
+                    , paragraph [ Html.text "Last Minute (available from Oct 1st): Last Minute: €390 / 4000 SEK (€290 / 3000 SEK with student ID). Lunch and refreshments included for all participants." ]
+                    , paragraph [ Html.text "One-day tickets (available from Oct 1st): €190 / 2000 SEK (€145 / 1500 SEK with student ID). Lunch and refreshments not included." ]
                     ]
                 , column
                     [ paragraph
@@ -906,7 +902,7 @@ viewTickets =
                             [ Html.text "sign up here" ]
                         , Html.text " and you will receive the discount code."
                         ]
-                    , paragraph [ Html.text "*Students will be required to provide proof of registration or enrolment letter of their current university." ]
+                    , paragraph [ Html.text "*Students will be required to provide proof of registration or enrollment letter of their current university." ]
                     ]
                 ]
             , Html.div []
