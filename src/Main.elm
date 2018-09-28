@@ -25,6 +25,7 @@ type Visibility
 type ModalContent
     = SpeakerInfo Speaker
     | SideEventInfo (List (Html Never))
+    | PriceChange
 
 
 type alias Model =
@@ -34,11 +35,20 @@ type alias Model =
     }
 
 
-init : ( Model, Cmd Msg )
-init =
+type alias Flags =
+    { showPriceChangeModal : Bool
+    }
+
+
+init : Flags -> ( Model, Cmd Msg )
+init flags =
     ( { active = About
       , menu = Invisible
-      , modal = Nothing
+      , modal =
+            if flags.showPriceChangeModal then
+                Just PriceChange
+            else
+                Nothing
       }
     , allSections
         |> List.reverse
@@ -310,6 +320,15 @@ viewMailChimp =
         ]
 
 
+viewPriceChange : Html Msg
+viewPriceChange =
+    Html.div
+        [ class [ Style.PriceChangeModal ] ]
+        [ Html.h1 [] [ Html.text "Ticket price change!" ]
+        , paragraph [ Html.text "On October 1st, the price for a ticket will go up form €350 / 3600 SEK (€235/2400 SEK with student ID) to €390 / 4000 SEK (€290 / 3000 SEK with student ID), so get your tickets now!" ]
+        ]
+
+
 viewModal : Maybe ModalContent -> Html Msg
 viewModal content =
     case content of
@@ -333,6 +352,9 @@ viewModal content =
                     Html.div
                         [ class [ Style.SpeakerModal ] ]
                         info
+
+        Just PriceChange ->
+            viewModalContent viewPriceChange
 
 
 viewModalContent : Html Msg -> Html Msg
@@ -1101,9 +1123,9 @@ getSectionName section =
 ---- PROGRAM ----
 
 
-main : Program Never Model Msg
+main : Program Flags Model Msg
 main =
-    Html.program
+    Html.programWithFlags
         { view = view
         , init = init
         , update = update
