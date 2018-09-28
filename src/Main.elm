@@ -570,6 +570,10 @@ viewPartners =
                 "beckley-foundation.png"
                 "http://beckleyfoundation.org/"
             , viewPartner
+                "MAPS"
+                "maps_logo.svg"
+                "https://maps.org/"
+            , viewPartner
                 "Psyty"
                 "psyty.png"
                 "http://psyty.fi/"
