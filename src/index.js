@@ -8,7 +8,7 @@ const hasSeenPriceChangeModal = !!document.cookie.match(
 );
 
 const app = Main.embed(document.getElementById("root"), {
-  showPriceChangeModal: !hasSeenPriceChangeModal
+  showPriceChangeModal: false // !hasSeenPriceChangeModal
 });
 
 if (!hasSeenPriceChangeModal) {
