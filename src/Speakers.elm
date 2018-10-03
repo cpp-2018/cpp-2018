@@ -70,6 +70,35 @@ speakers =
             ]
         )
     , Speaker
+        "Christine Clark, MD"
+        (getImageUrl "christine-clark.jpg")
+        (paragraph
+            [ paragraph
+                [ bold "Christine Clark"
+                , text " earned her MD at Rush Medical College in 2013 and completed her final year of her psychiatric residency at the University of New Mexico in summer of 2018. As an undergraduate at University of Virginia, she received a BA in Neuroscience and published basic science research in neurophysiology.  After completing her medical degree, she studied under Harriet de Wit at the Human Behavioral Pharmacology Lab at the University of Chicago, and in 2015 published an article on the acute effects of MDMA on autonomic cardiac activity and their relation to the subjective prosocial and stimulant effects. She is currently a student at California Institute of Integral Studies Center for Psychedelic Therapies and Research."
+                ]
+            , paragraph
+                [ bold "Abstract: Ibogaine Treatment for Substance Use Disorder: Clinical Relevance of Psychoactive Properties"
+                ]
+            , paragraph
+                [ bold "Introduction:"
+                , text " A growing body of literature indicates that mystical type peak experiences during psychedelic therapy are associated with improved clinical outcomes and persisting psychological and behavioral changes in a variety of conditions including substance dependence, end of life anxiety, and treatment resistant depression. This has been seen in the classic hallucinogens which act primarily as agonists at the 5HT2A receptor and ketamine, which has NMDA antagonism like ibogaine."
+                ]
+            , paragraph
+                [ bold "Method:"
+                , text " This presentation pools secondary data from three previous IRB approved studies and describes the phenomenology of ibogaine using the Mystical Experience Questionnaire (MEQ43) in 96 subjects (Noller et al 2018, Brown and Alper 2018, Barsuglia et al. 2017, poster presentation). Clinical outcome data from opiate addiction is available from two of the studies (n=42) (Noller et al 2018, Brown and Alper 2018)."
+                ]
+            , paragraph
+                [ bold "Results:"
+                , text " As defined by the MEQ43, ibogaine caused a complete mystical experience in 23% of subjects across three clinical studies. The relationship between this experience and clinical outcomes in opioid addiction will be presented."
+                ]
+            , paragraph
+                [ bold "Conclusions:"
+                , text " Additionally, this presentation will review the literature on the therapeutic importance of the psychoactive effects of ibogaine including its history of use in psychedelic therapy by Claudio Naranjo and Leo Zeff and the ceremonial use of iboga in Bwiti rituals in West Central Africa. While the medical and scientific communities often view ibogaine’s psychoactive properties as either irrelevant or undesirable side effects, this presentation explores the evidence supporting their therapeutic benefit."
+                ]
+            ]
+        )
+    , Speaker
         "James Brooks Close, MSc MACP"
         (getImageUrl "james-brooks-close.jpg")
         (paragraph
