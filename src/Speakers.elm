@@ -373,6 +373,14 @@ speakers =
             ]
         )
     , Speaker
+        "Vincent Verroust, PhD(c)"
+        (getImageUrl "vincent-verroust.jpg")
+        (paragraph
+            [ bold "Vincent Verroust"
+            , text " is a doctoral researcher in History of Science at the School of Advanced Studies in the Social Sciences in Paris, France, and an associate researcher at the Institute for the Humanities in Medicine in Lausanne, Switzerland. He is investigating the heuristic consequences of the discovery of the divinatory mushrooms of Mexico, focusing primarily on Roger Heim’s archives at the French National Museum of Natural History. Vincent advocates the consideration of historical data for the understanding of the potential of psychedelic substances for self-transformation. Within this framework, he notably came across a lost rare scientific documentary from 1964 showing mushroom experiments with volunteers in France, including a follow-up study, four years after the ingestions, suggesting modifications in personality. Vincent Verroust is also the founder of the French Psychedelic Society and a driving force of the psychedelic renaissance in France, for he has organized with his fellows the first scientific colloquium on psychedelics in Paris last May and for he's also the supervisor of a research seminar on psychedelics and the History of Medicine for the current academic year."
+            ]
+        )
+    , Speaker
         "Fredrik von Kieseritzky, PhD"
         (getImageUrl "fredrik-von-kieseritzky.jpg")
         (paragraph
