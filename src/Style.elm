@@ -82,7 +82,6 @@ type CssClasses
     | AboutNPVLogo
     | Underline
     | DarkBackground
-    | MoreInfoSoon
     | MailChimp
     | ModalOverlay
     | Modal
@@ -617,13 +616,6 @@ css =
             ]
         , Css.class PracticalitiesSmallImages
             [ Css.displayFlex
-            ]
-        , Css.class MoreInfoSoon
-            [ Css.textAlign Css.center
-            , Css.textTransform Css.uppercase
-            , Css.color colors.white
-            , Css.fontSize (Css.rem 2)
-            , Css.marginTop (Css.rem 2)
             ]
         , Css.class MailChimp
             [ Css.property "clear" "left"
