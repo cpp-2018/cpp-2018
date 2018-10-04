@@ -112,6 +112,7 @@ type CssClasses
     | PartnerImage
     | Partners
     | PriceChangeModal
+    | LivestreamLink
 
 
 css : Css.Stylesheet
@@ -790,5 +791,8 @@ css =
             , Css.justifyContent Css.center
             , Css.alignItems Css.center
             , Css.maxWidth (Css.rem 36)
+            ]
+        , Css.class LivestreamLink
+            [ Css.maxWidth (Css.pct 100)
             ]
         ]

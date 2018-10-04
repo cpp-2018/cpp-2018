@@ -92,6 +92,9 @@ getSectionFromHash section =
         "#partners" ->
             Ok Partners
 
+        "#livestream" ->
+            Ok Livestream
+
         "#contact" ->
             Ok Contact
 
@@ -167,6 +170,7 @@ type Section
     | Tickets
     | Contact
     | Partners
+    | Livestream
 
 
 allSections : List Section
@@ -178,6 +182,7 @@ allSections =
     , SideEvents
     , Tickets
     , Partners
+    , Livestream
     , Contact
     ]
 
@@ -191,6 +196,7 @@ navbarSections =
     , SideEvents
     , Tickets
     , Partners
+    , Livestream
     , Contact
     ]
 
@@ -942,6 +948,19 @@ viewTickets =
         ]
 
 
+viewLivestream : Html Msg
+viewLivestream =
+    Html.a
+        [ Attrs.href "https://cpp2018.cleeng.com/"
+        , Attrs.target "_blank"
+        ]
+        [ Html.img "Livestream"
+            [ class [ Style.LivestreamLink ]
+            , Attrs.src "/build/assets/livestream.jpg"
+            ]
+        ]
+
+
 viewContactText : String -> Html msg -> Html msg
 viewContactText title content =
     Html.div [ class [ Style.ContactText ] ]
@@ -1044,6 +1063,9 @@ viewSection section =
                 Partners ->
                     ( [], [], viewPartners )
 
+                Livestream ->
+                    ( [ Style.DarkBackground ], [], viewLivestream )
+
                 Contact ->
                     ( [ Style.ContactSection ], [ Style.ContactContent ], viewContact )
     in
@@ -1086,6 +1108,9 @@ getSectionId section =
         Partners ->
             "partners"
 
+        Livestream ->
+            "livestream"
+
         Contact ->
             "contact"
 
@@ -1113,6 +1138,9 @@ getSectionName section =
 
         Partners ->
             "Partners"
+
+        Livestream ->
+            "Livestream"
 
         Contact ->
             "Contact"
