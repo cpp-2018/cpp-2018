@@ -574,6 +574,8 @@ viewPracticalities =
                         [ Html.text "here" ]
                     , Html.text "."
                     ]
+                 , Html.div [ class [ Style.ProgramLinkContainer ] ]
+                   [ viewProgramLink ]
                 ]
             , Html.div [ class [ Style.PracticalitiesImages ] ]
                 [ Html.div [ class [ Style.PracticalitiesSmallImages ] ]
@@ -592,8 +594,7 @@ viewPracticalities =
                     ]
                 ]
             ]
-       , Html.div [ class [ Style.ProgramLinkContainer ] ]
-           [ viewProgramLink ]
+
         ]
 
 
