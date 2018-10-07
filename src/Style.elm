@@ -39,6 +39,7 @@ type CssClasses
     | HomeLogoVideo
     | HomeLogoWrapper
     | About
+    | ProgramLinkContainer
     | CPPLogo
     | AboutIntroText
     | AboutText
@@ -548,6 +549,10 @@ css =
             ]
         , Css.class DarkBackground
             [ Css.backgroundColor colors.neutral.dark
+            ]
+        , Css.class ProgramLinkContainer
+            [ Css.displayFlex
+            , Css.justifyContent Css.center
             ]
         , Css.class Practicalities
             [ Css.fontSize (Css.rem 1.2)

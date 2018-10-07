@@ -206,6 +206,11 @@ ticketUrl =
     "https://secure.tickster.com/Intro.aspx?ERC=5PWCFFRV5EU58MW"
 
 
+programUrl : String
+programUrl =
+    "https://issuu.com/nfpv/docs/cpp2018_programblad_digi"
+
+
 formUrl : String
 formUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLSdGQSaUq69_UCqxKhTZ_GxaNI2_2bcSrpG8oK0iRRJu_LBo5w/viewform"
@@ -219,6 +224,17 @@ viewTicketLink =
         , Attrs.target "_blank"
         ]
         [ Html.text "Get tickets"
+        ]
+
+
+viewProgramLink : Html msg
+viewProgramLink =
+    Html.a
+        [ class [ Style.TicketLink ]
+        , Attrs.href programUrl
+        , Attrs.target "_blank"
+        ]
+        [ Html.text "Read the full program here"
         ]
 
 
@@ -576,6 +592,8 @@ viewPracticalities =
                     ]
                 ]
             ]
+       , Html.div [ class [ Style.ProgramLinkContainer ] ]
+           [ viewProgramLink ]
         ]
 
 
@@ -703,7 +721,6 @@ viewGetTickets link =
             ]
             [ Html.text "Get Tickets" ]
         ]
-
 
 viewSideEvents : Html Msg
 viewSideEvents =
