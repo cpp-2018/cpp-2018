@@ -40,6 +40,7 @@ type CssClasses
     | HomeLogoWrapper
     | About
     | ProgramLinkContainer
+    | Livestream
     | CPPLogo
     | AboutIntroText
     | AboutText
@@ -788,6 +789,13 @@ css =
             , Css.justifyContent Css.center
             , Css.alignItems Css.center
             , Css.maxWidth (Css.rem 36)
+            ]
+        , Css.class Livestream
+            [ Css.displayFlex
+            , Css.flexDirection Css.column
+            , Css.alignItems Css.center
+            , Css.color colors.white
+            , Css.fontSize (Css.rem 1.2)
             ]
         , Css.class LivestreamLink
             [ Css.maxWidth (Css.pct 100)

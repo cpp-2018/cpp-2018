@@ -964,16 +964,19 @@ viewTickets =
 
 viewLivestream : Html Msg
 viewLivestream =
-    Html.a
-        [ Attrs.href "https://cpp2018.cleeng.com/"
-        , Attrs.target "_blank"
-        ]
-        [ Html.img "Livestream"
-            [ class [ Style.LivestreamLink ]
-            , Attrs.src "/build/assets/livestream.jpg"
-            ]
-        ]
-
+    Html.div [ class [Style.Livestream]]
+    [ Html.a
+         [ Attrs.href "https://cpp2018.cleeng.com/"
+         , Attrs.target "_blank"
+         ]
+         [ Html.img "Livestream"
+             [ class [ Style.LivestreamLink ]
+             , Attrs.src "/build/assets/livestream.jpg"
+             ]
+         ]
+    , Html.p [] [ Html.text "Members of Nätverket för psykedelisk vetenskap stream the event for free."]
+    , Html.p [] [ Html.a [Attrs.href "http://psykedeliskvetenskap.org/medlem"] [Html.text "Become a member here!"]]
+    ]
 
 viewContactText : String -> Html msg -> Html msg
 viewContactText title content =
