@@ -574,8 +574,8 @@ viewPracticalities =
                         [ Html.text "here" ]
                     , Html.text "."
                     ]
-                 , Html.div [ class [ Style.ProgramLinkContainer ] ]
-                   [ viewProgramLink ]
+                , Html.div [ class [ Style.ProgramLinkContainer ] ]
+                    [ viewProgramLink ]
                 ]
             , Html.div [ class [ Style.PracticalitiesImages ] ]
                 [ Html.div [ class [ Style.PracticalitiesSmallImages ] ]
@@ -594,7 +594,6 @@ viewPracticalities =
                     ]
                 ]
             ]
-
         ]
 
 
@@ -722,6 +721,7 @@ viewGetTickets link =
             ]
             [ Html.text "Get Tickets" ]
         ]
+
 
 viewSideEvents : Html Msg
 viewSideEvents =
@@ -965,19 +965,20 @@ viewTickets =
 
 viewLivestream : Html Msg
 viewLivestream =
-    Html.div [ class [Style.Livestream]]
-    [ Html.a
-         [ Attrs.href "https://cpp2018.cleeng.com/"
-         , Attrs.target "_blank"
-         ]
-         [ Html.img "Livestream"
-             [ class [ Style.LivestreamLink ]
-             , Attrs.src "/build/assets/livestream.jpg"
-             ]
-         ]
-    , Html.p [] [ Html.text "Members of Nätverket för psykedelisk vetenskap stream the event for free."]
-    , Html.p [] [ Html.a [Attrs.href "http://psykedeliskvetenskap.org/medlem"] [Html.text "Become a member here!"]]
-    ]
+    Html.div [ class [ Style.Livestream ] ]
+        [ Html.a
+            [ Attrs.href "https://cpp2018.cleeng.com/"
+            , Attrs.target "_blank"
+            ]
+            [ Html.img "Livestream"
+                [ class [ Style.LivestreamLink ]
+                , Attrs.src "/build/assets/livestream.jpg"
+                ]
+            ]
+        , Html.p [] [ Html.text "Members of Nätverket för psykedelisk vetenskap stream the event for free." ]
+        , Html.p [] [ Html.a [ Attrs.href "http://psykedeliskvetenskap.org/medlem" ] [ Html.text "Become a member here!" ] ]
+        ]
+
 
 viewContactText : String -> Html msg -> Html msg
 viewContactText title content =
