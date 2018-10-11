@@ -935,8 +935,9 @@ viewTickets =
             [ Html.div
                 [ class [ Style.TicketsInfo ] ]
                 [ column
-                    [ paragraph [ Html.text "Last Minute (available from Oct 1st): €390 / 4000 SEK (€290 / 3000 SEK with student ID). Lunch and refreshments included for all participants." ]
-                    , paragraph [ Html.text "One-day tickets (available from Oct 1st): €190 / 2000 SEK (€145 / 1500 SEK with student ID). Lunch and refreshments not included." ]
+                    [ paragraph [ Html.text "Last Minute (available from Oct 1st): €390 / 4000 SEK (€290 / 3000 SEK for students*)." ]
+                    , paragraph [ Html.text "Note: After Oct 11th and during the conference we only sell one-day tickets! No food included, you can buy food at the hotel bar. Please get your tickets in advance, limited options on location." ]
+                    , paragraph [ Html.text "One-day tickets (available from Oct 1st): €190 / 2000 SEK (€145 / 1500 SEK for students*). Lunch and refreshments not included." ]
                     ]
                 , column
                     [ paragraph
